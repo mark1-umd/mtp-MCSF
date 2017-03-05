@@ -1,10 +1,10 @@
 set(GTEST_SHUFFLE 1)
 
 add_executable(
-    cpp-test
+    mcfs-test
     main.cpp
     test.cpp
 )
 
-target_include_directories(cpp-test PUBLIC ../vendor/googletest/googletest/include)
-target_link_libraries(cpp-test PUBLIC gtest)
+target_include_directories(mcfs-test PUBLIC ../vendor/googletest/googletest/include)
+target_link_libraries(mcfs-test PUBLIC gtest)

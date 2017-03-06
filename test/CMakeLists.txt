@@ -3,7 +3,7 @@ set(GTEST_SHUFFLE 1)
 add_executable(
     mcfs-test
     main.cpp
-    test.cpp
+    MCFStest.cpp
 )
 
 target_include_directories(mcfs-test PUBLIC ../vendor/googletest/googletest/include)

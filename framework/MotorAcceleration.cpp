@@ -20,7 +20,6 @@
 
 MotorAcceleration::MotorAcceleration() {
   // TODO Auto-generated constructor stub
-
 }
 
 MotorAcceleration::~MotorAcceleration() {

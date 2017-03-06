@@ -15,7 +15,6 @@
 
 Route::Route() {
   // TODO Auto-generated constructor stub
-
 }
 
 Route::~Route() {
@@ -27,7 +26,7 @@ Route::~Route() {
  * @param [in] a WayPoint to be added to this route
  */
 void Route::addWayPoint(const WayPoint wayPoint) {
-  Route::route.pushback(wayPoint);
+  Route::route.push_back(wayPoint);
   return;
 }
 
@@ -40,8 +39,13 @@ void Route::addWayPoint(const WayPoint wayPoint) {
 Path Route::planPath(const MotorVelocity maxVelocity,
                      const MotorAcceleration maxAcceleration) {
   Path path = new Path;
-  for (auto wp : Route::route)
-    path.addPathPoint(wp.getPosition, maxVelocity, maxAcceleration);
+  for (auto wp : Route::route) {
+    PathPoint pathpoint;
+    pathpoint.setPosition(wp.getPosition());
+    pathpoint.setMaxVelocity(maxVelocity);
+    pathpoint.setMaxAcceleration(maxAcceleration);
+    path.addPathPoint(pathpoint);
+  }
   return path;
 }
 

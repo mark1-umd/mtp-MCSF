@@ -18,7 +18,7 @@
 #include <vector>
 #include <iostream>
 
-/** @brief A trajectory is a vector of motion prifle trajectory points
+/** @brief A trajectory is a vector of motion profile trajectory points
  */
 
 class Trajectory {

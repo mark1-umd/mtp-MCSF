@@ -16,10 +16,10 @@
 #ifndef TRAJECTORYPOINT_HPP_
 #define TRAJECTORYPOINT_HPP_
 
-#include "Point.hpp"
 #include <iostream>
+#include "Point.hpp"
 
-/** @brief <brief description>
+/** @brief A trajectory point is a point with added velocity and duration
  */
 
 class TrajectoryPoint : public Point {

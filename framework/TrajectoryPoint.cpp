@@ -17,7 +17,6 @@
 
 TrajectoryPoint::TrajectoryPoint() {
   // TODO Auto-generated constructor stub
-
 }
 
 TrajectoryPoint::~TrajectoryPoint() {

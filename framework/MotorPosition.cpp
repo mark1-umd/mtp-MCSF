@@ -14,7 +14,6 @@
 
 MotorPosition::MotorPosition() {
   // TODO Auto-generated constructor stub
-
 }
 
 MotorPosition::~MotorPosition() {

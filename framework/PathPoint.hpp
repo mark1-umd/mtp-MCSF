@@ -17,8 +17,8 @@
 #ifndef PATHPOINT_HPP_
 #define PATHPOINT_HPP_
 
-#include "Point.hpp"
 #include <iostream>
+#include "Point.hpp"
 
 /** @brief <brief description>
  */

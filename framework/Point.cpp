@@ -13,19 +13,16 @@
  * superclass is a generalization of those three types of points.
  *
  */
- #include "Point.hpp"
+#include "Point.hpp"
 
 
- Point::Point()
- {
- // TODO Auto-generated constructor stub
+Point::Point() {
+  // TODO Auto-generated constructor stub
+}
 
- }
-
- Point::~Point()
- {
- // TODO Auto-generated destructor stub
- }
+Point::~Point() {
+  // TODO Auto-generated destructor stub
+}
 
 /**
  * @brief Set the position of a generic Point object

@@ -16,7 +16,6 @@
 
 Trajectory::Trajectory() {
   // TODO Auto-generated constructor stub
-
 }
 
 Trajectory::~Trajectory() {

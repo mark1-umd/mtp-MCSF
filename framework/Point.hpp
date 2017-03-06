@@ -13,12 +13,15 @@
  * superclass is a generalization of those three types of points.
  *
  */
- #ifndef POINT_HPP_
- #define POINT_HPP_
+#ifndef POINT_HPP_
+#define POINT_HPP_
 
 #include <iostream>
 
- class Point {
+/** @brief A point is position reference for a motor
+ */
+
+class Point {
  public:
   Point();
   virtual ~Point();
@@ -28,7 +31,7 @@
 
  private:
   MotorPosition position;
- };
+};
 
 
- #endif /* POINT_HPP_ */
+#endif /* POINT_HPP_ */

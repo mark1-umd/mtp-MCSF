@@ -16,13 +16,20 @@
 
 Path::Path() {
   // TODO Auto-generated constructor stub
-
 }
 
 Path::~Path() {
   // TODO Auto-generated destructor stub
 }
 
+/**
+ * @brief Add a path point onto this path
+ * @param [in] a PathPoint pathPoint to add to the current path
+ */
+void Path::addPathPoint(const PathPoint pathPoint) {
+  Path::path.push_back(pathPoint);
+  return;
+}
 /**
  * @brief Using the current path, plan a motion profile trajectory
  * @return A motion profile trajectory

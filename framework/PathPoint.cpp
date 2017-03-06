@@ -18,7 +18,6 @@
 
 PathPoint::PathPoint() {
   // TODO Auto-generated constructor stub
-
 }
 
 PathPoint::~PathPoint() {

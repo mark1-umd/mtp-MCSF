@@ -16,6 +16,7 @@
 
 #include <vector>
 #include <iostream>
+#include "Path.hpp"
 
 /** @brief A Route represents a series of Way Points to be traveled to
  */
@@ -26,7 +27,7 @@ class Route {
   virtual ~Route();
   void addWayPoint(const WayPoint wayPoint);
   Path planPath(const MotorVelocity maxVelocity,
-                const MotorAcceleration maxAccleration);
+                const MotorAcceleration maxAcceleration);
   void show();
 
  private:

@@ -25,6 +25,7 @@ class Path {
  public:
   Path();
   virtual ~Path();
+  void addPathPoint(PathPoint pathPoint);
   Trajectory planTrajectory();
   void show();
 

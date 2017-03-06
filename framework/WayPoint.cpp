@@ -15,7 +15,6 @@
 
 WayPoint::WayPoint() {
   // TODO Auto-generated constructor stub
-
 }
 
 WayPoint::~WayPoint() {

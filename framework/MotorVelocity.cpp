@@ -19,7 +19,6 @@
 
 MotorVelocity::MotorVelocity() {
   // TODO Auto-generated constructor stub
-
 }
 
 MotorVelocity::~MotorVelocity() {

@@ -16,7 +16,7 @@
 
 #include "Point.hpp"
 
-/** @brief A representation of a route-planning Way Point
+/** @brief A waypoint is simply a point
  */
 
 class WayPoint : public Point {

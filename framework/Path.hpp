@@ -17,6 +17,8 @@
 
 #include <vector>
 #include <iostream>
+#include "PathPoint.hpp"
+#include "Trajectory.hpp"
 
 /** @brief A motion path is a vector of Path Points
  */

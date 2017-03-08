@@ -26,7 +26,7 @@ Route::~Route() {
  * @param [in] a WayPoint to be added to this route
  */
 void Route::addWayPoint(const WayPoint wayPoint) {
-  Route::route.push_back(wayPoint);
+  route.push_back(wayPoint);
   return;
 }
 
@@ -38,8 +38,8 @@ void Route::addWayPoint(const WayPoint wayPoint) {
  */
 Path Route::planPath(const MotorVelocity maxVelocity,
                      const MotorAcceleration maxAcceleration) {
-  Path path = new Path;
-  for (auto wp : Route::route) {
+  Path path;
+  for (auto wp : route) {
     PathPoint pathpoint;
     pathpoint.setPosition(wp.getPosition());
     pathpoint.setMaxVelocity(maxVelocity);
@@ -51,8 +51,10 @@ Path Route::planPath(const MotorVelocity maxVelocity,
 
 void Route::show() {
   std::cout << "Route way points:" << std::endl;
-  for (auto wp : Route::route)
-    std::cout << wp.show() << std::endl;
+  for (auto wayPoint : route) {
+    wayPoint.show();
+    std::cout << std::endl;
+  }
   std::cout << "End of route" << std::endl;
   return;
 }

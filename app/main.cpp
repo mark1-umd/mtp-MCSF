@@ -1,8 +1,7 @@
 #include <iostream>
-#include <lib.hpp>
 
 int main()
 {
-    dummy();
+  std::cout << "Main is executing." << std::endl;
     return 0;
 }

@@ -17,8 +17,8 @@
  */
 #include "MotorVelocity.hpp"
 
-MotorVelocity::MotorVelocity() {
-  // TODO Auto-generated constructor stub
+MotorVelocity::MotorVelocity()
+    : velAsRotationsPerMinute(0.0) {
 }
 
 MotorVelocity::~MotorVelocity() {
@@ -30,7 +30,7 @@ MotorVelocity::~MotorVelocity() {
  * @param [in] double rate representing a motor velocity
  */
 void MotorVelocity::setRotationsPerMinute(const double rate) {
-  MotorVelocity::velAsRotationsPerMinute = rate;
+  velAsRotationsPerMinute = rate;
   return;
 }
 
@@ -39,5 +39,5 @@ void MotorVelocity::setRotationsPerMinute(const double rate) {
  * @return double representing a motor velocity
  */
 double MotorVelocity::getRotationsPerMinute() {
-  return MotorVelocity::velAsRotationsPerMinute;
+  return velAsRotationsPerMinute;
 }

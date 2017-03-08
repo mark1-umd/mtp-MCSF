@@ -5,19 +5,18 @@
  * @author MJenkins, ENPM 808X Spring 2017
  * @date Mar 5, 2017 - Creation
  *
- * @brief A superclass to define Point objects; subclasses will inherit
+ * @brief A base class to define common members of Point objects
  *
  * There are at least three types of Point objects - WayPoints,
  * PathPoints, and TrajectoryPoints.  All three have in common a
  * position with accessor methods to set and get the position.  This
- * superclass is a generalization of those three types of points.
+ * base class is a generalization of those three types of points.
  *
  */
 #include "Point.hpp"
 
-
-Point::Point() {
-  // TODO Auto-generated constructor stub
+Point::Point()
+    : position() {
 }
 
 Point::~Point() {
@@ -26,10 +25,10 @@ Point::~Point() {
 
 /**
  * @brief Set the position of a generic Point object
- * @param [in] MotorPosition pos
+ * @param [in] MotorPosition pos is a point referenced by a motor position
  */
-void setPosition(const MotorPosition pos) {
-  Point::position = pos;
+void Point::setPosition(const MotorPosition pos) {
+  position = pos;
   return;
 }
 
@@ -37,15 +36,15 @@ void setPosition(const MotorPosition pos) {
  * @brief Get the previously set position of a generic Point object
  * @return MotorPosition position
  */
-MotorPosition getPosition() {
-  return Point::position;
+MotorPosition Point::getPosition() {
+  return position;
 }
 
 /**
  * @brief Show the point's position (in motor rotations)
  */
 void Point::show() {
-  std::cout << "Position: " << Point::position.getRotations()
+  std::cout << "Position: " << position.getRotations()
             << " motor rotations";
   return;
 }

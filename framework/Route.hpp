@@ -17,6 +17,7 @@
 #include <vector>
 #include <iostream>
 #include "Path.hpp"
+#include "WayPoint.hpp"
 
 /** @brief A Route represents a series of Way Points to be traveled to
  */

@@ -19,6 +19,8 @@
 
 #include <iostream>
 #include "Point.hpp"
+#include "MotorVelocity.hpp"
+#include "MotorAcceleration.hpp"
 
 /** @brief <brief description>
  */

@@ -17,6 +17,7 @@
 #define POINT_HPP_
 
 #include <iostream>
+#include <MotorPosition.hpp>
 
 /** @brief A point is position reference for a motor
  */
@@ -25,11 +26,11 @@ class Point {
  public:
   Point();
   virtual ~Point();
-  void setPosition(const MotorPosition pos);
+  void setPosition(MotorPosition pos);
   MotorPosition getPosition();
   void show();
 
- private:
+ protected:
   MotorPosition position;
 };
 

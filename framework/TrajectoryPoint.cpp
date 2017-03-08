@@ -28,7 +28,7 @@ TrajectoryPoint::~TrajectoryPoint() {
  * @param [in] a MotorVelocity velocity setting
  */
 void TrajectoryPoint::setVelocity(const MotorVelocity vel) {
-  TrajectoryPoint::velocity = vel;
+  velocity = vel;
   return;
 }
 
@@ -37,7 +37,7 @@ void TrajectoryPoint::setVelocity(const MotorVelocity vel) {
  * @return a MotorVelocity representing this trajectory points velocity
  */
 MotorVelocity TrajectoryPoint::getVelocity() {
-  return TrajectoryPoint::velocity;
+  return velocity;
 }
 
 /**
@@ -45,7 +45,7 @@ MotorVelocity TrajectoryPoint::getVelocity() {
  * @param [in] int duration in milliseconds
  */
 void TrajectoryPoint::setDurationMS(const int duration) {
-  TrajectoryPoint::durationMS = duration;
+  durationMS = duration;
   return;
 }
 
@@ -54,13 +54,13 @@ void TrajectoryPoint::setDurationMS(const int duration) {
  * @return int duration in milliseconds
  */
 int TrajectoryPoint::getDurationMS() {
-  return TrajectoryPoint::durationMS;
+  return durationMS;
 }
 
 void TrajectoryPoint::show() {
-  std::cout << "Position: " << TrajectoryPoint::position.getRotations()
+  std::cout << "Position: " << position.getRotations()
             << " rotations; " << "Velocity: "
-            << TrajectoryPoint::velocity.getRotationsPerMinute() << " RPM; "
-            << "Duration: " << TrajectoryPoint::durationMS << " ms";
+            << velocity.getRotationsPerMinute() << " RPM; "
+            << "Duration: " << durationMS << " ms";
   return;
 }

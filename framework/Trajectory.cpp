@@ -28,7 +28,7 @@ Trajectory::~Trajectory() {
 void Trajectory::execute() {
   std::cout << "Executing motion profile trajectory: (one dot per point)"
             << std::endl;
-  for (auto tp : Trajectory::trajectory)
+  for (auto trajectoryPoint : trajectory)
     std::cout << ".";
   std::cout << std::endl;
   std::cout << "End of motion profile trajectory execution." << std::endl;
@@ -40,8 +40,8 @@ void Trajectory::execute() {
  */
 void Trajectory::show() {
   std::cout << "Motion Profile trajectory:" << std::endl;
-  for (auto tp : Trajectory::trajectory) {
-    tp.show();
+  for (auto trajectoryPoint : Trajectory::trajectory) {
+    trajectoryPoint.show();
     std::cout << std::endl;
   }
   std::cout << "End of Motion Profile trajectory." << std::endl;

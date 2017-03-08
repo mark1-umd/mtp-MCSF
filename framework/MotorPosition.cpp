@@ -12,8 +12,8 @@
  */
 #include "MotorPosition.hpp"
 
-MotorPosition::MotorPosition() {
-  // TODO Auto-generated constructor stub
+MotorPosition::MotorPosition()
+    : rotationCount(0.0) {
 }
 
 MotorPosition::~MotorPosition() {
@@ -21,18 +21,18 @@ MotorPosition::~MotorPosition() {
 }
 
 /**
- * @brief Set the motor position using a non-integer rotation count
+ * @brief Set the motor position using a floating point (double) rotation count
  * @param [in] a count value in a double
  */
 void MotorPosition::setRotations(const double count) {
-  MotorPosition::rotationCount = count;
+  rotationCount = count;
   return;
 }
 
 /**
- * @brief Return the motor position as a non-integer rotation count
+ * @brief Return the motor position as a floating point (double) rotation count
  * @return the current position as a motor encoder rotation count
  */
-double getRotations() {
-  return MotorPosition::rotationCount;
+double MotorPosition::getRotations() {
+  return rotationCount;
 }

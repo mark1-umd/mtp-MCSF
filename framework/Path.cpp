@@ -15,7 +15,6 @@
 #include "Path.hpp"
 
 Path::Path() {
-  // TODO Auto-generated constructor stub
 }
 
 Path::~Path() {
@@ -27,7 +26,7 @@ Path::~Path() {
  * @param [in] a PathPoint pathPoint to add to the current path
  */
 void Path::addPathPoint(const PathPoint pathPoint) {
-  Path::path.push_back(pathPoint);
+  path.push_back(pathPoint);
   return;
 }
 /**
@@ -35,14 +34,14 @@ void Path::addPathPoint(const PathPoint pathPoint) {
  * @return A motion profile trajectory
  */
 Trajectory Path::planTrajectory() {
-  Trajectory trajectory = new Trajectory;
+  Trajectory trajectory;
   return trajectory;
 }
 
 void Path::show() {
   std::cout << "Motion path:" << std::endl;
-  for (auto p : Path::path) {
-    std::cout << p.show();
+  for (auto pathPoint : path) {
+    pathPoint.show();
     std::cout << std::endl;
   }
   std::cout << "End of motion path." << std::endl;

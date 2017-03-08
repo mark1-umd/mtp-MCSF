@@ -1,10 +1,21 @@
 set(GTEST_SHUFFLE 1)
 
 add_executable(
-    mcfs-test
+    MCSFtest
     main.cpp
-    MCFStest.cpp
+    MCSFtest.cpp
+    ../framework/MotorAcceleration.cpp
+    ../framework/MotorPosition.cpp
+    ../framework/MotorVelocity.cpp
+    ../framework/Path.cpp
+    ../framework/PathPoint.cpp
+    ../framework/Point.cpp
+    ../framework/Route.cpp
+    ../framework/Trajectory.cpp
+    ../framework/TrajectoryPoint.cpp
+    ../framework/WayPoint.cpp
 )
-
-target_include_directories(mcfs-test PUBLIC ../vendor/googletest/googletest/include)
-target_link_libraries(mcfs-test PUBLIC gtest)
+include_directories(
+    ${CMAKE_SOURCE_DIR}/framework)
+target_include_directories(MCSFtest PUBLIC ../vendor/googletest/googletest/include)
+target_link_libraries(MCSFtest PUBLIC gtest)

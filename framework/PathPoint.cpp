@@ -29,7 +29,7 @@ PathPoint::~PathPoint() {
  * @param [in] a MotorVelocity maximum velocity
  */
 void PathPoint::setMaxVelocity(const MotorVelocity maxV) {
-  PathPoint::maxVelocity = maxV;
+  maxVelocity = maxV;
   return;
 }
 
@@ -38,7 +38,7 @@ void PathPoint::setMaxVelocity(const MotorVelocity maxV) {
  * @return a MotorVelocity value representing the maximum allowable velocity
  */
 MotorVelocity PathPoint::getMaxVelocity() {
-  return PathPoint::maxVelocity;
+  return maxVelocity;
 }
 
 /**
@@ -46,7 +46,7 @@ MotorVelocity PathPoint::getMaxVelocity() {
  * @param [in] a MotorAcceleration maximum allowable acceleration
  */
 void PathPoint::setMaxAcceleration(const MotorAcceleration maxA) {
-  PathPoint::maxAcceleration = maxA;
+  maxAcceleration = maxA;
   return;
 }
 
@@ -55,18 +55,18 @@ void PathPoint::setMaxAcceleration(const MotorAcceleration maxA) {
  * @return a MotorAcceleration value representing the maximum allowable acceleration
  */
 MotorAcceleration PathPoint::getMaxAcceleration() {
-  return PathPoint::maxAcceleration;
+  return maxAcceleration;
 }
 
 /**
  * @brief Show the details of the current path point
  */
 void PathPoint::show() {
-  std::cout << "Position: " << PathPoint::position.getRotations()
+  std::cout << "Position: " << position.getRotations()
             << " rotations; " << "Max Vel: "
-            << PathPoint::maxVelocity.getRotationsPerMinute() << " RPM; "
+            << maxVelocity.getRotationsPerMinute() << " RPM; "
             << "Max Accel: "
-            << PathPoint::maxAcceleration.getRotationsPerMinutePerSecond
+            << maxAcceleration.getRotationsPerMinutePerSecond()
             << " RPM/s ";
   return;
 }

@@ -18,8 +18,8 @@
  */
 #include "MotorAcceleration.hpp"
 
-MotorAcceleration::MotorAcceleration() {
-  // TODO Auto-generated constructor stub
+MotorAcceleration::MotorAcceleration()
+    : accelAsRotationsPerMinutePerSecond(0.0) {
 }
 
 MotorAcceleration::~MotorAcceleration() {
@@ -31,7 +31,7 @@ MotorAcceleration::~MotorAcceleration() {
  * @param [in] double rate to set as the acceleration value
  */
 void MotorAcceleration::setRotationsPerMinutePerSecond(const double rate) {
-  MotorAcceleration::accelAsRotationsPerMinutePerSecond = rate;
+  accelAsRotationsPerMinutePerSecond = rate;
   return;
 }
 
@@ -40,5 +40,5 @@ void MotorAcceleration::setRotationsPerMinutePerSecond(const double rate) {
  * @return a double representing the motor acceleration value
  */
 double MotorAcceleration::getRotationsPerMinutePerSecond() {
-  return MotorAcceleration::accelAsRotationsPerMinutePerSecond;
+  return accelAsRotationsPerMinutePerSecond;
 }

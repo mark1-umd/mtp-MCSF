@@ -17,6 +17,7 @@
 
 #include <vector>
 #include <iostream>
+#include "TrajectoryPoint.hpp"
 
 /** @brief A trajectory is a vector of motion profile trajectory points
  */

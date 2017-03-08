@@ -18,6 +18,7 @@
 
 #include <iostream>
 #include "Point.hpp"
+#include "MotorVelocity.hpp"
 
 /** @brief A trajectory point is a point with added velocity and duration
  */

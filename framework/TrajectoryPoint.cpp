@@ -15,8 +15,9 @@
  */
 #include "TrajectoryPoint.hpp"
 
-TrajectoryPoint::TrajectoryPoint() {
-  // TODO Auto-generated constructor stub
+TrajectoryPoint::TrajectoryPoint()
+    : velocity(),
+      durationMS(0) {
 }
 
 TrajectoryPoint::~TrajectoryPoint() {

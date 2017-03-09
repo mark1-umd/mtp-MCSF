@@ -80,8 +80,9 @@ engineering techniques being taught in a course entitled "Advanced Software Engi
 
 ## Status
 
-2017-03-04 Initial development work underway; no useful code at present
-2017-03-07 First set of three tests for basic accessor functions working
+- 2017-03-04 Initial development work underway; no useful code at present
+- 2017-03-07 First set of three tests for basic accessor functions working
+- 2017-03-08 Initial development complete, all basic tests working
 
 ## Installation
 

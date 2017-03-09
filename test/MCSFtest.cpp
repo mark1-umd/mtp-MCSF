@@ -320,7 +320,10 @@ TEST(TrajectoryPointTest, testInitialization) {
   EXPECT_DOUBLE_EQ(0.0, aMotorPosition.getRotations());
   MotorVelocity velocity = aTrajectoryPoint.getVelocity();
   EXPECT_DOUBLE_EQ(0.0, velocity.getRotationsPerMinute());
+  MotorAcceleration acceleration = aTrajectoryPoint.getAcceleration();
+  EXPECT_DOUBLE_EQ(0.0, acceleration.getRotationsPerMinutePerSecond());
   EXPECT_EQ(0, aTrajectoryPoint.getDurationMS());
+  EXPECT_DOUBLE_EQ(0.0, aTrajectoryPoint.getTimeS());
 }
 
  //*********************************************************
@@ -347,9 +350,26 @@ TEST(TrajectoryPointTest, testAccessorFunctions) {
   returnedVelocity = aTrajectoryPoint.getVelocity();
   EXPECT_DOUBLE_EQ(velocityInRPM, returnedVelocity.getRotationsPerMinute());
 
+  // Define a MotorAcceleration, set it as the Accleration in a TrajectoryPoint,
+  // and see if it comes back as the same value
+  MotorAcceleration acceleration, returnedAcceleration;
+  double accelerationInRPMperSecond = 1.2345;
+  acceleration.setRotationsPerMinutePerSecond(accelerationInRPMperSecond);
+  aTrajectoryPoint.setAcceleration(acceleration);
+  returnedAcceleration = aTrajectoryPoint.getAcceleration();
+  EXPECT_DOUBLE_EQ(accelerationInRPMperSecond,
+                   returnedAcceleration.getRotationsPerMinutePerSecond());
+
   // Set a duration in milliseconds in a TrajectoryPoint,
   // and see if it comes back as the same value
   int duration = 12;
   aTrajectoryPoint.setDurationMS(duration);
   EXPECT_EQ(duration, aTrajectoryPoint.getDurationMS());
+
+  // Set a time in seconds in a TrajectoryPoint,
+  // and see if it comes back as the same value
+  double time = 1.001;
+  aTrajectoryPoint.setTimeS(time);
+  EXPECT_EQ(time, aTrajectoryPoint.getTimeS());
+
 }

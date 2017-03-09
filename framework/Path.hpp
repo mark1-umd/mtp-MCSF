@@ -27,7 +27,7 @@ class Path {
  public:
   Path();
   virtual ~Path();
-  void addPathPoint(PathPoint pathPoint);
+  void addPathPoint(const PathPoint pathPoint);
   Trajectory planTrajectory();
   void show();
 

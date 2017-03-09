@@ -25,7 +25,7 @@ class MotorVelocity {
  public:
   MotorVelocity();
   virtual ~MotorVelocity();
-  void setRotationsPerMinute(double rate);
+  void setRotationsPerMinute(const double rate);
   double getRotationsPerMinute();
 
  private:

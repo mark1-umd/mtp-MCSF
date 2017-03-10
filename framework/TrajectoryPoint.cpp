@@ -102,6 +102,7 @@ int TrajectoryPoint::getDurationMS() {
  * @brief Set the relative time for this trajectory point in seconds
  * @param [in] double relative in seconds
  */
+
 void TrajectoryPoint::setTimeS(const double time) {
   timeS = time;
   return;
@@ -128,15 +129,21 @@ void TrajectoryPoint::show() {
 }
 
 /**
- * @brief Output the trajectory point to a comma-separated value file
- * @return double relative time in seconds
+ * @brief Output the trajectory point header to a comma-separated value file
  */
+void TrajectoryPoint::outputCSVheader(std::ofstream& fileCSV) {
+  fileCSV << "Time(s)" << "," << "Position(rotations)" << ","
+          << "Velocity(rotations/s)" << "," << "Acceleration(rotations/s**2)"
+          << "," << "Duration(ms)" << std::endl;
+}
 
+/**
+ * @brief Output the trajectory point to a comma-separated value file
+ */
 void TrajectoryPoint::outputCSV(std::ofstream& fileCSV) {
   fileCSV << timeS << "," << position.getRotations() << ","
       << velocity.getRotationsPerMinute() / 60 << ","
           << acceleration.getRotationsPerMinutePerSecond() / 60 << ","
           << durationMS
       << std::endl;
-
 }

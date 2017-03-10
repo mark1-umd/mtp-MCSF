@@ -20,6 +20,13 @@ MotorPosition::~MotorPosition() {
   // TODO Auto-generated destructor stub
 }
 
+MotorPosition MotorPosition::operator-(const MotorPosition& mp) {
+  MotorPosition result;
+  result.rotationCount = this->rotationCount - mp.rotationCount;
+  return result;
+}
+
+
 /**
  * @brief Set the motor position using a floating point (double) rotation count
  * @param [in] a count value in a double

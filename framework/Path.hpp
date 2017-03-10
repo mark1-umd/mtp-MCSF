@@ -18,21 +18,23 @@
 #include <vector>
 #include <iostream>
 #include "PathPoint.hpp"
-#include "Trajectory.hpp"
 
-/** @brief A motion path is a vector of Path Points
+/** @brief A motion path is a series of path points between two Way Points
  */
 
 class Path {
  public:
   Path();
   virtual ~Path();
-  void addPathPoint(const PathPoint pathPoint);
-  Trajectory planTrajectory();
+  void addPathPoint(const PathPoint& pathPoint);
+  bool getFirstPathPoint(PathPoint& pathPoint);
+  bool getNextPathPoint(PathPoint& pathPoint);
+  unsigned int size();
   void show();
 
  private:
   std::vector<PathPoint> path;
+  std::vector<PathPoint>::size_type nextPathPoint;
 };
 
 #endif /* PATH_HPP_ */

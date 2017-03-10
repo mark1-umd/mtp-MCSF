@@ -42,6 +42,7 @@ class TrajectoryPoint : public Point {
   double getTimeS();
   void show();
   void outputCSV(std::ofstream& fileCSV);
+  void outputCSVheader(std::ofstream& fileCSV);
 
  private:
   MotorPosition position;

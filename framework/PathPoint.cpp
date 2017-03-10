@@ -16,8 +16,9 @@
  */
 #include "PathPoint.hpp"
 
-PathPoint::PathPoint() {
-  // TODO Auto-generated constructor stub
+PathPoint::PathPoint()
+    : maxVelocity(),
+      maxAcceleration() {
 }
 
 PathPoint::~PathPoint() {

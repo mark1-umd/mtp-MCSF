@@ -24,6 +24,7 @@ class MotorPosition {
   virtual ~MotorPosition();
   void setRotations(const double count);
   double getRotations();
+  MotorPosition operator-(const MotorPosition& mp);
 
  private:
   double rotationCount;

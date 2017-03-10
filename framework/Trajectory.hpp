@@ -25,6 +25,7 @@
 #include <fstream>
 #include <string>
 #include <algorithm>
+#include <cmath>
 #include "MotorPosition.hpp"
 #include "MotorVelocity.hpp"
 #include "MotorAcceleration.hpp"

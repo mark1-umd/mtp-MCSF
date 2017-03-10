@@ -4,6 +4,7 @@
  *
  * @author MJenkins, ENPM 808X Spring 2017
  * @date Mar 5, 2017 - Creation
+ * @date Mar 9, 2017 - Added minus operator
  *
  * @brief Creates a defined type for a position based on a motor encoder
  *

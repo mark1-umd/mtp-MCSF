@@ -4,6 +4,9 @@
  *
  * @author MJenkins, ENPM 808X Spring 2017
  * @date Mar 6, 2017 - Creation
+ * @date Mar 9, 2017 - Removed planTrajectory (moved to Trajectory object)
+ * @date Mar 9, 2017 - Added getFirstPathPoint, getNextPathPoint, and
+ * size methods to facilitate trajectory generation from Trajectory object
  *
  * * @brief A motion path is a vector of Path Points
  *
@@ -33,11 +36,12 @@ void Path::addPathPoint(const PathPoint& pathPoint) {
 }
 
 /**
- * @brief Return the first path point in the path through the parameter
+ * @brief Return the first path point in the path
  * @param [out] PathPoint set equal to the value of the first path point on the path
- * @return bool indication of whether the requested path point was on the path
+ * @return bool indication of whether the requested point was on the path
  */
 bool Path::getFirstPathPoint(PathPoint& pathPoint) {
+  // Make sure the path has at least one point on it before accessing it
   if (!path.empty()) {
     pathPoint = path.front();
     nextPathPoint = 1;
@@ -47,11 +51,12 @@ bool Path::getFirstPathPoint(PathPoint& pathPoint) {
 }
 
 /**
- * @brief Return the next path point on the path through the parameter
+ * @brief Return the next path point on the path
  * @param [out] PathPoint set equal to the value of the next path point on the path
- * @return bool indication of whether the requested path point was on the path
+ * @return bool indication of whether the requested point was on the path
  */
 bool Path::getNextPathPoint(PathPoint& pathPoint) {
+  // Make sure there is a "next" point on the path before trying to access it
   if (nextPathPoint != 0 && nextPathPoint < path.size()) {
     pathPoint = path.at(nextPathPoint);
     nextPathPoint++;

@@ -4,6 +4,9 @@
  *
  * @author MJenkins, ENPM 808X Spring 2017
  * @date Mar 6, 2017 - Creation
+ * @date Mar 9, 2017 - Removed planTrajectory (moved to Trajectory object)
+ * @date Mar 9, 2017 - Added getFirstPathPoint, getNextPathPoint, and
+ * size methods to facilitate trajectory generation from Trajectory object
  *
  * @brief A motion path is a vector of Path Points
  *

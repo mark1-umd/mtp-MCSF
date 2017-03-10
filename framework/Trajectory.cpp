@@ -4,7 +4,8 @@
  *
  * @author MJenkins, ENPM 808X Spring 2017
  * @date Mar 6, 2017 - Creation
- * @date Mar 8, 2017 - Updates to support trajectory generation
+ * @date Mar 8, 2017 - Updates to attributes to support trajectory generation
+ * @date Mar 9, 2017 - added "generate" method using Path input
  *
  * @brief A trajectory is a vector of motion profile trajectory points
  *
@@ -111,7 +112,7 @@ unsigned int Trajectory::getAlgoNcount() {
 /**
  * @brief Private function to maintain a limited history of doubles
  * @param [in/out] vector<double> history of values
- * @param [in] int maximum number of values to keep in the history list
+ * @param [in] unsigned int maximum number of values to keep in the history list
  * @param [in] double value to add to the list
  */
 void Trajectory::addToHistory(std::vector<double> &history,
@@ -131,9 +132,9 @@ void Trajectory::addToHistory(std::vector<double> &history,
 }
 
 /**
- * @brief Generate a trajectory based on the provided 2-point path
+ * @brief Generate a trajectory based on a provided 2-point path
  * @param [in] path A motion path consisting of a series of path points
- * @param [in] int iteration period in milliseconds (time slice for execution of each trajectory point)
+ * @param [in] unsigned int iteration period in milliseconds (time slice for execution of each trajectory point)
  */
 void Trajectory::generate(Path& path,
                           const unsigned int iterationPeriodMS) {

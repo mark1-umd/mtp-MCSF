@@ -4,7 +4,8 @@
  *
  * @author MJenkins, ENPM 808X Spring 2017
  * @date Mar 6, 2017 - Creation
- * @date Mar 8, 2017 - Updates to support trajectory generation
+ * @date Mar 8, 2017 - Updates to attributes to support trajectory generation
+ * @date Mar 9, 2017 - added "generate" method using Path input
  *
  * @brief A trajectory is a vector of motion profile trajectory points
  *

@@ -4,17 +4,16 @@
  *
  * @author MJenkins, ENPM 808X Spring 2017
  * @date Mar 5, 2017 - Creation
+ * @date Mar 9, 2017 - Updates to support trajectory generation changes in Trajectory class
  *
  * @brief A motion profile trajectory point - position, velocity, duration
  *
  * A motion profile consists of a set of trajectory points, each one of
  * which specifies a position and velocity to be achieved during the
  * execution of the point, and a duration in which to achieve the
- * velocity and position.  In addition to these basic attributes, an
- * acceleration value indicating the current acceleration, and a time
- * value representing the relative time since the first trajectory point
- * in a series of trajectory points forming a motion profile trajectory,
- * are stored.
+ * velocity and position.  Additional attributes capture the acceleration
+ * and time points calculated during trajectory generation so that a
+ * comma-separate value file can be provided to graph trajectory details.
  *
  */
 #include "TrajectoryPoint.hpp"

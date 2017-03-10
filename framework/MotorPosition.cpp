@@ -4,10 +4,13 @@
  *
  * @author MJenkins, ENPM 808X Spring 2017
  * @date Mar 5, 2017 - Creation
+ * @date Mar 9, 2017 - Added minus operator
+ * *
+ * @brief Creates a defined type for a position based on a motor encoder
  *
- * @brief <brief description>
- *
- * <details>
+ * One type of position measurement is through the value of an absolute
+ * motor encoder reading.  This class creates a strictly-typed value to
+ * be used for such a position.
  *
  */
 #include "MotorPosition.hpp"
@@ -20,6 +23,11 @@ MotorPosition::~MotorPosition() {
   // TODO Auto-generated destructor stub
 }
 
+/**
+ * @brief Minus (-) operator to allow subtraction between MotorPositions
+ * @param [in] MotorPosition mp - the right operand of the subtraction operator
+ * @return MotorPosition representing the difference between the two operands
+ */
 MotorPosition MotorPosition::operator-(const MotorPosition& mp) {
   MotorPosition result;
   result.rotationCount = this->rotationCount - mp.rotationCount;

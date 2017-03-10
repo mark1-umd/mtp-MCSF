@@ -237,7 +237,7 @@ void Trajectory::generate(Path& path,
       algoSumFilter1 = std::max((algoSumFilter1 - algoFL1recip), 0.0);
 
     // Calculate sumFilter2 as the sum of sumFilter1 history
-    algoSumFilter2 = std::accumulate(algoSumFilter1History.begin(),
+    algoSumFilter2 = accumulate(algoSumFilter1History.begin(),
                                      algoSumFilter1History.end(), 0.0);
 
     // Calculate the trajectory point velocity

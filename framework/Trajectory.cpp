@@ -206,7 +206,7 @@ void Trajectory::generate(Path& path,
   algoNcount = (double) algoT4MS / (double) algoItPMS;
 
   // A vector to hold the history of Filter 1 sum values
-  std::vector<double> algoSumFilter1History;
+  std::vector<double> algoFilter1SumHistory;
 
   // Ensure the trajectory is clear (in case this is a repeat invocation)
   trajectory.clear();
@@ -222,13 +222,13 @@ void Trajectory::generate(Path& path,
   double tpAccelerationRPSpS = 0.0;
   double tpTimeS = 0.0;
 
-  // Set the step counter, relative time, and sumFilter variables to 0
+  // Set the step counter, relative time, and Filter sum variables to 0
   unsigned int algoStep = 1;
-  double algoSumFilter1 = 0.0;
-  double algoSumFilter2 = 0.0;
+  double algoFilter1Sum = 0.0;
+  double algoFilter2Sum = 0.0;
 
-  // Store this step's sumFilter1 in sumFilter1History with a limit of FL2 values
-  addToHistory(algoSumFilter1History, algoFL2count, algoSumFilter1);
+  // Store this step's Filter1 sum in filter1SumHistory with a limit of FL2 values
+  addToHistory(algoFilter1SumHistory, algoFL2count, algoFilter1Sum);
 
   // Add first trajectory point to the trajectory
 
@@ -264,26 +264,26 @@ void Trajectory::generate(Path& path,
   // calculated values
   // *******************************************************************
 
-  // do the algorithm (while sumFilter1 or sumFilter2 is non-zero)
+  // do the algorithm (while Filter1 sum or Filter2 sum is non-zero)
   do {
 
     // Increment the step that will calculate the next trajectory point
     algoStep++;
 
-    // Increase or decrease sumFilter1 based on step count compared with N
+    // Increase or decrease Filter1 sum based on step count (compared with N + 2)
     if (algoStep < (algoNcount + 2))
-      // Increase sumFilter1, but don't go over 1.0
-      algoSumFilter1 = std::min((algoSumFilter1 + algoFL1recip), 1.0);
+      // Increase filter1Sum, but don't go over 1.0
+      algoFilter1Sum = std::min((algoFilter1Sum + algoFL1recip), 1.0);
     else
       // Decrease sumFilter1, but don't go under 0.0
-      algoSumFilter1 = std::max((algoSumFilter1 - algoFL1recip), 0.0);
+      algoFilter1Sum = std::max((algoFilter1Sum - algoFL1recip), 0.0);
 
-    // Calculate sumFilter2 as the sum of sumFilter1 history
-    algoSumFilter2 = accumulate(algoSumFilter1History.begin(),
-                                     algoSumFilter1History.end(), 0.0);
+    // Calculate Filter2 sum as the sum of filter1Sum history
+    algoFilter2Sum = accumulate(algoFilter1SumHistory.begin(),
+                                algoFilter1SumHistory.end(), 0.0);
 
     // Calculate the trajectory point velocity
-    tpVelocityRPS = ((algoSumFilter1 + algoSumFilter2) / (1 + algoFL2count))
+    tpVelocityRPS = ((algoFilter1Sum + algoFilter2Sum) / (1 + algoFL2count))
         * algoMaxVelRPS;
 
     // Calculate the trajectory point position in rotations as the
@@ -328,8 +328,8 @@ void Trajectory::generate(Path& path,
     // Save current velocity for the next loop through the algorithm
     tpVelocityRPSlastStep = tpVelocityRPS;
 
-    // Keep on keeping on until both sumFilter1 and sumFilter2 are zero
-  } while (algoSumFilter1 != 0 || algoSumFilter2 != 0);
+    // Keep on keeping on until Filter1 sum and Filter2 sum are both zero
+  } while (algoFilter1Sum != 0 || algoFilter2Sum != 0);
 
   // We have generated our trajectory; return to caller
   return;

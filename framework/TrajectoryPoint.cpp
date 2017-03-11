@@ -5,15 +5,17 @@
  * @author MJenkins, ENPM 808X Spring 2017
  * @date Mar 5, 2017 - Creation
  * @date Mar 9, 2017 - Updates to support trajectory generation changes in Trajectory class
+ * @date Mar 11, 2017 - Updates to track algorithm details for model comparison
  *
  * @brief A motion profile trajectory point - position, velocity, duration
  *
  * A motion profile consists of a set of trajectory points, each one of
  * which specifies a position and velocity to be achieved during the
  * execution of the point, and a duration in which to achieve the
- * velocity and position.  Additional attributes capture the acceleration
- * and time points calculated during trajectory generation so that a
- * comma-separate value file can be provided to graph trajectory details.
+ * velocity and position.  Additional attributes capture the generation
+ * algorithm details such a filter values, acceleration and time points
+ * calculated during trajectory generation so that the generated output can
+ * be more closely compared with a spreadsheet model when verifying behavior.
  *
  */
 #include "TrajectoryPoint.hpp"
@@ -23,7 +25,10 @@ TrajectoryPoint::TrajectoryPoint()
       velocity(),
       acceleration(),
       durationMS(0),
-      timeS(0.0) {
+      step(0),
+      timeS(0.0),
+      filter1Sum(0.0),
+      filter2Sum(0.0) {
 }
 
 TrajectoryPoint::~TrajectoryPoint() {
@@ -85,7 +90,7 @@ MotorAcceleration TrajectoryPoint::getAcceleration() {
  * @brief Set the duration for this trajectory point in milliseconds
  * @param [in] int duration in milliseconds
  */
-void TrajectoryPoint::setDurationMS(const int duration) {
+void TrajectoryPoint::setDurationMS(const unsigned int duration) {
   durationMS = duration;
   return;
 }
@@ -94,14 +99,31 @@ void TrajectoryPoint::setDurationMS(const int duration) {
  * @brief Get the duration for this trajectory point in milliseconds
  * @return int duration in milliseconds
  */
-int TrajectoryPoint::getDurationMS() {
+unsigned int TrajectoryPoint::getDurationMS() {
   return durationMS;
 }
+
+/**
+ * @brief Set the step count for this trajectory point
+ * @param [in] unsigned int step count
+ */
+void TrajectoryPoint::setStep(const unsigned int stepCount) {
+  step = stepCount;
+  return;
+}
+
+/**
+ * @brief Get the step count for this trajectory point
+ * @return unsigned int step count
+ */
+unsigned int TrajectoryPoint::getStep() {
+  return step;
+}
+
 /**
  * @brief Set the relative time for this trajectory point in seconds
  * @param [in] double relative in seconds
  */
-
 void TrajectoryPoint::setTimeS(const double time) {
   timeS = time;
   return;
@@ -113,6 +135,40 @@ void TrajectoryPoint::setTimeS(const double time) {
  */
 double TrajectoryPoint::getTimeS() {
   return timeS;
+}
+
+/**
+ * @brief Set the Filter 1 sum for this trajectory point
+ * @param [in] double sum value for the Filter 1 sum
+ */
+void TrajectoryPoint::setFilter1Sum(const double sum) {
+  filter1Sum = sum;
+  return;
+}
+
+/**
+ * @brief Get the Filter 1 sum for this trajectory point
+ * @return double sum value for the Filter 1 sum
+ */
+double TrajectoryPoint::getFilter1Sum() {
+  return filter1Sum;
+}
+
+/**
+ * @brief Set the Filter 2 sum for this trajectory point
+ * @param [in] double sum value for the Filter 2 sum
+ */
+void TrajectoryPoint::setFilter2Sum(const double sum) {
+  filter2Sum = sum;
+  return;
+}
+
+/**
+ * @brief Get the Filter 2 sum for this trajectory point
+ * @return double sum value for the Filter 2 sum
+ */
+double TrajectoryPoint::getFilter2Sum() {
+  return filter2Sum;
 }
 
 /**
@@ -131,9 +187,8 @@ void TrajectoryPoint::show() {
  * @brief Output the trajectory point header to a comma-separated value file
  */
 void TrajectoryPoint::outputCSVheader(std::ofstream& fileCSV) {
-  fileCSV << "Time(s)" << "," << "Position(rotations)" << ","
-          << "Velocity(rotations/s)" << "," << "Acceleration(rotations/s**2)"
-          << "," << "Duration(ms)" << std::endl;
+  fileCSV << "T(s)" << "," << "Pos(r)" << "," << "V(rpss)" << "," << "A(rps/s)"
+          << "," << "Dur(ms)" << std::endl;
 }
 
 /**

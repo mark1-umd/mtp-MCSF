@@ -4,6 +4,7 @@
  *
  * @author MJenkins, ENPM 808X Spring 2017
  * @date Mar 6, 2017 - Creation
+ * @date Mar 10, 2017 - Added/expanded tests
  *
  * @brief Test application for the Motion Control System Framework
  *
@@ -491,16 +492,17 @@ TEST(TrajectoryTest, testInitialization) {
   EXPECT_DOUBLE_EQ(0.0, distance.getRotations());
 
   // The algorithm variables should initialize to zeros
-  EXPECT_EQ(0, aTrajectory.getAlgoItPMS());
-  EXPECT_EQ(0, aTrajectory.getAlgoT1MS());
-  EXPECT_EQ(0, aTrajectory.getAlgoT2MS());
-  EXPECT_EQ(0, aTrajectory.getAlgoT4MS());
-  EXPECT_EQ(0, aTrajectory.getAlgoFL1count());
-  EXPECT_EQ(0, aTrajectory.getAlgoFL2count());
-  EXPECT_EQ(0, aTrajectory.getAlgoNcount());
+  unsigned int zero = 0;
+  EXPECT_EQ(zero, aTrajectory.getAlgoItPMS());
+  EXPECT_EQ(zero, aTrajectory.getAlgoT1MS());
+  EXPECT_EQ(zero, aTrajectory.getAlgoT2MS());
+  EXPECT_EQ(zero, aTrajectory.getAlgoT4MS());
+  EXPECT_EQ(zero, aTrajectory.getAlgoFL1count());
+  EXPECT_EQ(zero, aTrajectory.getAlgoFL2count());
+  EXPECT_EQ(zero, aTrajectory.getAlgoNcount());
 
   // The initial size of the trajectory path itself should be zero
-  EXPECT_EQ(0, aTrajectory.size());
+  EXPECT_EQ(zero, aTrajectory.size());
 }
 
 //*********************************************************

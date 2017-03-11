@@ -1,4 +1,16 @@
-add_executable(mcsf-app main.cpp)
+add_executable(mcsf-app
+    main.cpp
+    ../framework/MotorAcceleration.cpp
+    ../framework/MotorPosition.cpp
+    ../framework/MotorVelocity.cpp
+    ../framework/Path.cpp
+    ../framework/PathPoint.cpp
+    ../framework/Point.cpp
+    ../framework/Route.cpp
+    ../framework/Trajectory.cpp
+    ../framework/TrajectoryPoint.cpp
+    ../framework/WayPoint.cpp    
+)
 include_directories(
     ${CMAKE_SOURCE_DIR}/include
     ${CMAKE_SOURCE_DIR}/framework

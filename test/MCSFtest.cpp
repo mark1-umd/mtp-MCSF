@@ -506,8 +506,63 @@ TEST(TrajectoryTest, testInitialization) {
 //*********************************************************
 TEST(TrajectoryTest, testGenerationAndAccessorFunctions) {
 
-// Build a path
-Trajectory aTrajectory;
+  // Build a path with two path points
+  Path aPath;
 
-//
+  // Create a path point, load it up and add it to the path
+  PathPoint firstPathPoint;
+  MotorPosition firstPosition;
+  firstPosition.setRotations(0.0);
+  firstPathPoint.setPosition(firstPosition);
+
+  MotorVelocity firstMaxMotorVelocity;
+  firstMaxMotorVelocity.setRotationsPerMinute(240);  // 4 RPS is 240 RPM
+  firstPathPoint.setMaxVelocity(firstMaxMotorVelocity);
+
+  MotorAcceleration firstMaxAcceleration;
+  firstMaxAcceleration.setRotationsPerMinutePerSecond(600);  // 10 RPS/S is 600 RPM/S
+  firstPathPoint.setMaxAcceleration(firstMaxAcceleration);
+
+  aPath.addPathPoint(firstPathPoint);
+
+  // Create another path point, load it up, and add it to the path
+  PathPoint secondPathPoint;
+  MotorPosition secondPosition;
+  secondPosition.setRotations(5.0);
+  secondPathPoint.setPosition(secondPosition);
+
+  MotorVelocity secondMaxMotorVelocity;
+  secondMaxMotorVelocity.setRotationsPerMinute(120);  // 2 RPS is 120 RPM
+  secondPathPoint.setMaxVelocity(secondMaxMotorVelocity);
+
+  MotorAcceleration secondMaxAcceleration;
+  secondMaxAcceleration.setRotationsPerMinutePerSecond(300);  // 5 RPS/S is 300 RPM/S
+  secondPathPoint.setMaxAcceleration(secondMaxAcceleration);
+
+  aPath.addPathPoint(secondPathPoint);
+
+  // Check the size of the path (should have two path points on it)
+  EXPECT_EQ(2, aPath.size());
+
+  // With two points on the path, generate a trajectory
+  Trajectory aTrajectory;
+  unsigned int iterationPeriod = 10;
+  aTrajectory.generate(aPath, iterationPeriod);
+
+  // Check the maxVelocity, maxAcceleration, and distance
+  MotorVelocity returnMaxVelocity = aTrajectory.getMaxVelocity();
+  EXPECT_DOUBLE_EQ(240, returnMaxVelocity.getRotationsPerMinute());
+  MotorAcceleration returnMaxAcceleration = aTrajectory.getMaxAcceleration();
+  EXPECT_DOUBLE_EQ(600, returnMaxAcceleration.getRotationsPerMinutePerSecond());
+  MotorPosition returnDistance = aTrajectory.getDistance();
+  EXPECT_DOUBLE_EQ(5.0, returnDistance.getRotations());
+
+  // Check the algorithm parameters
+  EXPECT_EQ(iterationPeriod, aTrajectory.getAlgoItPMS());
+  EXPECT_EQ(400, aTrajectory.getAlgoT1MS());
+  EXPECT_EQ(200, aTrajectory.getAlgoT2MS());
+  EXPECT_EQ(1250, aTrajectory.getAlgoT4MS());
+  EXPECT_EQ(40, aTrajectory.getAlgoFL1count());
+  EXPECT_EQ(20, aTrajectory.getAlgoFL2count());
+  EXPECT_EQ(125, aTrajectory.getAlgoNcount());
 }

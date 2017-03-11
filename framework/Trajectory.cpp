@@ -118,7 +118,7 @@ unsigned int Trajectory::getAlgoNcount() {
 }
 
 /**
- * @brief Private function to maintain a limited history of doubles
+ * @brief Private function to maintain a limited history of double values
  * @param [in/out] vector<double> history of values
  * @param [in] unsigned int maximum number of values to keep in the history list
  * @param [in] double value to add to the list
@@ -279,6 +279,9 @@ void Trajectory::generate(Path& path,
     else
       // Decrease sumFilter1, but don't go under 0.0
       algoFilter1Sum = std::max((algoFilter1Sum - algoFL1recip), 0.0);
+
+    // Store this step's Filter1 sum in filter1SumHistory with a limit of FL2 values
+    addToHistory(algoFilter1SumHistory, algoFL2count, algoFilter1Sum);
 
     // Calculate Filter2 sum as the sum of filter1Sum history
     algoFilter2Sum = accumulate(algoFilter1SumHistory.begin(),

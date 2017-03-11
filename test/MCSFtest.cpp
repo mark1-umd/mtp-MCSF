@@ -381,7 +381,8 @@ TEST(PathTest, testInitilization) {
   Path aPath;
 
   // The path should be empty (size 0)
-  EXPECT_EQ(0, aPath.size());
+  unsigned int zero = 0;
+  EXPECT_EQ(zero, aPath.size());
 }
 
 //*********************************************************
@@ -425,7 +426,8 @@ TEST(PathTest, testAccessorFunctions) {
   aPath.addPathPoint(secondPathPoint);
 
   // Check the size of the path (should have two path points on it)
-  EXPECT_EQ(2, aPath.size());
+  unsigned int two = 2;
+  EXPECT_EQ(two, aPath.size());
 
   // With two points on the path, test the accessor functions
   PathPoint firstReturnPathPoint, secondReturnPathPoint;  // No need to set values
@@ -542,7 +544,8 @@ TEST(TrajectoryTest, testGenerationAndAccessorFunctions) {
   aPath.addPathPoint(secondPathPoint);
 
   // Check the size of the path (should have two path points on it)
-  EXPECT_EQ(2, aPath.size());
+  unsigned int two = 2;
+  EXPECT_EQ(two, aPath.size());
 
   // With two points on the path, generate a trajectory
   Trajectory aTrajectory;

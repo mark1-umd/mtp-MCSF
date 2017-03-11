@@ -78,10 +78,10 @@ int main() {
   aTrajectory.show();
   std::cout << std::endl;
 
-  std::cout << "Outputting trajectory to file \"trajectory.csv\" -" << std::cout
-            << std::cout;
+  std::cout << "Outputting trajectory to file \"trajectory.csv\" -" << std::endl
+            << std::endl;
   aTrajectory.outputCSV("trajectory.csv");
-  std::cout << "Output complete - exiting." << std::cout;
+  std::cout << "Output complete - exiting." << std::endl << std::endl;
 
   return 0;
 }

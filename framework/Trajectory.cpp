@@ -158,55 +158,82 @@ void Trajectory::generate(Path& path,
     return;
   }
 
+  // *******************************************************************
+  // Set up the parameters for the trajectory generation algorithm
+  // *******************************************************************
   // The maximum velocity and acceleration information for the trajectory
   // between two points is determined by the settings for the first point
   PathPoint firstPathPoint;
-  PathPoint nextPathPoint;
   MotorPosition startPosition, endPosition;
+  // Get the first path point
   if (path.getFirstPathPoint(firstPathPoint)) {
+    // Set the starting position at the position of the first path point
     startPosition = firstPathPoint.getPosition();
+    // Set the max velocity and acceleration for the trajectory
     maxVelocity = firstPathPoint.getMaxVelocity();
     maxAcceleration = firstPathPoint.getMaxAcceleration();
-    endPosition = startPosition;
+    // Get the next path point
+    PathPoint nextPathPoint;
     if (path.getNextPathPoint(nextPathPoint))
+      // Set the ending position at the position of the next path point
       endPosition = nextPathPoint.getPosition();
   }
+  // The distance to be traveled is the difference between the two positions
   distance = endPosition - startPosition;
+  // Algorithm distance is measured in motor rotations
   double algoDistRot = distance.getRotations();
+  // Algorithm maximum velocity is in rotations per second
   double algoMaxVelRPS = maxVelocity.getRotationsPerMinute() / 60;
+  // Algorithm maximum acceleration is in rotations per second per second
   double algoMaxAccelRPSpS = maxAcceleration.getRotationsPerMinutePerSecond()
       / 60;
+  // Algorithm time factor T1 in milliseconds - time to reach max vel at max accel
   algoT1MS = (algoMaxVelRPS / algoMaxAccelRPSpS) * 1000;
+  // Algorithm time factor T2 in milliseconds - used to calculate lookback time
+  // for the Filter 2 sum (manually adjustable in the Talon SRX model)
+  // This implementation currently fixes it at half of T1; may need tuning later
   algoT2MS = algoT1MS / 2;
+  // Algorithm Iteration Period in milliseconds - the granularity of the trajectory points
   algoItPMS = iterationPeriodMS;
+  // Algorithm time factor T4  in milliseconds - the time to traverse the distance at max velocity
   algoT4MS = (algoDistRot / algoMaxVelRPS) * 1000;
+  // Algorithm FL1 count - number of iteration periods in time T1
   algoFL1count = ceil(double(algoT1MS) / double(algoItPMS));
-  double algoFL1recip = 1 / double(algoFL1count);
-  std::vector<double> algoSumFilter1History;
-  algoFL2count = ceil(double(algoT2MS) / double(algoItPMS));
-  algoNcount = algoT4MS / algoItPMS;
+  double algoFL1recip = 1 / (double) algoFL1count;
+  // Algorithm FL2 count - number of iteration periods in time T2
+  algoFL2count = ceil((double) algoT2MS / (double) algoItPMS);
+  // Algorithm N count - number of iteration periods in time T4
+  algoNcount = (double) algoT4MS / (double) algoItPMS;
 
-  // Initialize the algorithm's calculated output variables to 0
+  // A vector to hold the history of Filter 1 sum values
+  std::vector<double> algoSumFilter1History;
+
+  // Ensure the trajectory is clear (in case this is a repeat invocation)
+  trajectory.clear();
+
+  // *******************************************************************
+  // Generate the first trajectory point with manually-set zeroed values
+  // *******************************************************************
+
+  // Set the algorithm's calculated output variables to 0
   double tpPositionRot = 0.0;
   double tpVelocityRPS = 0.0;
   double tpVelocityRPSlastStep = 0.0;
   double tpAccelerationRPSpS = 0.0;
   double tpTimeS = 0.0;
 
-  // Initialize the step counter, relative time, and sumFilter variables to 0
-  unsigned int algoStep = 0;
+  // Set the step counter, relative time, and sumFilter variables to 0
+  unsigned int algoStep = 1;
   double algoSumFilter1 = 0.0;
   double algoSumFilter2 = 0.0;
 
-  // Store sumFilter1 in sumFilter1History with a limit of FL2 values
+  // Store this step's sumFilter1 in sumFilter1History with a limit of FL2 values
   addToHistory(algoSumFilter1History, algoFL2count, algoSumFilter1);
 
   // Add first trajectory point to the trajectory
 
-  // Make sure the trajectory is empty
-  trajectory.clear();
-
-  // Get a variable for the trajectory point
+  // Get a variable for the trajectory point (we will re-use this in the
+  // algorithm loop
   TrajectoryPoint tPoint;
 
   // Add a MotorPosition object with the current trajectory point rotations
@@ -228,12 +255,19 @@ void Trajectory::generate(Path& path,
   // time relative to the start of the trajectory execution
   tPoint.setDurationMS(algoItPMS);
   tPoint.setTimeS(tpTimeS);
+
+  // Stick the completed trajectory point onto the trajectory
   trajectory.push_back(tPoint);
 
-  // do the algorithm while sumFilter1 or sumFilter2 are non-zero
+  // *******************************************************************
+  // Generate the rest of the trajectory points with algorithmically
+  // calculated values
+  // *******************************************************************
+
+  // do the algorithm (while sumFilter1 or sumFilter2 is non-zero)
   do {
 
-    // We are at the next step (trajectory point)
+    // Increment the step that will calculate the next trajectory point
     algoStep++;
 
     // Increase or decrease sumFilter1 based on step count compared with N
@@ -249,23 +283,26 @@ void Trajectory::generate(Path& path,
                                      algoSumFilter1History.end(), 0.0);
 
     // Calculate the trajectory point velocity
-    tpVelocityRPS = ((algoSumFilter1 + algoSumFilter2) / (1 + algoFL2count));
+    tpVelocityRPS = ((algoSumFilter1 + algoSumFilter2) / (1 + algoFL2count))
+        * algoMaxVelRPS;
 
     // Calculate the trajectory point position in rotations as the
     // average of the velocities from this step and the last, times the
     // iteration period, added to the last position
-    tpPositionRot += ((tpVelocityRPS + tpVelocityRPSlastStep) / 2) * algoItPMS;
+    tpPositionRot +=
+        ((((tpVelocityRPS + tpVelocityRPSlastStep) / 2) * algoItPMS) / 1000.0);
 
     // Calculate the trajectory point acceleration as the change in
     // velocity from the last step to this one, divided by the iteration
     // period
-    tpAccelerationRPSpS = (tpVelocityRPS - tpVelocityRPSlastStep) / algoItPMS;
+    tpAccelerationRPSpS = (tpVelocityRPS - tpVelocityRPSlastStep)
+        / (algoItPMS / 1000.0);
 
     // Calculate the time of the trajectory point relative to the start
     // of the first trajectory point
-    tpTimeS = ((algoStep - 1) * algoItPMS);
+    tpTimeS = (((double) algoStep - 1.0) * (double) algoItPMS) / 1000.0;
 
-    // Add another trajectory point to the trajectory
+    // Add this trajectory point to the trajectory
 
     // Add a MotorPosition object with the current trajectory point rotations
     tpMotorPosition.setRotations(tpPositionRot);
@@ -284,12 +321,17 @@ void Trajectory::generate(Path& path,
     // time relative to the start of the trajectory execution
     tPoint.setDurationMS(algoItPMS);
     tPoint.setTimeS(tpTimeS);
+
+    // Stick the completed trajectory point onto the trajectory
     trajectory.push_back(tPoint);
+
+    // Save current velocity for the next loop through the algorithm
+    tpVelocityRPSlastStep = tpVelocityRPS;
 
     // Keep on keeping on until both sumFilter1 and sumFilter2 are zero
   } while (algoSumFilter1 != 0 || algoSumFilter2 != 0);
 
-  // We are done; return to caller
+  // We have generated our trajectory; return to caller
   return;
 }
 
@@ -354,8 +396,10 @@ void Trajectory::outputCSV(const std::string trajectoryFileName) {
   // Write out the trajectory points as tabular data
   bool headerNeeded = true;
   for (auto tp : trajectory) {
-    if (headerNeeded)
+    if (headerNeeded) {
       tp.outputCSVheader(tFile);
+      headerNeeded = false;
+    }
     tp.outputCSV(tFile);
   }
   // Close out the trajectory file, and return from whence we were called

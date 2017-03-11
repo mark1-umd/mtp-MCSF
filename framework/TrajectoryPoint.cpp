@@ -187,17 +187,19 @@ void TrajectoryPoint::show() {
  * @brief Output the trajectory point header to a comma-separated value file
  */
 void TrajectoryPoint::outputCSVheader(std::ofstream& fileCSV) {
-  fileCSV << "T(s)" << "," << "Pos(r)" << "," << "V(rpss)" << "," << "A(rps/s)"
-          << "," << "Dur(ms)" << std::endl;
+  fileCSV << "Step" "," << "Time(s)" << "," << "Filter1 sum" << ","
+          << "Filter2 sum" << "," << "Vel(RPS)" << "," << "Pos(R)" << ","
+          << "Accel(RPS/S)" << "," << "Dur(ms)" << std::endl;
 }
 
 /**
  * @brief Output the trajectory point to a comma-separated value file
  */
 void TrajectoryPoint::outputCSV(std::ofstream& fileCSV) {
-  fileCSV << timeS << "," << position.getRotations() << ","
-      << velocity.getRotationsPerMinute() / 60 << ","
+  fileCSV << step << "," << timeS << "," << filter1Sum << "," << filter2Sum
+          << "," << velocity.getRotationsPerMinute() / 60 << ","
+          << position.getRotations() << ","
           << acceleration.getRotationsPerMinutePerSecond() / 60 << ","
           << durationMS
-      << std::endl;
+          << std::endl;
 }

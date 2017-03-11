@@ -25,7 +25,7 @@
 #include "../framework/MotorAcceleration.hpp"
 #include "../framework/Point.hpp"
 #include "../framework/WayPoint.hpp"
-#include "../framework/TrajectoryPoint.hpp"
+#include "../framework/PathPoint.hpp"
 #include "../framework/TrajectoryPoint.hpp"
 #include "../framework/Trajectory.hpp"
 #include "../framework/Path.hpp"
@@ -322,6 +322,7 @@ TEST(TrajectoryPointTest, testInitialization) {
   EXPECT_DOUBLE_EQ(0.0, velocity.getRotationsPerMinute());
   MotorAcceleration acceleration = aTrajectoryPoint.getAcceleration();
   EXPECT_DOUBLE_EQ(0.0, acceleration.getRotationsPerMinutePerSecond());
+  // The durationMS and timeS variables should zero
   EXPECT_EQ(0, aTrajectoryPoint.getDurationMS());
   EXPECT_DOUBLE_EQ(0.0, aTrajectoryPoint.getTimeS());
 }
@@ -371,5 +372,142 @@ TEST(TrajectoryPointTest, testAccessorFunctions) {
   double time = 1.001;
   aTrajectoryPoint.setTimeS(time);
   EXPECT_EQ(time, aTrajectoryPoint.getTimeS());
+}
 
+//*********************************************************
+// Test initialization for the Path class
+//*********************************************************
+TEST(PathTest, testInitilization) {
+  Path aPath;
+
+  // The path should be empty (size 0)
+  EXPECT_EQ(0, aPath.size());
+}
+
+//*********************************************************
+// Test accessor functions for the Path class
+//*********************************************************
+TEST(PathTest, testAccessorFunctions) {
+
+  // Build a path with two path points
+  Path aPath;
+
+  // Create a path point, load it up and add it to the path
+  PathPoint firstPathPoint;
+  MotorPosition firstPosition;
+  firstPosition.setRotations(0.0);
+  firstPathPoint.setPosition(firstPosition);
+
+  MotorVelocity firstMaxMotorVelocity;
+  firstMaxMotorVelocity.setRotationsPerMinute(240);  // 4 RPS is 240 RPM
+  firstPathPoint.setMaxVelocity(firstMaxMotorVelocity);
+
+  MotorAcceleration firstMaxAcceleration;
+  firstMaxAcceleration.setRotationsPerMinutePerSecond(600);  // 10 RPS/S is 600 RPM/S
+  firstPathPoint.setMaxAcceleration(firstMaxAcceleration);
+
+  aPath.addPathPoint(firstPathPoint);
+
+  // Create another path point, load it up, and add it to the path
+  PathPoint secondPathPoint;
+  MotorPosition secondPosition;
+  secondPosition.setRotations(5.0);
+  secondPathPoint.setPosition(secondPosition);
+
+  MotorVelocity secondMaxMotorVelocity;
+  secondMaxMotorVelocity.setRotationsPerMinute(120);  // 2 RPS is 120 RPM
+  secondPathPoint.setMaxVelocity(secondMaxMotorVelocity);
+
+  MotorAcceleration secondMaxAcceleration;
+  secondMaxAcceleration.setRotationsPerMinutePerSecond(300);  // 5 RPS/S is 300 RPM/S
+  secondPathPoint.setMaxAcceleration(secondMaxAcceleration);
+
+  aPath.addPathPoint(secondPathPoint);
+
+  // Check the size of the path (should have two path points on it)
+  EXPECT_EQ(2, aPath.size());
+
+  // With two points on the path, test the accessor functions
+  PathPoint firstReturnPathPoint, secondReturnPathPoint;  // No need to set values
+
+  // Test for a successful failure of getNextPathPoint with no
+  // previous getFirstPathPoint
+  EXPECT_FALSE(aPath.getNextPathPoint(firstReturnPathPoint));
+
+  // Now test to see that we do get a first path point
+  EXPECT_TRUE(aPath.getFirstPathPoint(firstReturnPathPoint));
+
+  // Test the position setting
+  MotorPosition firstReturnPosition = firstReturnPathPoint.getPosition();
+  EXPECT_DOUBLE_EQ(0.0, firstReturnPosition.getRotations());
+
+  // Test the max velocity
+  MotorVelocity firstReturnMaxVelocity = firstReturnPathPoint.getMaxVelocity();
+  EXPECT_DOUBLE_EQ(240, firstReturnMaxVelocity.getRotationsPerMinute());
+
+  // Test the max acceleration
+  MotorAcceleration firstReturnMaxAcceleration = firstReturnPathPoint
+      .getMaxAcceleration();
+  EXPECT_DOUBLE_EQ(600,
+                   firstReturnMaxAcceleration.getRotationsPerMinutePerSecond());
+
+  // Now test to see that we get a second path point
+  EXPECT_TRUE(aPath.getNextPathPoint(secondReturnPathPoint));
+
+  // Test the position setting
+  MotorPosition secondReturnPosition = secondReturnPathPoint.getPosition();
+  EXPECT_DOUBLE_EQ(5.0, secondReturnPosition.getRotations());
+
+  // Test the max velocity
+  MotorVelocity secondReturnMaxVelocity =
+      secondReturnPathPoint.getMaxVelocity();
+  EXPECT_DOUBLE_EQ(120, secondReturnMaxVelocity.getRotationsPerMinute());
+
+  // Test the max acceleration
+  MotorAcceleration secondReturnMaxAcceleration = secondReturnPathPoint
+      .getMaxAcceleration();
+  EXPECT_DOUBLE_EQ(
+      300, secondReturnMaxAcceleration.getRotationsPerMinutePerSecond());
+
+  // Test to see that another getNextPathPoint isn't successful
+  EXPECT_FALSE(aPath.getNextPathPoint(secondReturnPathPoint));
+}
+
+//*********************************************************
+// Test initialization for the Trajectory class
+//*********************************************************
+TEST(TrajectoryTest, testInitialization) {
+  Trajectory aTrajectory;
+
+  // The maxVelocity, maxAcceleration, and distance should all
+  // initialize to zeros
+  MotorVelocity maxVelocity = aTrajectory.getMaxVelocity();
+  EXPECT_DOUBLE_EQ(0.0, maxVelocity.getRotationsPerMinute());
+  MotorAcceleration maxAcceleration = aTrajectory.getMaxAcceleration();
+  EXPECT_DOUBLE_EQ(0.0, maxAcceleration.getRotationsPerMinutePerSecond());
+  MotorPosition distance = aTrajectory.getDistance();
+  EXPECT_DOUBLE_EQ(0.0, distance.getRotations());
+
+  // The algorithm variables should initialize to zeros
+  EXPECT_EQ(0, aTrajectory.getAlgoItPMS());
+  EXPECT_EQ(0, aTrajectory.getAlgoT1MS());
+  EXPECT_EQ(0, aTrajectory.getAlgoT2MS());
+  EXPECT_EQ(0, aTrajectory.getAlgoT4MS());
+  EXPECT_EQ(0, aTrajectory.getAlgoFL1count());
+  EXPECT_EQ(0, aTrajectory.getAlgoFL2count());
+  EXPECT_EQ(0, aTrajectory.getAlgoNcount());
+
+  // The initial size of the trajectory path itself should be zero
+  EXPECT_EQ(0, aTrajectory.size());
+}
+
+//*********************************************************
+// Test generation & accessor functions for the Trajectory class
+//*********************************************************
+TEST(TrajectoryTest, testGenerationAndAccessorFunctions) {
+
+// Build a path
+Trajectory aTrajectory;
+
+//
 }

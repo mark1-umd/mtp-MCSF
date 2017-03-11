@@ -251,10 +251,12 @@ void Trajectory::generate(Path& path,
   tpMotorAcceleration.setRotationsPerMinutePerSecond(tpAccelerationRPSpS * 60);
   tPoint.setAcceleration(tpMotorAcceleration);
 
-  // Add in the duration of the trajectory point, and the current step
-  // time relative to the start of the trajectory execution
+  // Add in algorithmic details
   tPoint.setDurationMS(algoItPMS);
+  tPoint.setStep(algoStep);
   tPoint.setTimeS(tpTimeS);
+  tPoint.setFilter1Sum(algoFilter1Sum);
+  tPoint.setFilter2Sum(algoFilter2Sum);
 
   // Stick the completed trajectory point onto the trajectory
   trajectory.push_back(tPoint);
@@ -317,10 +319,14 @@ void Trajectory::generate(Path& path,
         tpAccelerationRPSpS * 60);
     tPoint.setAcceleration(tpMotorAcceleration);
 
-    // Add in the duration of the trajectory point, and the current step
-    // time relative to the start of the trajectory execution
+    // Add the trajectory point duration (ms)
     tPoint.setDurationMS(algoItPMS);
+
+    // Add in algorithmic details to the trajectory point
+    tPoint.setStep(algoStep);
     tPoint.setTimeS(tpTimeS);
+    tPoint.setFilter1Sum(algoFilter1Sum);
+    tPoint.setFilter2Sum(algoFilter2Sum);
 
     // Stick the completed trajectory point onto the trajectory
     trajectory.push_back(tPoint);

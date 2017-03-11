@@ -323,9 +323,12 @@ TEST(TrajectoryPointTest, testInitialization) {
   EXPECT_DOUBLE_EQ(0.0, velocity.getRotationsPerMinute());
   MotorAcceleration acceleration = aTrajectoryPoint.getAcceleration();
   EXPECT_DOUBLE_EQ(0.0, acceleration.getRotationsPerMinutePerSecond());
-  // The durationMS and timeS variables should zero
+  // The durationMS, step, timeS, filter1Sum, and filter2Sum variables should zero
   EXPECT_EQ(0, aTrajectoryPoint.getDurationMS());
+  EXPECT_EQ(0, aTrajectoryPoint.getStep());
   EXPECT_DOUBLE_EQ(0.0, aTrajectoryPoint.getTimeS());
+  EXPECT_DOUBLE_EQ(0.0, aTrajectoryPoint.getFilter1Sum());
+  EXPECT_DOUBLE_EQ(0.0, aTrajectoryPoint.getFilter2Sum());
 }
 
  //*********************************************************
@@ -364,15 +367,30 @@ TEST(TrajectoryPointTest, testAccessorFunctions) {
 
   // Set a duration in milliseconds in a TrajectoryPoint,
   // and see if it comes back as the same value
-  int duration = 12;
+  unsigned int duration = 12;
   aTrajectoryPoint.setDurationMS(duration);
   EXPECT_EQ(duration, aTrajectoryPoint.getDurationMS());
+
+  // Set a step number and see if it comes back as the same value
+  unsigned int aStep = 34;
+  aTrajectoryPoint.setStep(aStep);
+  EXPECT_EQ(aStep, aTrajectoryPoint.getStep());
 
   // Set a time in seconds in a TrajectoryPoint,
   // and see if it comes back as the same value
   double time = 1.001;
   aTrajectoryPoint.setTimeS(time);
   EXPECT_EQ(time, aTrajectoryPoint.getTimeS());
+
+  // Set a filter 1 sum value and see if it comes back the same
+  double filter1Sum = 36.90;
+  aTrajectoryPoint.setFilter1Sum(filter1Sum);
+  EXPECT_DOUBLE_EQ(filter1Sum, aTrajectoryPoint.getFilter1Sum());
+
+  // Set a filter 2 sum value and see if it comes back the same
+  double filter2Sum = .034989;
+  aTrajectoryPoint.setFilter2Sum(filter2Sum);
+  EXPECT_DOUBLE_EQ(filter2Sum, aTrajectoryPoint.getFilter2Sum());
 }
 
 //*********************************************************

@@ -47,10 +47,18 @@ MotorVelocity Trajectory::getMaxVelocity() {
 
 /**
  * @brief Get the maximum acceleration for this trajectory
- * @return a MotorAcceleration representing this trajectory'ss maximum acceleration
+ * @return a MotorAcceleration representing this trajectory's maximum acceleration
  */
 MotorAcceleration Trajectory::getMaxAcceleration() {
   return maxAcceleration;
+}
+
+/**
+ * @brief Get the distance covered by this trajectory (in MotorPosition units)
+ * @return a MotorPosition representing this trajectory's distance covered
+ */
+MotorPosition Trajectory::getDistance() {
+  return distance;
 }
 
 /**

@@ -79,13 +79,18 @@ engineering techniques being taught in a course entitled "Advanced Software Engi
 - Coveralls coverage monitoring (in development)
 
 ## Status
-
+### Initial Development
 - 2017-03-04 Initial MCSF development work underway; no useful code at present
 - 2017-03-07 First set of three tests for basic accessor functions working
 - 2017-03-08 Initial MCSF development complete, all basic tests working
+    - See the design documents in the /UML/initial development folder
+    
+### Evolution - Iteration20170308
 - 2017-03-11 Evolution of the MCSF 1-dimensional 2-path trajectory generation complete
+    - See the design documents in the /UML/iteration20170308 folder (Astah Community package and .png output)
+    - See the results in the /Results folder (a 10ms iteration period motion profile that matches exactly with the Talon Motion Profile Excel model for possible use on an FRC robot with Talon SRX motor controllers, and a 25 ms iteration period motion profile showing the same profile at a coarser granularity, such as might be expected from an FTC Android-based robot with its 25 ms hardware update loop and no direct access to the motor controllers)
 
-## Installation
+## Review and usage of the MCSF
 
 - Checkout the repo (and submodules)
 ```

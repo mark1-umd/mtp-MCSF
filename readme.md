@@ -56,12 +56,12 @@ My development is being conducted in phases:
 
 - The first phase is to create a trajectory generator capable of taking a two-point, 1 dimensional path and creating a series of trajectory points that describe a trapezoidal motion profile consistent with specified
 constraints (maximum velocity, maximum acceleration)
+- The second phase will use the trajectory generator to handle creating dual
+trajectories for a "tank drive" system that turns through differential motor speeds
+- The third phase will consider how to enhance the system to handle paths with
+multiple segments (i.e., how to best merge motion profiles to avoid stopping/
+restarting the robot at each change in direction and/or speed)
 
-- The second phase will enhance the trajectory generator to handle
-1-dimensional paths with 3+ points
-
-- The third phase will enhance the trajectory generator to handle
-2-dimensional paths
 
 ## Focus of work
 
@@ -80,9 +80,10 @@ engineering techniques being taught in a course entitled "Advanced Software Engi
 
 ## Status
 
-- 2017-03-04 Initial development work underway; no useful code at present
+- 2017-03-04 Initial MCSF development work underway; no useful code at present
 - 2017-03-07 First set of three tests for basic accessor functions working
-- 2017-03-08 Initial development complete, all basic tests working
+- 2017-03-08 Initial MCSF development complete, all basic tests working
+- 2017-03-11 Evolution of the MCSF 1-dimensional 2-path trajectory generation complete
 
 ## Installation
 
@@ -90,4 +91,6 @@ engineering techniques being taught in a course entitled "Advanced Software Engi
 ```
 $ git clone --recursive https://github.com/mark1-umd/mtp-MCSF.git
 ```
-
+- Examine the code, particularly the /app/main.cpp that demonstrates how to
+use the Motion Control System Framework to generate trajectories
+- Use/Extend the MCSF for your individual system

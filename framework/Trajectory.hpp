@@ -25,6 +25,7 @@
 #include <fstream>
 #include <string>
 #include <numeric>
+#include <algorithm>
 #include <cmath>
 #include "MotorPosition.hpp"
 #include "MotorVelocity.hpp"
@@ -50,17 +51,17 @@ class Trajectory {
   unsigned int getAlgoFL1count();
   unsigned int getAlgoFL2count();
   unsigned int getAlgoNcount();
-  void generate(Path& path, const unsigned int iterationPeriodMS);
+  void generate(Path &path, const unsigned int iterationPeriodMS);
   void execute();
   unsigned int size();
   void show();
-  void outputCSV(const std::string trajectoryFileName);
+  void outputCSV(const std::string &trajectoryFileName);
 
  private:
   void addToHistory(std::vector<double> &history, const unsigned int max,
                     const double value);
-  MotorVelocity maxVelocity;          // maximum velocity for this trajectory
-  MotorAcceleration maxAcceleration;  // maximum acceleration for this trajectory
+  MotorVelocity maxVelocity;          // max velocity for this trajectory
+  MotorAcceleration maxAcceleration;  // max acceleration for this trajectory
   MotorPosition distance;             // total distance for this trajectory
   unsigned int algoItPMS;             // iteration period for each point
   unsigned int algoT1MS;              // algorithm T1 variable, in milliseconds

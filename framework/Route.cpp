@@ -13,19 +13,19 @@
  */
 #include "Route.hpp"
 
-Route::Route() {
-  // TODO Auto-generated constructor stub
+Route::Route()
+    : route() {
 }
 
 Route::~Route() {
-  // TODO Auto-generated destructor stub
+  // TODO(Mark Jenkins): Auto-generated destructor stub
 }
 
 /**
  * @brief Add a way point to this route
  * @param [in] a WayPoint to be added to this route
  */
-void Route::addWayPoint(const WayPoint wayPoint) {
+void Route::addWayPoint(const WayPoint &wayPoint) {
   route.push_back(wayPoint);
   return;
 }
@@ -36,8 +36,8 @@ void Route::addWayPoint(const WayPoint wayPoint) {
  * @param maxAcceleration
  * @return a Path object specifying the path points to traverse
  */
-Path Route::planPath(const MotorVelocity maxVelocity,
-                     const MotorAcceleration maxAcceleration) {
+Path Route::planPath(const MotorVelocity &maxVelocity,
+                     const MotorAcceleration &maxAcceleration) {
   Path path;
   for (auto wp : route) {
     PathPoint pathpoint;

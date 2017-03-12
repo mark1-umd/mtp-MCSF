@@ -18,8 +18,8 @@
 #ifndef PATH_HPP_
 #define PATH_HPP_
 
-#include <vector>
 #include <iostream>
+#include <vector>
 #include "PathPoint.hpp"
 
 /** @brief A motion path is a series of path points between two Way Points
@@ -29,9 +29,9 @@ class Path {
  public:
   Path();
   virtual ~Path();
-  void addPathPoint(const PathPoint& pathPoint);
-  bool getFirstPathPoint(PathPoint& pathPoint);
-  bool getNextPathPoint(PathPoint& pathPoint);
+  void addPathPoint(const PathPoint &pathPoint);
+  bool getFirstPathPoint(PathPoint &pathPoint);
+  bool getNextPathPoint(PathPoint &pathPoint);
   unsigned int size();
   void show();
 

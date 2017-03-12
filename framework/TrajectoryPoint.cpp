@@ -32,14 +32,14 @@ TrajectoryPoint::TrajectoryPoint()
 }
 
 TrajectoryPoint::~TrajectoryPoint() {
-  // TODO Auto-generated destructor stub
+  // TODO(Mark Jenkins): Auto-generated destructor stub
 }
 
 /**
  * @brief Set the position for this trajectory point
  * @param [in] a MotorPosition position setting
  */
-void TrajectoryPoint::setPosition(const MotorPosition pos) {
+void TrajectoryPoint::setPosition(const MotorPosition &pos) {
   position = pos;
   return;
 }
@@ -56,7 +56,7 @@ MotorPosition TrajectoryPoint::getPosition() {
  * @brief Set the velocity for this trajectory point
  * @param [in] a MotorVelocity velocity setting
  */
-void TrajectoryPoint::setVelocity(const MotorVelocity vel) {
+void TrajectoryPoint::setVelocity(const MotorVelocity &vel) {
   velocity = vel;
   return;
 }
@@ -73,7 +73,7 @@ MotorVelocity TrajectoryPoint::getVelocity() {
  * @brief Set the acceleration for this trajectory point
  * @param [in] a MotorAcceleration acceleration setting
  */
-void TrajectoryPoint::setAcceleration(const MotorAcceleration accel) {
+void TrajectoryPoint::setAcceleration(const MotorAcceleration &accel) {
   acceleration = accel;
   return;
 }

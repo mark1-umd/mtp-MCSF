@@ -25,7 +25,8 @@
 
 int main() {
   std::cout
-      << "Motion Control System Framework trajectory generation demonstration starting"
+      << "Motion Control System Framework trajectory generation -"
+            << " demonstration starting"
       << std::endl << std::endl;
 
   // Build a path with two path points
@@ -38,11 +39,13 @@ int main() {
   firstPathPoint.setPosition(firstPosition);
 
   MotorVelocity firstMaxMotorVelocity;
-  firstMaxMotorVelocity.setRotationsPerMinute(240);  // 4 RPS is 240 RPM
+  // 4 RPS is 240 RPM
+  firstMaxMotorVelocity.setRotationsPerMinute(240);
   firstPathPoint.setMaxVelocity(firstMaxMotorVelocity);
 
   MotorAcceleration firstMaxAcceleration;
-  firstMaxAcceleration.setRotationsPerMinutePerSecond(600);  // 10 RPS/S is 600 RPM/S
+  // 10 RPS/S is 600 RPM/S
+  firstMaxAcceleration.setRotationsPerMinutePerSecond(600);
   firstPathPoint.setMaxAcceleration(firstMaxAcceleration);
 
   aPath.addPathPoint(firstPathPoint);
@@ -54,11 +57,13 @@ int main() {
   secondPathPoint.setPosition(secondPosition);
 
   MotorVelocity secondMaxMotorVelocity;
-  secondMaxMotorVelocity.setRotationsPerMinute(120);  // 2 RPS is 120 RPM
+  // 2 RPS is 120 RPM
+  secondMaxMotorVelocity.setRotationsPerMinute(120);
   secondPathPoint.setMaxVelocity(secondMaxMotorVelocity);
 
   MotorAcceleration secondMaxAcceleration;
-  secondMaxAcceleration.setRotationsPerMinutePerSecond(300);  // 5 RPS/S is 300 RPM/S
+  // 5 RPS/S is 300 RPM/S
+  secondMaxAcceleration.setRotationsPerMinutePerSecond(300);
   secondPathPoint.setMaxAcceleration(secondMaxAcceleration);
 
   aPath.addPathPoint(secondPathPoint);

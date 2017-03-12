@@ -22,14 +22,14 @@ PathPoint::PathPoint()
 }
 
 PathPoint::~PathPoint() {
-  // TODO Auto-generated destructor stub
+  // TODO(Mark Jenkins): Auto-generated destructor stub
 }
 
 /**
  * @brief Set the maximum allowable velocity for this path point
  * @param [in] a MotorVelocity maximum velocity
  */
-void PathPoint::setMaxVelocity(const MotorVelocity maxV) {
+void PathPoint::setMaxVelocity(const MotorVelocity &maxV) {
   maxVelocity = maxV;
   return;
 }
@@ -46,7 +46,7 @@ MotorVelocity PathPoint::getMaxVelocity() {
  * @brief Set the maximum allowable acceleration for this path point
  * @param [in] a MotorAcceleration maximum allowable acceleration
  */
-void PathPoint::setMaxAcceleration(const MotorAcceleration maxA) {
+void PathPoint::setMaxAcceleration(const MotorAcceleration &maxA) {
   maxAcceleration = maxA;
   return;
 }

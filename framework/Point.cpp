@@ -20,14 +20,14 @@ Point::Point()
 }
 
 Point::~Point() {
-  // TODO Auto-generated destructor stub
+  // TODO(Mark Jenkins): Auto-generated destructor stub
 }
 
 /**
  * @brief Set the position of a generic Point object
  * @param [in] MotorPosition pos is a point referenced by a motor position
  */
-void Point::setPosition(const MotorPosition pos) {
+void Point::setPosition(const MotorPosition &pos) {
   position = pos;
   return;
 }

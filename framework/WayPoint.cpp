@@ -14,10 +14,9 @@
 #include "WayPoint.hpp"
 
 WayPoint::WayPoint() {
-  // TODO Auto-generated constructor stub
 }
 
 WayPoint::~WayPoint() {
-  // TODO Auto-generated destructor stub
+  // TODO(Mark Jenkins): Auto-generated destructor stub
 }
 

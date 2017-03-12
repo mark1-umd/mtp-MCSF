@@ -29,9 +29,9 @@ class PathPoint : public Point {
  public:
   PathPoint();
   virtual ~PathPoint();
-  void setMaxVelocity(const MotorVelocity maxV);
+  void setMaxVelocity(const MotorVelocity &maxV);
   MotorVelocity getMaxVelocity();
-  void setMaxAcceleration(const MotorAcceleration maxA);
+  void setMaxAcceleration(const MotorAcceleration &maxA);
   MotorAcceleration getMaxAcceleration();
   void show();
 

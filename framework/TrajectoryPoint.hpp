@@ -35,11 +35,11 @@ class TrajectoryPoint : public Point {
  public:
   TrajectoryPoint();
   virtual ~TrajectoryPoint();
-  void setPosition(const MotorPosition pos);
+  void setPosition(const MotorPosition &pos);
   MotorPosition getPosition();
-  void setVelocity(const MotorVelocity vel);
+  void setVelocity(const MotorVelocity &vel);
   MotorVelocity getVelocity();
-  void setAcceleration(const MotorAcceleration accel);
+  void setAcceleration(const MotorAcceleration &accel);
   MotorAcceleration getAcceleration();
   void setDurationMS(const unsigned int duration);
   unsigned int getDurationMS();

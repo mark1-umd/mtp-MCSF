@@ -26,9 +26,9 @@ class Route {
  public:
   Route();
   virtual ~Route();
-  void addWayPoint(const WayPoint wayPoint);
-  Path planPath(const MotorVelocity maxVelocity,
-                const MotorAcceleration maxAcceleration);
+  void addWayPoint(const WayPoint &wayPoint);
+  Path planPath(const MotorVelocity &maxVelocity,
+                const MotorAcceleration &maxAcceleration);
   void show();
 
  private:

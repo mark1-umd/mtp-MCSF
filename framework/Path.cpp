@@ -23,14 +23,14 @@ Path::Path()
 }
 
 Path::~Path() {
-  // TODO Auto-generated destructor stub
+  // TODO(Mark Jenkins): Auto-generated destructor stub
 }
 
 /**
  * @brief Add a path point onto this path
  * @param [in] a PathPoint pathPoint to add to the current path
  */
-void Path::addPathPoint(const PathPoint& pathPoint) {
+void Path::addPathPoint(const PathPoint &pathPoint) {
   path.push_back(pathPoint);
   return;
 }
@@ -40,7 +40,7 @@ void Path::addPathPoint(const PathPoint& pathPoint) {
  * @param [out] PathPoint set equal to the value of the first path point on the path
  * @return bool indication of whether the requested point was on the path
  */
-bool Path::getFirstPathPoint(PathPoint& pathPoint) {
+bool Path::getFirstPathPoint(PathPoint &pathPoint) {
   // Make sure the path has at least one point on it before accessing it
   if (!path.empty()) {
     pathPoint = path.front();
@@ -55,7 +55,7 @@ bool Path::getFirstPathPoint(PathPoint& pathPoint) {
  * @param [out] PathPoint set equal to the value of the next path point on the path
  * @return bool indication of whether the requested point was on the path
  */
-bool Path::getNextPathPoint(PathPoint& pathPoint) {
+bool Path::getNextPathPoint(PathPoint &pathPoint) {
   // Make sure there is a "next" point on the path before trying to access it
   if (nextPathPoint != 0 && nextPathPoint < path.size()) {
     pathPoint = path.at(nextPathPoint);

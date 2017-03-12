@@ -34,7 +34,7 @@ Trajectory::Trajectory()
 }
 
 Trajectory::~Trajectory() {
-  // TODO Auto-generated destructor stub
+  // TODO(Mark Jenkins): Auto-generated destructor stub
 }
 
 /**
@@ -144,7 +144,7 @@ void Trajectory::addToHistory(std::vector<double> &history,
  * @param [in] path A motion path consisting of a series of path points
  * @param [in] unsigned int iteration period in milliseconds (time slice for execution of each trajectory point)
  */
-void Trajectory::generate(Path& path,
+void Trajectory::generate(Path &path,
                           const unsigned int iterationPeriodMS) {
   // This is the two-point path version of trajectory generation - only
   // paths where the counting of the path points is two, no more, and
@@ -187,23 +187,28 @@ void Trajectory::generate(Path& path,
   // Algorithm maximum acceleration is in rotations per second per second
   double algoMaxAccelRPSpS = maxAcceleration.getRotationsPerMinutePerSecond()
       / 60;
-  // Algorithm time factor T1 in milliseconds - time to reach max vel at max accel
+  // Algorithm time factor T1 in milliseconds
+  // - time to reach max vel at max accel
   algoT1MS = (algoMaxVelRPS / algoMaxAccelRPSpS) * 1000;
   // Algorithm time factor T2 in milliseconds - used to calculate lookback time
   // for the Filter 2 sum (manually adjustable in the Talon SRX model)
   // This implementation currently fixes it at half of T1; may need tuning later
   algoT2MS = algoT1MS / 2;
-  // Algorithm Iteration Period in milliseconds - the granularity of the trajectory points
+  // Algorithm Iteration Period in milliseconds
+  // - the granularity of the trajectory points
   algoItPMS = iterationPeriodMS;
-  // Algorithm time factor T4  in milliseconds - the time to traverse the distance at max velocity
+  // Algorithm time factor T4  in milliseconds
+  // - the time to traverse the distance at max velocity
   algoT4MS = (algoDistRot / algoMaxVelRPS) * 1000;
   // Algorithm FL1 count - number of iteration periods in time T1
-  algoFL1count = ceil(double(algoT1MS) / double(algoItPMS));
-  double algoFL1recip = 1 / (double) algoFL1count;
+  algoFL1count = ceil(
+      static_cast<double>(algoT1MS) / static_cast<double>(algoItPMS));
+  double algoFL1recip = 1 / static_cast<double>(algoFL1count);
   // Algorithm FL2 count - number of iteration periods in time T2
-  algoFL2count = ceil((double) algoT2MS / (double) algoItPMS);
+  algoFL2count = ceil(
+      static_cast<double>(algoT2MS) / static_cast<double>(algoItPMS));
   // Algorithm N count - number of iteration periods in time T4
-  algoNcount = (double) algoT4MS / (double) algoItPMS;
+  algoNcount = static_cast<double>(algoT4MS) / static_cast<double>(algoItPMS);
 
   // A vector to hold the history of Filter 1 sum values
   std::vector<double> algoFilter1SumHistory;
@@ -227,7 +232,8 @@ void Trajectory::generate(Path& path,
   double algoFilter1Sum = 0.0;
   double algoFilter2Sum = 0.0;
 
-  // Store this step's Filter1 sum in filter1SumHistory with a limit of FL2 values
+  // Store this step's Filter1 sum in filter1SumHistory
+  // with a limit of FL2 values
   addToHistory(algoFilter1SumHistory, algoFL2count, algoFilter1Sum);
 
   // Add first trajectory point to the trajectory
@@ -246,7 +252,8 @@ void Trajectory::generate(Path& path,
   tpMotorVelocity.setRotationsPerMinute(tpVelocityRPS * 60);
   tPoint.setVelocity(tpMotorVelocity);
 
-  // Add a MotorAcceleration object with the current trajectory point acceleration
+  // Add a MotorAcceleration object with the current
+  // trajectory point acceleration
   MotorAcceleration tpMotorAcceleration;
   tpMotorAcceleration.setRotationsPerMinutePerSecond(tpAccelerationRPSpS * 60);
   tPoint.setAcceleration(tpMotorAcceleration);
@@ -268,11 +275,11 @@ void Trajectory::generate(Path& path,
 
   // do the algorithm (while Filter1 sum or Filter2 sum is non-zero)
   do {
-
     // Increment the step that will calculate the next trajectory point
     algoStep++;
 
-    // Increase or decrease Filter1 sum based on step count (compared with N + 2)
+    // Increase or decrease Filter1 sum based on step
+    // count (compared with N + 2)
     if (algoStep < (algoNcount + 2))
       // Increase filter1Sum, but don't go over 1.0
       algoFilter1Sum = std::min((algoFilter1Sum + algoFL1recip), 1.0);
@@ -280,7 +287,8 @@ void Trajectory::generate(Path& path,
       // Decrease sumFilter1, but don't go under 0.0
       algoFilter1Sum = std::max((algoFilter1Sum - algoFL1recip), 0.0);
 
-    // Store this step's Filter1 sum in filter1SumHistory with a limit of FL2 values
+    // Store this step's Filter1 sum in filter1SumHistory
+    // with a limit of FL2 values
     addToHistory(algoFilter1SumHistory, algoFL2count, algoFilter1Sum);
 
     // Calculate Filter2 sum as the sum of filter1Sum history
@@ -305,7 +313,8 @@ void Trajectory::generate(Path& path,
 
     // Calculate the time of the trajectory point relative to the start
     // of the first trajectory point
-    tpTimeS = (((double) algoStep - 1.0) * (double) algoItPMS) / 1000.0;
+    tpTimeS = ((static_cast<double>(algoStep) - 1.0)
+        * static_cast<double>(algoItPMS)) / 1000.0;
 
     // Add this trajectory point to the trajectory
 
@@ -317,7 +326,8 @@ void Trajectory::generate(Path& path,
     tpMotorVelocity.setRotationsPerMinute(tpVelocityRPS * 60);
     tPoint.setVelocity(tpMotorVelocity);
 
-    // Add a MotorAcceleration object with the current trajectory point acceleration
+    // Add a MotorAcceleration object with the current
+    // trajectory point acceleration
     tpMotorAcceleration.setRotationsPerMinutePerSecond(
         tpAccelerationRPSpS * 60);
     tPoint.setAcceleration(tpMotorAcceleration);
@@ -381,7 +391,7 @@ void Trajectory::show() {
 /**
  * @brief Output this motion profile trajectory as data to a CSV file
  */
-void Trajectory::outputCSV(const std::string trajectoryFileName) {
+void Trajectory::outputCSV(const std::string &trajectoryFileName) {
   // Open the trajectory file for output, wiping any current content
   std::ofstream tFile(trajectoryFileName,
                                  std::ios::out | std::ios::trunc);

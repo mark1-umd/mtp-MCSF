@@ -26,7 +26,7 @@ class Point {
  public:
   Point();
   virtual ~Point();
-  void setPosition(const MotorPosition pos);
+  void setPosition(const MotorPosition &pos);
   MotorPosition getPosition();
   void show();
 

@@ -23,7 +23,7 @@ MotorAcceleration::MotorAcceleration()
 }
 
 MotorAcceleration::~MotorAcceleration() {
-  // TODO Auto-generated destructor stub
+  // TODO(Mark Jenkins): Auto-generated destructor stub
 }
 
 /**

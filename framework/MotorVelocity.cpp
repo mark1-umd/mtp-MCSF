@@ -22,7 +22,7 @@ MotorVelocity::MotorVelocity()
 }
 
 MotorVelocity::~MotorVelocity() {
-  // TODO Auto-generated destructor stub
+  // TODO(Mark Jenkins): Auto-generated destructor stub
 }
 
 /**

@@ -85,7 +85,7 @@ void TankDrive::move(double distanceFeet, ChassisTurnRate chassisTurnRate,
     // smaller on the inside of the turn, bigger on the outside
 
     // ****** First determine path distances based on move distance and
-    // ****** drive geometry (the distance beween the left and right motivators)
+    // ****** drive geometry (the distance between the left and right motivators)
 
     // Calculate center turn circle circumference in feet, then radius in feet
     const double centerTurnCircleCircumferenceFeet = (360
@@ -108,7 +108,7 @@ void TankDrive::move(double distanceFeet, ChassisTurnRate chassisTurnRate,
     // circumference (which is itself calculated as the circle with radius 1/2
     //  of the drive width greater than the radius of the center turning circle)
     const double outerPathDistanceFeet = circumferenceToDistanceScaleFactor * 2
-        * pi * (centerTurnCircleRadiusFeet - (0.5 * widthInFeet));
+        * pi * (centerTurnCircleRadiusFeet + (0.5 * widthInFeet));
 
     // ****** Next determine path velocities and accelerations adjusted to that
     // ****** the inner and outer path motions take the same amount of time

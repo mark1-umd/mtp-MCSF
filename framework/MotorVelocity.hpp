@@ -26,6 +26,8 @@ class MotorVelocity {
   MotorVelocity();
   virtual ~MotorVelocity();
   void setRotationsPerMinute(const double rate);
+  void convertFromChassisVelocityByRotPerMovementFoot(
+      ChassisVelocity chassisVelocity, double rotPerMovementFoot);
   double getRotationsPerMinute();
 
  private:

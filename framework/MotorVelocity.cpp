@@ -35,6 +35,18 @@ void MotorVelocity::setRotationsPerMinute(const double rate) {
 }
 
 /**
+ * @brief Convert from a ChassVelocity to motor rotations by Rotations per Movement Foot
+ * @param [in] ChassisVelocity chassisVelocity specifies a linear physical velocity
+ * @param [in] double rotPerMovementFoot is the conversion factor from movement feet to rotations
+ */
+void MotorVelocity::convertFromChassisVelocityByRotPerMovementFoot(
+    ChassisVelocity chassisVelocity, double rotPerMovementFoot) {
+  velAsRotationsPerMinute = chassisVelocity.getFeetPerSecond() * 60
+      * rotPerMovementFoot;
+  return;
+}
+
+/**
  * @brief Get motor velocity in units of Rotations per Minute
  * @return double representing a motor velocity
  */

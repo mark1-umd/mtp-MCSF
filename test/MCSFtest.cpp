@@ -5,6 +5,7 @@
  * @author MJenkins, ENPM 808X Spring 2017
  * @date Mar 6, 2017 - Creation
  * @date Mar 10, 2017 - Added/expanded tests
+ * @date Mar 13, 2017 - Added tests for Chassis movement classes
  *
  * @brief Test application for the Motion Control System Framework
  *
@@ -31,6 +32,12 @@
 #include "../framework/Trajectory.hpp"
 #include "../framework/Path.hpp"
 #include "../framework/Route.hpp"
+#include "../framework/ChassisTurnRate.hpp"
+#include "../framework/ChassisVelocity.hpp"
+#include "../framework/ChassisAcceleration.hpp"
+#include "../framework/DriveSystem.hpp"
+#include "../framework/TankDrive.hpp"
+#include "../framework/Chassis.hpp"
 
 //*********************************************************
 // Test initialization for the MotorPosition class

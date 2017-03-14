@@ -35,6 +35,12 @@ void MotorAcceleration::setRotationsPerMinutePerSecond(const double rate) {
   return;
 }
 
+void MotorAcceleration::convertFromChassisAccelerationByRotPerMovementFoot(
+    ChassisAcceleration chassisAcceleration, double rotPerMovementFoot) {
+  accelAsRotationsPerMinutePerSecond = chassisAcceleration
+      .getFeetPerSecondPerSecond() * 60 * rotPerMovementFoot;
+  return;
+}
 /**
  * @brief Get a motor acceleration value in Rotations per Minute per second
  * @return a double representing the motor acceleration value

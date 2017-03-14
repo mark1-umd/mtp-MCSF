@@ -45,6 +45,17 @@ void MotorPosition::setRotations(const double count) {
 }
 
 /**
+ * @brief Convert a linear distance measure in feet to motor rotations using conversion factor
+ * @param [in] double distanceFeet - the linear distance measure
+ * @param [in] double rotPerMovementFoot - the conversion factor from 1 linear foot to motor rotations
+ */
+void MotorPosition::convertFromDistanceFeetByRotPerMovementFoot(
+    const double distanceFeet, const double rotPerMovementFoot) {
+  rotationCount = distanceFeet * rotPerMovementFoot;
+  return;
+}
+
+/**
  * @brief Return the motor position as a floating point (double) rotation count
  * @return the current position as a motor encoder rotation count
  */

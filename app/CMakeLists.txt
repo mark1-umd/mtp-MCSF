@@ -1,5 +1,7 @@
-add_executable(mcsf-app
-    main.cpp
+add_executable(mcsf-demo-evo1
+    main-evo1.cpp
+    ../framework/ChassisAcceleration.cpp
+    ../framework//ChassisVelocity.cpp
     ../framework/MotorAcceleration.cpp
     ../framework/MotorPosition.cpp
     ../framework/MotorVelocity.cpp
@@ -10,13 +12,7 @@ add_executable(mcsf-app
     ../framework/Trajectory.cpp
     ../framework/TrajectoryPoint.cpp
     ../framework/WayPoint.cpp
-    ../framework/ChassisTurnRate.cpp
-    ../framework/ChassisVelocity.cpp
-    ../framework/ChassisAcceleration.cpp
-    ../framework/DriveSystem.cpp
-    ../framework/TankDrive.cpp
-    ../framework/Chassis.cpp    
-)
+ )
 include_directories(
     ${CMAKE_SOURCE_DIR}/include
     ${CMAKE_SOURCE_DIR}/framework

@@ -109,9 +109,10 @@ void DriveSystem::setTrajectoryIterationPeriodMS(unsigned int period) {
 unsigned int DriveSystem::getTrajectoryIterationPeriodMS() {
   return trajectoryIterationPeriodMS;
 }
-
+/* this is now a virtual method MRJ 2017-03-12
 void DriveSystem::move(double distanceFeet, ChassisTurnRate chassisTurnRate,
           ChassisVelocity chassisVelocityRequested,
           ChassisAcceleration chassisAccelerationRequested) {
   return;
 }
+ */

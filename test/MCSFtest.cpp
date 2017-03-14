@@ -23,7 +23,7 @@
 #include <memory>
 #include "../framework/MotorPosition.hpp"
 #include "../framework/MotorVelocity.hpp"
-#include "../framework/MotorAcceleration.hpp"
+#include "../framework/ChassisAcceleration.hpp"
 #include "../framework/Point.hpp"
 #include "../framework/WayPoint.hpp"
 #include "../framework/PathPoint.hpp"
@@ -588,4 +588,416 @@ TEST(TrajectoryTest, testGenerationAndAccessorFunctions) {
   EXPECT_EQ(40, aTrajectory.getAlgoFL1count());
   EXPECT_EQ(20, aTrajectory.getAlgoFL2count());
   EXPECT_EQ(125, aTrajectory.getAlgoNcount());
+}
+
+//*********************************************************
+// Test initialization for the ChassisTurnRate class
+//*********************************************************
+TEST(ChassisTurnRateTest, testInitialization) {
+  std::shared_ptr < ChassisTurnRate > aChassisTurnRate = std::make_shared<
+      ChassisTurnRate>();
+
+  // Degrees per foot in the ChassisTurnRate object should initialize to 0
+  EXPECT_DOUBLE_EQ(0.0, aChassisTurnRate->getDegreesPerFoot());
+}
+
+//*********************************************************
+// Test accessor functions for the MotorPosition class
+//*********************************************************
+TEST(ChassisTurnRateTest, testAccessorFunctions) {
+  std::shared_ptr < ChassisTurnRate > aChassisTurnRate = std::make_shared<
+      ChassisTurnRate>();
+
+  // Set and get values starting with zero
+  double degreesPerFoot = 0.0;
+  aChassisTurnRate->setDegreesPerFoot(degreesPerFoot);
+  EXPECT_DOUBLE_EQ(degreesPerFoot, aChassisTurnRate->getDegreesPerFoot());
+
+  // Try a positive number
+  degreesPerFoot = 34.56;
+  aChassisTurnRate->setDegreesPerFoot(degreesPerFoot);
+  EXPECT_DOUBLE_EQ(degreesPerFoot, aChassisTurnRate->getDegreesPerFoot());
+
+  // Try a negative number
+  degreesPerFoot = -34.56;
+  aChassisTurnRate->setDegreesPerFoot(degreesPerFoot);
+  EXPECT_DOUBLE_EQ(degreesPerFoot, aChassisTurnRate->getDegreesPerFoot());
+
+  // Try a larger magnitude positive number
+  degreesPerFoot = 3123456.1234;
+  aChassisTurnRate->setDegreesPerFoot(degreesPerFoot);
+  EXPECT_DOUBLE_EQ(degreesPerFoot, aChassisTurnRate->getDegreesPerFoot());
+
+  // Try a larger magnitude negative number
+  degreesPerFoot = -3123456.1234;
+  aChassisTurnRate->setDegreesPerFoot(degreesPerFoot);
+  EXPECT_DOUBLE_EQ(degreesPerFoot, aChassisTurnRate->getDegreesPerFoot());
+
+  // Try a small magnitude positive number
+  degreesPerFoot = 0.000001;
+  aChassisTurnRate->setDegreesPerFoot(degreesPerFoot);
+  EXPECT_DOUBLE_EQ(degreesPerFoot, aChassisTurnRate->getDegreesPerFoot());
+
+  // Try a small magnitude negative number
+  degreesPerFoot = 0.000001;
+  aChassisTurnRate->setDegreesPerFoot(degreesPerFoot);
+  EXPECT_DOUBLE_EQ(degreesPerFoot, aChassisTurnRate->getDegreesPerFoot());
+}
+
+//*********************************************************
+// Test initialization for the ChassisVelocity class
+//*********************************************************
+TEST(ChassisVelocityTest, testInitialization) {
+  std::shared_ptr < ChassisVelocity > aChassisVelocity = std::make_shared<
+      ChassisVelocity>();
+
+  // RPM in the ChassisVelocity object should initialize to 0
+  EXPECT_DOUBLE_EQ(0.0, aChassisVelocity->getFeetPerSecond());
+}
+
+//*********************************************************
+// Test accessor functions for the ChassisVelocity class
+//*********************************************************
+TEST(ChassisVelocityTest, testAccessorFunctions) {
+  std::shared_ptr < ChassisVelocity > aChassisVelocity = std::make_shared<
+      ChassisVelocity>();
+
+  // Set and get values starting with zero
+  double velFPS = 0.0;
+  aChassisVelocity->setFeetPerSecond(velFPS);
+  EXPECT_DOUBLE_EQ(velFPS, aChassisVelocity->getFeetPerSecond());
+
+  // Try a positive number
+  velFPS = 34.56;
+  aChassisVelocity->setFeetPerSecond(velFPS);
+  EXPECT_DOUBLE_EQ(velFPS, aChassisVelocity->getFeetPerSecond());
+
+  // Try a negative number
+  velFPS = -34.56;
+  aChassisVelocity->setFeetPerSecond(velFPS);
+  EXPECT_DOUBLE_EQ(velFPS, aChassisVelocity->getFeetPerSecond());
+
+  // Try a larger magnitude positive number
+  velFPS = 3123456.1234;
+  aChassisVelocity->setFeetPerSecond(velFPS);
+  EXPECT_DOUBLE_EQ(velFPS, aChassisVelocity->getFeetPerSecond());
+
+  // Try a larger magnitude negative number
+  velFPS = -3123456.1234;
+  aChassisVelocity->setFeetPerSecond(velFPS);
+  EXPECT_DOUBLE_EQ(velFPS, aChassisVelocity->getFeetPerSecond());
+
+  // Try a small magnitude positive number
+  velFPS = 0.000001;
+  aChassisVelocity->setFeetPerSecond(velFPS);
+  EXPECT_DOUBLE_EQ(velFPS, aChassisVelocity->getFeetPerSecond());
+
+  // Try a small magnitude negative number
+  velFPS = 0.000001;
+  aChassisVelocity->setFeetPerSecond(velFPS);
+  EXPECT_DOUBLE_EQ(velFPS, aChassisVelocity->getFeetPerSecond());
+}
+
+//*********************************************************
+// Test initialization for the ChassisAcceleration class
+//*********************************************************
+TEST(ChassisAccelerationTest, testInitialization) {
+  std::shared_ptr < ChassisAcceleration > aChassisAcceleration =
+      std::make_shared<ChassisAcceleration>();
+
+  // Rotation count in the ChassisAcceleration object should initialize to 0
+  EXPECT_DOUBLE_EQ(0.0, aChassisAcceleration->getFeetPerSecondPerSecond());
+}
+
+//*********************************************************
+// Test accessor functions for the ChassisAcceleration class
+//*********************************************************
+TEST(ChassisAccelerationTest, testAccessorFunctions) {
+  std::shared_ptr < ChassisAcceleration > aChassisAcceleration =
+      std::make_shared<ChassisAcceleration>();
+
+  // Set and get values starting with zero
+  double velFPSperSecond = 0.0;
+  aChassisAcceleration->setFeetPerSecondPerSecond(velFPSperSecond);
+  EXPECT_DOUBLE_EQ(velFPSperSecond,
+                   aChassisAcceleration->getFeetPerSecondPerSecond());
+
+  // Try a positive number
+  velFPSperSecond = 34.56;
+  aChassisAcceleration->setFeetPerSecondPerSecond(velFPSperSecond);
+  EXPECT_DOUBLE_EQ(velFPSperSecond,
+                   aChassisAcceleration->getFeetPerSecondPerSecond());
+
+  // Try a negative number
+  velFPSperSecond = -34.56;
+  aChassisAcceleration->setFeetPerSecondPerSecond(velFPSperSecond);
+  EXPECT_DOUBLE_EQ(velFPSperSecond,
+                   aChassisAcceleration->getFeetPerSecondPerSecond());
+
+  // Try a larger magnitude positive number
+  velFPSperSecond = 3123456.1234;
+  aChassisAcceleration->setFeetPerSecondPerSecond(velFPSperSecond);
+  EXPECT_DOUBLE_EQ(velFPSperSecond,
+                   aChassisAcceleration->getFeetPerSecondPerSecond());
+
+  // Try a larger magnitude negative number
+  velFPSperSecond = -3123456.1234;
+  aChassisAcceleration->setFeetPerSecondPerSecond(velFPSperSecond);
+  EXPECT_DOUBLE_EQ(velFPSperSecond,
+                   aChassisAcceleration->getFeetPerSecondPerSecond());
+
+  // Try a small magnitude positive number
+  velFPSperSecond = 0.000001;
+  aChassisAcceleration->setFeetPerSecondPerSecond(velFPSperSecond);
+  EXPECT_DOUBLE_EQ(velFPSperSecond,
+                   aChassisAcceleration->getFeetPerSecondPerSecond());
+
+  // Try a small magnitude negative number
+  velFPSperSecond = 0.000001;
+  aChassisAcceleration->setFeetPerSecondPerSecond(velFPSperSecond);
+  EXPECT_DOUBLE_EQ(velFPSperSecond,
+                   aChassisAcceleration->getFeetPerSecondPerSecond());
+}
+
+//*********************************************************
+// Test initialization for the DriveSystem class
+//*********************************************************
+TEST(DriveSystemTest, testInitialization) {
+  std::shared_ptr < DriveSystem > aDriveSystem =
+      std::make_shared<DriveSystem>();
+
+  // chassisName in the DriveSystem object should initialize to ""
+  EXPECT_STRING("", aDriveSystem->getChassisName());
+
+  // maxVelocity should initialize to a MotorVelocity with 0 rotations per minute
+  MotorVelocity maxVelocity = aDriveSystem->getMaxVelocity();
+  EXPECT_DOUBLE_EQ(0.0, maxVelocity->getRotationsPerMinute());
+
+  // maxAccleration should initialize to a MotorAcceleration with 0 rations per minute per second
+  MotorAcceleration maxAcceleration = aDriveSystem->getMaxAcceleration();
+  EXPECT_DOUBLE_EQ(0.0, maxAcceleration->getRotationsPerMinutePerSecond());
+
+  // motor rotations per (chassis) movement foot should initialize to 0
+  EXPECT_DOUBLE_EQ(0.0, aDriveSystem->getmotorRotPerMovementFoot());
+
+  // Trajectory Iteration Period (in milliseconds) should initialize to 0
+  unsigned int zero = 0;
+  EXPECT_EQUAL(zero, aDriveSystem->getTrajectoryIterationPeriodMS());
+}
+
+//*********************************************************
+// Test Accesor functions for the DriveSystem (Base) class
+//*********************************************************
+TEST(DriveSystemTest, testAccessorFunctions) {
+  std::shared_ptr < DriveSystem > aDriveSystem =
+      std::make_shared<DriveSystem>();
+
+  // Set a name and read it back
+  aDriveSystem->setName("JohnnyFive");
+  EXPECT_STRING("JohnnyFive", aDriveSystem->getName());
+
+  // Define a MotorVelocity, set it as the maxVelocity in a DriveSystem,
+  // and see if it comes back as the same value
+  MotorVelocity maxVelocity, returnedMaxVelocity;
+  double velocityInRPM = 310.345;
+  maxvelocity.setRotationsPerMinute(velocityInRPM);
+  aDriveSystem->setMaxVelocity(maxVelocity);
+  returnedMaxVelocity = aDriveSystem->getMaxVelocity();
+  EXPECT_DOUBLE_EQ(velocityInRPM, returnedMaxVelocity.getRotationsPerMinute());
+
+  // Define a MotorAcceleration, set it as the maxAccleration in a DriveSystem,
+  // and see if it comes back as the same value
+  MotorAcceleration maxAcceleration, returnedMaxAcceleration;
+  double accelerationInRPMperSecond = 1.2345;
+  maxAcceleration.setRotationsPerMinutePerSecond(accelerationInRPMperSecond);
+  aDriveSystem->setMaxAcceleration(maxAcceleration);
+  returnedMaxAcceleration = aDriveSystem->getMaxAcceleration();
+  EXPECT_DOUBLE_EQ(accelerationInRPMperSecond,
+                   returnedMaxAcceleration.getRotationsPerMinutePerSecond());
+
+  // Set the motor rotations per movement foot in a DriveSystem,
+  // and see if it comes back as the same value
+  double rotPerFoot = 101.56;
+  aDriveSystem->setMotorRotPerMovementFoot(rotPerFoot);
+  EXPECT_DOUBLE_EQ(rotPerFoot, aDriveSystem->getMotorRotPerMovementFoot());
+
+  // Set a trajectory iteration period in milliseconds in a DriveSystem,
+  // and see if it comes back as the same value
+  unsigned int iterationPeriod = 12;
+  aDriveSystem.setTrajectoryIterationPeriodMS(iterationPeriod);
+  EXPECT_EQ(iterationPeriod, aDriveSystem.getTrajectoryIterationPeriodMS());
+}
+
+//*********************************************************
+// Test initialization for the TankDrive class
+//*********************************************************
+TEST(TankDriveTest, testInitialization) {
+  std::shared_ptr < TankDrive > aTankDrive = std::make_shared<TankDrive>();
+
+  // chassisName in the TankDrive object should initialize to ""
+  EXPECT_EQ("", aTankDrive->getChassisName());
+
+  // maxVelocity should initialize to a MotorVelocity with 0 rotations per minute
+  MotorVelocity maxVelocity = aTankDrive->getMaxVelocity();
+  EXPECT_DOUBLE_EQ(0.0, maxVelocity->getRotationsPerMinute());
+
+  // maxAccleration should initialize to a MotorAcceleration with 0 rations per minute per second
+  MotorAcceleration maxAcceleration = aTankDrive->getMaxAcceleration();
+  EXPECT_DOUBLE_EQ(0.0, maxAcceleration->getRotationsPerMinutePerSecond());
+
+  // motor rotations per (chassis) movement foot should initialize to 0
+  EXPECT_DOUBLE_EQ(0.0, aTankDrive->getmotorRotPerMovementFoot());
+
+  // Trajectory Iteration Period (in milliseconds) should initialize to 0
+  unsigned int zero = 0;
+  EXPECT_EQUAL(zero, aTankDrive->getTrajectoryIterationPeriodMS());
+
+  // Drive system width (feet) should initialize to 0
+  EXPECT_DOUBLE_EQ(0.0, aTankDrive->getWidthInFeet());
+}
+
+//*********************************************************
+// Test Accesor functions for the TankDrive (Derived) class
+//*********************************************************
+TEST(TankDriveTest, testAccessorFunctions) {
+  std::shared_ptr < TankDrive > aTankDrive = std::make_shared<TankDrive>();
+
+  // Set a name and read it back
+  aTankDrive->setName("JohnnyFive");
+  EXPECT_STRING("JohnnyFive", aTankDrive->getName());
+
+  // Define a MotorVelocity, set it as the maxVelocity in a TankDrive,
+  // and see if it comes back as the same value
+  MotorVelocity maxVelocity, returnedMaxVelocity;
+  double velocityInRPM = 310.345;
+  maxVelocity.setRotationsPerMinute(velocityInRPM);
+  aTankDrive->setMaxVelocity(maxVelocity);
+  returnedMaxVelocity = aTankDrive->getMaxVelocity();
+  EXPECT_DOUBLE_EQ(velocityInRPM, returnedMaxVelocity.getRotationsPerMinute());
+
+  // Define a MotorAcceleration, set it as the maxAccleration in a TankDrive,
+  // and see if it comes back as the same value
+  MotorAcceleration maxAcceleration, returnedMaxAcceleration;
+  double accelerationInRPMperSecond = 1.2345;
+  maxAcceleration.setRotationsPerMinutePerSecond(accelerationInRPMperSecond);
+  aTankDrive->setMaxAcceleration(maxAcceleration);
+  returnedMaxAcceleration = aTankDrive->getMaxAcceleration();
+  EXPECT_DOUBLE_EQ(accelerationInRPMperSecond,
+                   returnedMaxAcceleration.getRotationsPerMinutePerSecond());
+
+  // Set the motor rotations per movement foot in a TankDrive,
+  // and see if it comes back as the same value
+  double rotPerFoot = 101.56;
+  aTankDrive->setMotorRotPerMovementFoot(rotPerFoot);
+  EXPECT_DOUBLE_EQ(rotPerFoot, aTankDrive->getMotorRotPerMovementFoot());
+
+  // Set a trajectory iteration period in milliseconds in a TankDrive,
+  // and see if it comes back as the same value
+  unsigned int iterationPeriod = 12;
+  aTankDrive.setTrajectoryIterationPeriodMS(iterationPeriod);
+  EXPECT_EQ(iterationPeriod, aTankDrive->getTrajectoryIterationPeriodMS());
+
+  // Set the drive system width (feet) in a TankDrive,
+  // and see if it comes back as the same value
+  double driveWidthFeet = 3.333333;
+  aTankDrive->setWidthInFeet(driveWidthFeet);
+  EXPECT_DOUBLE_EQ(driveWidthFeet, aTankDrive->getWidthInFeet());
+}
+
+//*********************************************************
+// Test initialization for the Chassis class
+//*********************************************************
+TEST(ChassisTest, testInitialization) {
+  std::shared_ptr < Chassis > aChassis = std::make_shared<Chassis>();
+
+  // Chassis name should initialize to ""
+  EXPECT_EQ("", aChassis->getName());
+
+  // the drive system should initialize to a drive system with the expected drive system initialization
+  DriveSystem aDriveSystem = aChassisGetDriveSystem;
+
+  // chassisName in the DriveSystem object should initialize to ""
+  EXPECT_STRING("", aDriveSystem.getChassisName());
+
+  // maxVelocity should initialize to a MotorVelocity with 0 rotations per minute
+  MotorVelocity maxVelocity = aDriveSystem.getMaxVelocity();
+  EXPECT_DOUBLE_EQ(0.0, maxVelocity.getRotationsPerMinute());
+
+  // maxAccleration should initialize to a MotorAcceleration with 0 rations per minute per second
+  MotorAcceleration maxAcceleration = aDriveSystem.getMaxAcceleration();
+  EXPECT_DOUBLE_EQ(0.0, maxAcceleration.getRotationsPerMinutePerSecond());
+
+  // motor rotations per (chassis) movement foot should initialize to 0
+  EXPECT_DOUBLE_EQ(0.0, aDriveSystem.getmotorRotPerMovementFoot());
+
+  // Trajectory Iteration Period (in milliseconds) should initialize to 0
+  unsigned int zero = 0;
+  EXPECT_EQUAL(zero, aDriveSystem.getTrajectoryIterationPeriodMS());
+}
+
+//*********************************************************
+// Test accessor functions for the Chassis class
+//*********************************************************
+TEST(ChassisTest, testInitialization) {
+  std::shared_ptr < Chassis > aChassis = std::make_shared<Chassis>();
+
+  // Chassis name
+  std::string chassisName = "JohnnyFive";
+  aChassis->setName(chassisName);
+  EXPECT_EQ(chassisName, aChassis->getName());
+
+  // Drive system...
+
+  // Create a drive system so that we can set it...
+  TankDrive aTankDrive;
+
+  // Define a MotorVelocity, set it as the maxVelocity
+  MotorVelocity maxVelocity;
+  double velocityInRPM = 310.345;
+  maxVelocity.setRotationsPerMinute(velocityInRPM);
+  aTankDrive.setMaxVelocity(maxVelocity);
+
+  // Define a MotorAcceleration, set it as the maxAccleration
+  MotorAcceleration maxAcceleration;
+  double accelerationInRPMperSecond = 1.2345;
+  maxAcceleration.setRotationsPerMinutePerSecond(accelerationInRPMperSecond);
+  aTankDrive.setMaxAcceleration(maxAcceleration);
+
+  // Set the motor rotations per movement foot in a TankDrive,
+  double rotPerFoot = 101.56;
+  aTankDrive.setMotorRotPerMovementFoot(rotPerFoot);
+
+  // Set a trajectory iteration period in milliseconds in a TankDrive,
+  unsigned int iterationPeriod = 12;
+  aTankDrive.setTrajectoryIterationPeriodMS(iterationPeriod);
+
+  // Set the drive system width (feet) in a TankDrive,
+  double driveWidthFeet = 3.333333;
+  aTankDrive.setWidthInFeet(driveWidthFeet);
+
+  // and set this this tank drive as the tank drive for the chassis
+  aChassis->setDriveSystem(aTankDrive);
+
+  // Now get the drive system back, and check all of the bits to see if
+  // they are the same as were set above
+  TankDrive returnedTankDrive = aChassis->getDriveSystem();
+
+  // The Drive System chassis name should match the name set in the Chassis (above)
+  EXPECT_EQ(chassisName, returnedTankDrive.getChassisName());
+
+  // Pull out the max velocity and see if it matches what was set
+  MotorVelocity returnedMaxVelocity = returnedTankDrive.getMaxVelocity();
+  EXPECT_DOUBLE_EQ(velocityInRPM, returnedMaxVelocity.getRotationsPerMinute());
+
+  // Pull out the max acceleration and see if it matches what was set
+  MotorAcceleration returnedMaxAcceleration = returnedTankDrive
+      .getMaxAcceleration();
+  EXPECT_DOUBLE_EQ(accelerationInRPMperSecond,
+                   returnedMaxAcceleration.getRotationsPerMinutePerSecond());
+
+  // Check the rest of the attributes
+  EXPECT_DOUBLE_EQ(rotPerFoot, returnedTankDrive.getMotorRotPerMovementFoot());
+  EXPECT_EQ(iterationPeriod,
+            returnedTankDrive.getTrajectoryIterationPeriodMS());
+  EXPECT_DOUBLE_EQ(driveWidthFeet, returnedTankDrive.getWidthInFeet());
 }

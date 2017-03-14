@@ -109,10 +109,16 @@ void DriveSystem::setTrajectoryIterationPeriodMS(unsigned int period) {
 unsigned int DriveSystem::getTrajectoryIterationPeriodMS() {
   return trajectoryIterationPeriodMS;
 }
-/* this is now a virtual method MRJ 2017-03-12
+
+/**
+ * @brief A "filler" method in the base class to prevent link errors; redefined in derived classes
+ * @param distanceFeet
+ * @param chassisTurnRate
+ * @param chassisVelocityRequested
+ * @param chassisAccelerationRequested
+ */
 void DriveSystem::move(double distanceFeet, ChassisTurnRate chassisTurnRate,
           ChassisVelocity chassisVelocityRequested,
           ChassisAcceleration chassisAccelerationRequested) {
   return;
 }
- */

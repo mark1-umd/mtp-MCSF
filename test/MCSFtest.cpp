@@ -22,22 +22,22 @@
  */
 #include <gtest/gtest.h>
 #include <memory>
-#include "../framework/MotorPosition.hpp"
-#include "../framework/MotorVelocity.hpp"
-#include "../framework/MotorAcceleration.hpp"
-#include "../framework/Point.hpp"
-#include "../framework/WayPoint.hpp"
-#include "../framework/PathPoint.hpp"
-#include "../framework/TrajectoryPoint.hpp"
-#include "../framework/Trajectory.hpp"
-#include "../framework/Path.hpp"
-#include "../framework/Route.hpp"
+#include "../framework/Chassis.hpp"
+#include "../framework/ChassisAcceleration.hpp"
 #include "../framework/ChassisTurnRate.hpp"
 #include "../framework/ChassisVelocity.hpp"
-#include "../framework/ChassisAcceleration.hpp"
 #include "../framework/DriveSystem.hpp"
+#include "../framework/MotorAcceleration.hpp"
+#include "../framework/MotorPosition.hpp"
+#include "../framework/MotorVelocity.hpp"
+#include "../framework/Path.hpp"
+#include "../framework/PathPoint.hpp"
+#include "../framework/Point.hpp"
+#include "../framework/Trajectory.hpp"
+#include "../framework/TrajectoryPoint.hpp"
+#include "../framework/Route.hpp"
 #include "../framework/TankDrive.hpp"
-#include "../framework/Chassis.hpp"
+#include "../framework/WayPoint.hpp"
 
 //*********************************************************
 // Test initialization for the MotorPosition class
@@ -935,59 +935,63 @@ TEST(ChassisTest, testAccessorFunctions) {
   // Drive system...
 
   // Create a drive system so that we can set it in the chassis...
-  std::unique_ptr<TankDrive> aTankDrive;
+//  std::unique_ptr<TankDrive> aTankDrive; // Not working 2017-03-14
+
+  TankDrive aTankDrive;
 
   // Define a MotorVelocity, set it as the maxVelocity
   MotorVelocity maxVelocity;
   double velocityInRPM = 310.345;
   maxVelocity.setRotationsPerMinute(velocityInRPM);
-  aTankDrive->setMaxVelocity(maxVelocity);
+  aTankDrive.setMaxVelocity(maxVelocity);
 
   // Define a MotorAcceleration, set it as the maxAccleration
   MotorAcceleration maxAcceleration;
   double accelerationInRPMperSecond = 1.2345;
   maxAcceleration.setRotationsPerMinutePerSecond(accelerationInRPMperSecond);
-  aTankDrive->setMaxAcceleration(maxAcceleration);
+  aTankDrive.setMaxAcceleration(maxAcceleration);
 
   // Set the motor rotations per movement foot in a TankDrive,
   double rotPerFoot = 101.56;
-  aTankDrive->setMotorRotPerMovementFoot(rotPerFoot);
+  aTankDrive.setMotorRotPerMovementFoot(rotPerFoot);
 
   // Set a trajectory iteration period in milliseconds in a TankDrive,
   unsigned int iterationPeriod = 12;
-  aTankDrive->setTrajectoryIterationPeriodMS(iterationPeriod);
+  aTankDrive.setTrajectoryIterationPeriodMS(iterationPeriod);
 
   // Set the drive system width (feet) in a TankDrive,
   double driveWidthFeet = 3.333333;
-  aTankDrive->setWidthInFeet(driveWidthFeet);
+  aTankDrive.setWidthInFeet(driveWidthFeet);
 
   // and set this this tank drive as the tank drive for the chassis
-  std::shared_ptr<DriveSystem> theDrive = std::move(aTankDrive);
-  aChassis.setDriveSystem(theDrive);
+//  std::shared_ptr<DriveSystem> theDrive = std::move(aTankDrive);
+//  aChassis.setDriveSystem(theDrive); // Not working 2017-03-14
+  aChassis.setDriveSystem(aTankDrive);
 
   // Now get the drive system back, and check all of the
   // bits to see if they are the same as were set above
-  std::shared_ptr<DriveSystem> returnedTankDrive = aChassis.getDriveSystem();
+//  std::shared_ptr<DriveSystem> returnedTankDrive = aChassis.getDriveSystem();
+  TankDrive returnedTankDrive = aChassis.getDriveSystem();
 
   // The Drive System chassis name should match the name set
   // in the Chassis (above)
-  EXPECT_EQ(chassisName, returnedTankDrive->getChassisName());
-  /*
+  EXPECT_EQ(chassisName, returnedTankDrive.getChassisName());
+
   // Pull out the max velocity and see if it matches what was set
-  MotorVelocity returnedMaxVelocity = returnedTankDrive->getMaxVelocity();
+  MotorVelocity returnedMaxVelocity = returnedTankDrive.getMaxVelocity();
   EXPECT_DOUBLE_EQ(velocityInRPM, returnedMaxVelocity.getRotationsPerMinute());
 
   // Pull out the max acceleration and see if it matches what was set
   MotorAcceleration returnedMaxAcceleration = returnedTankDrive
-      ->getMaxAcceleration();
+      .getMaxAcceleration();
   EXPECT_DOUBLE_EQ(accelerationInRPMperSecond,
                    returnedMaxAcceleration.getRotationsPerMinutePerSecond());
 
   // Check the rest of the attributes
-  EXPECT_DOUBLE_EQ(rotPerFoot, returnedTankDrive->getMotorRotPerMovementFoot());
+  EXPECT_DOUBLE_EQ(rotPerFoot, returnedTankDrive.getMotorRotPerMovementFoot());
   EXPECT_EQ(iterationPeriod,
-            returnedTankDrive->getTrajectoryIterationPeriodMS());
-//  EXPECT_DOUBLE_EQ(driveWidthFeet, returnedTankDrive->getWidthInFeet());
-   */
+            returnedTankDrive.getTrajectoryIterationPeriodMS());
+  EXPECT_DOUBLE_EQ(driveWidthFeet, returnedTankDrive.getWidthInFeet());
+
 }
 

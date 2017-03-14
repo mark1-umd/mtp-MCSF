@@ -39,15 +39,18 @@ class Chassis {
   virtual ~Chassis();
   void setName(std::string myName);
   std::string getName();
-  void setDriveSystem(std::shared_ptr<DriveSystem> driveSystem);
-  std::shared_ptr<DriveSystem> getDriveSystem();
+//  void setDriveSystem(std::shared_ptr<DriveSystem> driveSystem);
+//  std::shared_ptr<DriveSystem> getDriveSystem(); // Not working 2017-03-14
+  void setDriveSystem(const TankDrive &driveSystem);
+  TankDrive getDriveSystem();
   void move(double distanceFeet, ChassisTurnRate chassisTurnRate,
             ChassisVelocity chassisVelocityRequested,
             ChassisAcceleration chassisAccelerationRequested);
 
  private:
   std::string myName;
-  std::shared_ptr<DriveSystem> myDrive;
+//  std::shared_ptr<DriveSystem> myDrive; // Not working - MRJ 2017-03-14
+  TankDrive myDrive;
 };
 
 #endif /* CHASSIS_HPP_ */

@@ -23,7 +23,7 @@
 
 Chassis::Chassis()
     : myName(""),
-      myDriveSystem() {
+      myDrive() {
 }
 
 Chassis::~Chassis() {
@@ -33,9 +33,9 @@ Chassis::~Chassis() {
  * @brief Set the chassis name
  * @param [in] string name of the chassis
  */
-void Chassis::setMyName(std::string name) {
+void Chassis::setName(std::string name) {
   myName = name;
-  myDriveSystem.setChassisName(myName);
+  myDrive->setChassisName(myName);
   return;
 }
 
@@ -43,7 +43,7 @@ void Chassis::setMyName(std::string name) {
  * @brief Get the chassis name
  * @return string name of the chassis
  */
-std::string Chassis::getMyName() {
+std::string Chassis::getName() {
   return myName;
 }
 
@@ -51,9 +51,9 @@ std::string Chassis::getMyName() {
  * @brief Sets the chassis's drive system to the specified object of a class derived from DriveSystem
  * @param [in] DriveSystem driveSystem derived class object (e.g., a TankDrive object)
  */
-void Chassis::setMyDriveSystem(const DriveSystem &driveSystem) {
-  myDriveSystem = driveSystem;
-  myDriveSystem.setChassisName(myName);
+void Chassis::setDriveSystem(std::shared_ptr<DriveSystem> driveSystem) {
+  myDrive = driveSystem;
+  myDrive->setChassisName(myName);
   return;
 }
 
@@ -61,8 +61,9 @@ void Chassis::setMyDriveSystem(const DriveSystem &driveSystem) {
  * @brief Gets the chassis' drive system (an object of a class derived from the DriveSystem base class)
  * @return DriveSystem myDriveSystem - an object of a class derived from the DriveSystem base class
  */
-DriveSystem Chassis::getMyDriveSystem() {
-  return myDriveSystem;
+std::shared_ptr<DriveSystem> Chassis::getDriveSystem() {
+  std::shared_ptr<DriveSystem> theDrive = myDrive;
+  return theDrive;
 }
 
 /**
@@ -76,7 +77,7 @@ void Chassis::move(double distanceFeet, ChassisTurnRate chassisTurnRate,
                    ChassisVelocity chassisVelocityRequested,
                    ChassisAcceleration chassisAccelerationRequested) {
   // Pass this on to the drive system
-  myDriveSystem.move(distanceFeet, chassisTurnRate, chassisVelocityRequested,
+  myDrive->move(distanceFeet, chassisTurnRate, chassisVelocityRequested,
                      chassisAccelerationRequested);
   return;
 }

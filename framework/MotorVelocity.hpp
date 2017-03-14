@@ -18,6 +18,7 @@
 #ifndef MOTORVELOCITY_HPP_
 #define MOTORVELOCITY_HPP_
 
+#include "ChassisVelocity.hpp"
 /** @brief The MotorVelocity class is a strict type for motor velocities
  */
 

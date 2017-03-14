@@ -109,3 +109,9 @@ void DriveSystem::setTrajectoryIterationPeriodMS(unsigned int period) {
 unsigned int DriveSystem::getTrajectoryIterationPeriodMS() {
   return trajectoryIterationPeriodMS;
 }
+
+void DriveSystem::move(double distanceFeet, ChassisTurnRate chassisTurnRate,
+          ChassisVelocity chassisVelocityRequested,
+          ChassisAcceleration chassisAccelerationRequested) {
+  return;
+}

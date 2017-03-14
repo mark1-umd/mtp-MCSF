@@ -17,8 +17,7 @@
 #include "ChassisAcceleration.hpp"
 
 ChassisAcceleration::ChassisAcceleration()
-: accelAsFeetPerSecondPerSecond(0.0);
-{
+    : accelAsFeetPerSecondPerSecond(0.0) {
 }
 
 ChassisAcceleration::~ChassisAcceleration() {

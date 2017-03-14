@@ -61,7 +61,7 @@ void TankDrive::move(double distanceFeet, ChassisTurnRate chassisTurnRate,
   ChassisAcceleration leftPathAcceleration, rightPathAcceleration;
 
   // Is this movement straight?
-  if (chassisTurnRate.getDegreesPerFoot == 0) {
+  if (chassisTurnRate.getDegreesPerFoot() == 0) {
 
     // Set left and right path distances in feet to the move distance in feet
     leftPathDistanceFeet = distanceFeet;
@@ -89,7 +89,7 @@ void TankDrive::move(double distanceFeet, ChassisTurnRate chassisTurnRate,
 
     // Calculate center turn circle circumference in feet, then radius in feet
     const double centerTurnCircleCircumferenceFeet = (360
-        / chassisTurnRate.degreesPerFoot());
+        / chassisTurnRate.getDegreesPerFoot());
     const double pi = 4 * atan(double(1.0));
     const double centerTurnCircleRadiusFeet = centerTurnCircleCircumferenceFeet
         / (2 * pi);
@@ -205,16 +205,16 @@ void TankDrive::move(double distanceFeet, ChassisTurnRate chassisTurnRate,
   MotorPosition beginRightPathMotorPosition, endRightPathMotorPosition;
   beginRightPathMotorPosition.setRotations(0.0);
   endRightPathMotorPosition.convertFromDistanceFeetByRotPerMovementFoot(
-      leftPathDistanceFeet, motorRotPerMovementFoot);
+      rightPathDistanceFeet, motorRotPerMovementFoot);
   MotorVelocity beginRightPathMotorVelocity, endRightPathMotorVelocity;
   beginRightPathMotorVelocity.convertFromChassisVelocityByRotPerMovementFoot(
-      leftPathVelocity, motorRotPerMovementFoot);
+      rightPathVelocity, motorRotPerMovementFoot);
   endRightPathMotorVelocity.setRotationsPerMinute(0.0);
   MotorAcceleration beginRightPathMotorAcceleration,
       endRightPathMotorAcceleration;
   beginRightPathMotorAcceleration
       .convertFromChassisAccelerationByRotPerMovementFoot(
-      leftPathAcceleration, motorRotPerMovementFoot);
+      rightPathAcceleration, motorRotPerMovementFoot);
 
   // Create the right path with two points
   Path rightPath;

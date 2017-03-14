@@ -18,7 +18,7 @@
 #ifndef CHASSISTURNRATE_HPP_
 #define CHASSISTURNRATE_HPP_
 
-/** @brief ChassisTurnRate objects are used to specify a change in direction while a chassis is moving.
+/** @brief ChassisTurnRate objects are used to specify a change in direction when a chassis is moving.
  */
 
 class ChassisTurnRate {

@@ -9,7 +9,13 @@ add_executable(mcsf-app
     ../framework/Route.cpp
     ../framework/Trajectory.cpp
     ../framework/TrajectoryPoint.cpp
-    ../framework/WayPoint.cpp    
+    ../framework/WayPoint.cpp
+    ../framework/ChassisTurnRate.cpp
+    ../framework/ChassisVelocity.cpp
+    ../framework/ChassisAcceleration.cpp
+    ../framework/DriveSystem.cpp
+    ../framework/TankDrive.cpp
+    ../framework/Chassis.cpp    
 )
 include_directories(
     ${CMAKE_SOURCE_DIR}/include

@@ -23,10 +23,12 @@
 #define CHASSIS_HPP_
 
 #include <string>
+#include <memory>
 #include "ChassisTurnRate.hpp"
 #include "ChassisVelocity.hpp"
 #include "ChassisAcceleration.hpp"
 #include "DriveSystem.hpp"
+#include "TankDrive.hpp"
 
 /** @brief A Chassis has a DriveSystem and a name, and can move using the Motion Control System Framework
  */
@@ -35,17 +37,17 @@ class Chassis {
  public:
   Chassis();
   virtual ~Chassis();
-  void setMyName(std::string myName);
-  std::string getMyName();
-  void setMyDriveSystem(const DriveSystem &driveSystem);
-  DriveSystem getMyDriveSystem();
+  void setName(std::string myName);
+  std::string getName();
+  void setDriveSystem(std::shared_ptr<DriveSystem> driveSystem);
+  std::shared_ptr<DriveSystem> getDriveSystem();
   void move(double distanceFeet, ChassisTurnRate chassisTurnRate,
             ChassisVelocity chassisVelocityRequested,
             ChassisAcceleration chassisAccelerationRequested);
 
  private:
   std::string myName;
-  DriveSystem myDriveSystem;
+  std::shared_ptr<DriveSystem> myDrive;
 };
 
 #endif /* CHASSIS_HPP_ */

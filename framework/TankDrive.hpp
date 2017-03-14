@@ -23,11 +23,15 @@
 #include <cmath>
 #include <string>
 #include "DriveSystem.hpp"
+#include "MotorPosition.hpp"
 #include "MotorVelocity.hpp"
 #include "MotorAcceleration.hpp"
 #include "ChassisTurnRate.hpp"
 #include "ChassisVelocity.hpp"
 #include "ChassisAcceleration.hpp"
+#include "Path.hpp"
+#include "PathPoint.hpp"
+#include "Trajectory.hpp"
 
 
 /** @brief TankDrive is derived from the base class DriveSystem

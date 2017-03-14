@@ -19,6 +19,8 @@
 #ifndef MOTORACCELERATION_HPP_
 #define MOTORACCELERATION_HPP_
 
+#include "ChassisAcceleration.hpp"
+
 /** @brief A class to provide a strict type for specifying motor acceleration
  */
 

@@ -14,8 +14,8 @@
 #ifndef ROUTE_HPP_
 #define ROUTE_HPP_
 
-#include <vector>
 #include <iostream>
+#include <vector>
 #include "Path.hpp"
 #include "WayPoint.hpp"
 

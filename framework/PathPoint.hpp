@@ -18,11 +18,11 @@
 #define PATHPOINT_HPP_
 
 #include <iostream>
-#include "Point.hpp"
-#include "MotorVelocity.hpp"
 #include "MotorAcceleration.hpp"
+#include "MotorVelocity.hpp"
+#include "Point.hpp"
 
-/** @brief <brief description>
+/** @brief A motion path point has a maximum velocity and acceleration for motion from this point
  */
 
 class PathPoint : public Point {

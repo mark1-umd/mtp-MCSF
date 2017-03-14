@@ -24,7 +24,7 @@
 #include <memory>
 #include "../framework/MotorPosition.hpp"
 #include "../framework/MotorVelocity.hpp"
-#include "../framework/ChassisAcceleration.hpp"
+#include "../framework/MotorAcceleration.hpp"
 #include "../framework/Point.hpp"
 #include "../framework/WayPoint.hpp"
 #include "../framework/PathPoint.hpp"
@@ -324,7 +324,8 @@ TEST(TrajectoryPointTest, testInitialization) {
   EXPECT_DOUBLE_EQ(0.0, velocity.getRotationsPerMinute());
   MotorAcceleration acceleration = aTrajectoryPoint.getAcceleration();
   EXPECT_DOUBLE_EQ(0.0, acceleration.getRotationsPerMinutePerSecond());
-  // The durationMS, step, timeS, filter1Sum, and filter2Sum variables should zero
+  // The durationMS, step, timeS, filter1Sum, and filter2Sum variables
+  // should be zero
   EXPECT_EQ(0, aTrajectoryPoint.getDurationMS());
   EXPECT_EQ(0, aTrajectoryPoint.getStep());
   EXPECT_DOUBLE_EQ(0.0, aTrajectoryPoint.getTimeS());
@@ -332,9 +333,9 @@ TEST(TrajectoryPointTest, testInitialization) {
   EXPECT_DOUBLE_EQ(0.0, aTrajectoryPoint.getFilter2Sum());
 }
 
- //*********************************************************
+//*********************************************************
 // Test accessor functions for the TrajectoryPoint class
- //*********************************************************
+//*********************************************************
 TEST(TrajectoryPointTest, testAccessorFunctions) {
   TrajectoryPoint aTrajectoryPoint;
 
@@ -409,7 +410,6 @@ TEST(PathTest, testInitilization) {
 // Test accessor functions for the Path class
 //*********************************************************
 TEST(PathTest, testAccessorFunctions) {
-
   // Build a path with two path points
   Path aPath;
 
@@ -420,11 +420,13 @@ TEST(PathTest, testAccessorFunctions) {
   firstPathPoint.setPosition(firstPosition);
 
   MotorVelocity firstMaxMotorVelocity;
-  firstMaxMotorVelocity.setRotationsPerMinute(240);  // 4 RPS is 240 RPM
+  // 4 RPS is 240 RPM
+  firstMaxMotorVelocity.setRotationsPerMinute(240);
   firstPathPoint.setMaxVelocity(firstMaxMotorVelocity);
 
   MotorAcceleration firstMaxAcceleration;
-  firstMaxAcceleration.setRotationsPerMinutePerSecond(600);  // 10 RPS/S is 600 RPM/S
+  // 10 RPS/S is 600 RPM/S
+  firstMaxAcceleration.setRotationsPerMinutePerSecond(600);
   firstPathPoint.setMaxAcceleration(firstMaxAcceleration);
 
   aPath.addPathPoint(firstPathPoint);
@@ -436,11 +438,13 @@ TEST(PathTest, testAccessorFunctions) {
   secondPathPoint.setPosition(secondPosition);
 
   MotorVelocity secondMaxMotorVelocity;
-  secondMaxMotorVelocity.setRotationsPerMinute(120);  // 2 RPS is 120 RPM
+  // 2 RPS is 120 RPM
+  secondMaxMotorVelocity.setRotationsPerMinute(120);
   secondPathPoint.setMaxVelocity(secondMaxMotorVelocity);
 
   MotorAcceleration secondMaxAcceleration;
-  secondMaxAcceleration.setRotationsPerMinutePerSecond(300);  // 5 RPS/S is 300 RPM/S
+  // 5 RPS/S is 300 RPM/S
+  secondMaxAcceleration.setRotationsPerMinutePerSecond(300);
   secondPathPoint.setMaxAcceleration(secondMaxAcceleration);
 
   aPath.addPathPoint(secondPathPoint);
@@ -450,7 +454,8 @@ TEST(PathTest, testAccessorFunctions) {
   EXPECT_EQ(two, aPath.size());
 
   // With two points on the path, test the accessor functions
-  PathPoint firstReturnPathPoint, secondReturnPathPoint;  // No need to set values
+  // No need to set values; just want test the points
+  PathPoint firstReturnPathPoint, secondReturnPathPoint;
 
   // Test for a successful failure of getNextPathPoint with no
   // previous getFirstPathPoint
@@ -528,7 +533,6 @@ TEST(TrajectoryTest, testInitialization) {
 // Test generation & accessor functions for the Trajectory class
 //*********************************************************
 TEST(TrajectoryTest, testGenerationAndAccessorFunctions) {
-
   // Build a path with two path points
   Path aPath;
 
@@ -539,11 +543,13 @@ TEST(TrajectoryTest, testGenerationAndAccessorFunctions) {
   firstPathPoint.setPosition(firstPosition);
 
   MotorVelocity firstMaxMotorVelocity;
-  firstMaxMotorVelocity.setRotationsPerMinute(240);  // 4 RPS is 240 RPM
+  // 4 RPS is 240 RPM
+  firstMaxMotorVelocity.setRotationsPerMinute(240);
   firstPathPoint.setMaxVelocity(firstMaxMotorVelocity);
 
   MotorAcceleration firstMaxAcceleration;
-  firstMaxAcceleration.setRotationsPerMinutePerSecond(600);  // 10 RPS/S is 600 RPM/S
+  // 10 RPS/S is 600 RPM/S
+  firstMaxAcceleration.setRotationsPerMinutePerSecond(600);
   firstPathPoint.setMaxAcceleration(firstMaxAcceleration);
 
   aPath.addPathPoint(firstPathPoint);
@@ -555,11 +561,13 @@ TEST(TrajectoryTest, testGenerationAndAccessorFunctions) {
   secondPathPoint.setPosition(secondPosition);
 
   MotorVelocity secondMaxMotorVelocity;
-  secondMaxMotorVelocity.setRotationsPerMinute(120);  // 2 RPS is 120 RPM
+  // 2 RPS is 120 RPM
+  secondMaxMotorVelocity.setRotationsPerMinute(120);
   secondPathPoint.setMaxVelocity(secondMaxMotorVelocity);
 
   MotorAcceleration secondMaxAcceleration;
-  secondMaxAcceleration.setRotationsPerMinutePerSecond(300);  // 5 RPS/S is 300 RPM/S
+  // 5 RPS/S is 300 RPM/S
+  secondMaxAcceleration.setRotationsPerMinutePerSecond(300);
   secondPathPoint.setMaxAcceleration(secondMaxAcceleration);
 
   aPath.addPathPoint(secondPathPoint);
@@ -763,11 +771,13 @@ TEST(DriveSystemTest, testInitialization) {
   // chassisName in the DriveSystem object should initialize to ""
   EXPECT_EQ("", aDriveSystem.getChassisName());
 
-  // maxVelocity should initialize to a MotorVelocity with 0 rotations per minute
+  // maxVelocity should initialize to a MotorVelocity
+  // with 0 rotations per minute
   MotorVelocity maxVelocity = aDriveSystem.getMaxVelocity();
   EXPECT_DOUBLE_EQ(0.0, maxVelocity.getRotationsPerMinute());
 
-  // maxAccleration should initialize to a MotorAcceleration with 0 rations per minute per second
+  // maxAccleration should initialize to a MotorAcceleration
+  // with 0 rations per minute per second
   MotorAcceleration maxAcceleration = aDriveSystem.getMaxAcceleration();
   EXPECT_DOUBLE_EQ(0.0, maxAcceleration.getRotationsPerMinutePerSecond());
 
@@ -831,11 +841,13 @@ TEST(TankDriveTest, testInitialization) {
   // chassisName in the TankDrive object should initialize to ""
   EXPECT_EQ("", aTankDrive.getChassisName());
 
-  // maxVelocity should initialize to a MotorVelocity with 0 rotations per minute
+  // maxVelocity should initialize to a MotorVelocity with
+  // 0 rotations per minute
   MotorVelocity maxVelocity = aTankDrive.getMaxVelocity();
   EXPECT_DOUBLE_EQ(0.0, maxVelocity.getRotationsPerMinute());
 
-  // maxAccleration should initialize to a MotorAcceleration with 0 rations per minute per second
+  // maxAccleration should initialize to a MotorAcceleration with
+  // 0 rations per minute per second
   MotorAcceleration maxAcceleration = aTankDrive.getMaxAcceleration();
   EXPECT_DOUBLE_EQ(0.0, maxAcceleration.getRotationsPerMinutePerSecond());
 
@@ -953,11 +965,12 @@ TEST(ChassisTest, testAccessorFunctions) {
   std::shared_ptr<DriveSystem> theDrive = std::move(aTankDrive);
   aChassis.setDriveSystem(theDrive);
 
-  // Now get the drive system back, and check all of the bits to see if
-  // they are the same as were set above
+  // Now get the drive system back, and check all of the
+  // bits to see if they are the same as were set above
   std::shared_ptr<DriveSystem> returnedTankDrive = aChassis.getDriveSystem();
 
-  // The Drive System chassis name should match the name set in the Chassis (above)
+  // The Drive System chassis name should match the name set
+  // in the Chassis (above)
   EXPECT_EQ(chassisName, returnedTankDrive->getChassisName());
   /*
   // Pull out the max velocity and see if it matches what was set

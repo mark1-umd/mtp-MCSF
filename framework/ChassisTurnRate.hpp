@@ -29,8 +29,8 @@ class ChassisTurnRate {
   double getDegreesPerFoot();
 
  private:
-  double degreesPerFoot;  // 0 indicates straight movement, negative indicates left turn
-                          // positive indicates right turn
+  double degreesPerFoot;  // 0 indicates straight movement, negative indicates
+                          // left turn, positive indicates right turn
 };
 
 #endif /* CHASSISTURNRATE_HPP_ */

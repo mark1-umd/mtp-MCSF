@@ -22,11 +22,11 @@
 #ifndef CHASSIS_HPP_
 #define CHASSIS_HPP_
 
-#include <string>
 #include <memory>
+#include <string>
+#include "ChassisAcceleration.hpp"
 #include "ChassisTurnRate.hpp"
 #include "ChassisVelocity.hpp"
-#include "ChassisAcceleration.hpp"
 #include "DriveSystem.hpp"
 #include "TankDrive.hpp"
 

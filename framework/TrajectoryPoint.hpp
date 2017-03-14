@@ -21,12 +21,12 @@
 #ifndef TRAJECTORYPOINT_HPP_
 #define TRAJECTORYPOINT_HPP_
 
-#include <iostream>
 #include <fstream>
-#include "Point.hpp"
+#include <iostream>
+#include "MotorAcceleration.hpp"
 #include "MotorPosition.hpp"
 #include "MotorVelocity.hpp"
-#include "MotorAcceleration.hpp"
+#include "Point.hpp"
 
 /** @brief A trajectory point is a point with added velocity and duration
  */

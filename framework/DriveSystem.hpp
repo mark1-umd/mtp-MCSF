@@ -16,11 +16,11 @@
 #define DRIVESYSTEM_HPP_
 
 #include <string>
-#include "MotorVelocity.hpp"
-#include "MotorAcceleration.hpp"
+#include "ChassisAcceleration.hpp"
 #include "ChassisTurnRate.hpp"
 #include "ChassisVelocity.hpp"
-#include "ChassisAcceleration.hpp"
+#include "MotorAcceleration.hpp"
+#include "MotorVelocity.hpp"
 
 /** @brief Base class for representing drive system objects
  */

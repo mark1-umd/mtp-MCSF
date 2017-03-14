@@ -17,6 +17,5 @@ WayPoint::WayPoint() {
 }
 
 WayPoint::~WayPoint() {
-  // TODO(Mark Jenkins): Auto-generated destructor stub
 }
 

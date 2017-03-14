@@ -22,13 +22,13 @@
 #include <algorithm>
 #include <cmath>
 #include <string>
-#include "DriveSystem.hpp"
-#include "MotorPosition.hpp"
-#include "MotorVelocity.hpp"
-#include "MotorAcceleration.hpp"
+#include "ChassisAcceleration.hpp"
 #include "ChassisTurnRate.hpp"
 #include "ChassisVelocity.hpp"
-#include "ChassisAcceleration.hpp"
+#include "DriveSystem.hpp"
+#include "MotorAcceleration.hpp"
+#include "MotorPosition.hpp"
+#include "MotorVelocity.hpp"
 #include "Path.hpp"
 #include "PathPoint.hpp"
 #include "Trajectory.hpp"
@@ -48,7 +48,8 @@ class TankDrive : public DriveSystem {
             ChassisAcceleration chassisAccelelerationRequested);
 
  private:
-  double widthInFeet;  // the distance between the left and right side motivators of the tank drive
+  double widthInFeet;  // the distance between the left and right side
+                       // motivators of the tank drive
 };
 
 #endif /* TANKDRIVE_HPP_ */

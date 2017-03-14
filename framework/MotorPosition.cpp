@@ -20,7 +20,6 @@ MotorPosition::MotorPosition()
 }
 
 MotorPosition::~MotorPosition() {
-  // TODO(Mark Jenkins): Auto-generated destructor stub
 }
 
 /**
@@ -33,7 +32,6 @@ MotorPosition MotorPosition::operator-(const MotorPosition& mp) {
   result.rotationCount = this->rotationCount - mp.rotationCount;
   return result;
 }
-
 
 /**
  * @brief Set the motor position using a floating point (double) rotation count

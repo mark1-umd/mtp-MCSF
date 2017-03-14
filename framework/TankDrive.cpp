@@ -45,44 +45,44 @@ double TankDrive::getWidthInFeet() {
 void TankDrive::move(double distanceFeet, ChassisTurnRate chassisTurnRate,
                      ChassisVelocity chassisVelocityRequested,
                      ChassisAcceleration chassisAccelerationRequested) {
-  // Calculate chassis max velocity from drive system's maximum motor velocity and motor Rotations
-  // per movement foot
+  // Calculate chassis max velocity from drive system's maximum motor velocity
+  // and motor Rotationsper movement foot
   double chassisMaxVelocityFPS = maxVelocity.getRotationsPerMinute() / 60
       * motorRotPerMovementFoot;
 
-  // Calculate chassis max acceleration from drive system's maximum motor acceleration and motor
-  // rotations per movement foot
+  // Calculate chassis max acceleration from drive system's maximum motor
+  // acceleration and motor rotations per movement foot
   double chassisMaxAccelerationFPSS = maxAcceleration
       .getRotationsPerMinutePerSecond() / 60 * motorRotPerMovementFoot;
 
-  // Create the variables to contain the parameters for the paths used for trajectory generation
+  // Create the variables to contain the parameters for the paths used for
+  // trajectory generation
   double leftPathDistanceFeet, rightPathDistanceFeet;
   ChassisVelocity leftPathVelocity, rightPathVelocity;
   ChassisAcceleration leftPathAcceleration, rightPathAcceleration;
 
   // Is this movement straight?
   if (chassisTurnRate.getDegreesPerFoot() == 0) {
-
     // Set left and right path distances in feet to the move distance in feet
     leftPathDistanceFeet = distanceFeet;
     rightPathDistanceFeet = distanceFeet;
 
-    // Set left and right path velocities to the lesser of the requested velocity and
-    // the maximum chassis velocity
+    // Set left and right path velocities to the lesser of the requested
+    // velocity and the maximum chassis velocity
     leftPathVelocity.setFeetPerSecond(
         std::min(chassisVelocityRequested.getFeetPerSecond(),
                  chassisMaxVelocityFPS));
     rightPathVelocity = leftPathVelocity;
 
-    // Set left and right path accelerations to the lesser of the requested acceleration and
-    // the maximum chassis acceleration
+    // Set left and right path accelerations to the lesser of the requested
+    // acceleration and the maximum chassis acceleration
     leftPathAcceleration.setFeetPerSecondPerSecond(
         std::min(chassisAccelerationRequested.getFeetPerSecondPerSecond(),
                  chassisMaxAccelerationFPSS));
     rightPathAcceleration = leftPathAcceleration;
   } else {
-    // movement is circular, not straight, and the path variables will be smaller
-    // for the inside of the turn, and bigger for the outside of the turn
+    // movement is circular(not straight) - the path variables will be
+    // smaller on the inside of the turn, bigger on the outside
 
     // ****** First determine path distances based on move distance and
     // ****** drive geometry (the distance beween the left and right motivators)
@@ -90,7 +90,7 @@ void TankDrive::move(double distanceFeet, ChassisTurnRate chassisTurnRate,
     // Calculate center turn circle circumference in feet, then radius in feet
     const double centerTurnCircleCircumferenceFeet = (360
         / chassisTurnRate.getDegreesPerFoot());
-    const double pi = 4 * atan(double(1.0));
+    const double pi = 4 * atan(static_cast<double>(1.0));
     const double centerTurnCircleRadiusFeet = centerTurnCircleCircumferenceFeet
         / (2 * pi);
 
@@ -98,15 +98,15 @@ void TankDrive::move(double distanceFeet, ChassisTurnRate chassisTurnRate,
     const double circumferenceToDistanceScaleFactor = distanceFeet
         / centerTurnCircleCircumferenceFeet;
 
-    // Calculate inner distance in feet as the scaled inner turning circle circumference (which
-    // is itself calculated as the circle with radius 1/2 half of the drive width less than the
-    // radius of the center turning circle)
+    // Calculate inner distance in feet as the scaled inner turning circle
+    // circumference (which is itself calculated as the circle with radius 1/2
+    // of the drive width less than the radius of the center turning circle)
     const double innerPathDistanceFeet = circumferenceToDistanceScaleFactor * 2
         * pi * (centerTurnCircleRadiusFeet - (0.5 * widthInFeet));
 
-    // Calculate outer distance in feet as the scaled outer turning circle circumference
-    // (which is itself calculated as the circle with radius 1/2 of the drive width greater
-    // than the radius of the center turning circle)
+    // Calculate outer distance in feet as the scaled outer turning circle
+    // circumference (which is itself calculated as the circle with radius 1/2
+    //  of the drive width greater than the radius of the center turning circle)
     const double outerPathDistanceFeet = circumferenceToDistanceScaleFactor * 2
         * pi * (centerTurnCircleRadiusFeet - (0.5 * widthInFeet));
 
@@ -117,15 +117,15 @@ void TankDrive::move(double distanceFeet, ChassisTurnRate chassisTurnRate,
     const double centerToOuterPathMotionScaleFactor = outerPathDistanceFeet
         / distanceFeet;
 
-    // Scale up the center path velocity to get the outer path velocity, being careful
-    // not to exceed the maximum chassis velocity
+    // Scale up the center path velocity to get the outer path velocity, being
+    // careful not to exceed the maximum chassis velocity
     const double outerPathVelocityFPS = std::min(
         (chassisVelocityRequested.getFeetPerSecond()
             * centerToOuterPathMotionScaleFactor),
         chassisMaxVelocityFPS);
 
-    // Scale up the center acceleration to get the outer path acceleration, being
-    // careful not to exceed the maximum chassis acceleration
+    // Scale up the center acceleration to get the outer path acceleration,
+    // being careful not to exceed the maximum chassis acceleration
     const double outerPathAccelerationFPSS = std::min(
         (chassisAccelerationRequested.getFeetPerSecondPerSecond()
             * centerToOuterPathMotionScaleFactor),
@@ -170,9 +170,9 @@ void TankDrive::move(double distanceFeet, ChassisTurnRate chassisTurnRate,
     }
     // This is the end of "Straight?" or turning movement decision
   }
-  // Convert the chassis distances, velocities, and accelerations for each side's
-  // path to motor distances (positions), velocities, and accelerations to that
-  // we can build the motion paths for this movement
+  // Convert the chassis distances, velocities, and accelerations for each
+  // side's path to motor distances (positions), velocities, and
+  // accelerations to that we can build the motion paths for this movement
 
   // Left path beginning and ending position, velocity, and acceleration
   MotorPosition beginLeftPathMotorPosition, endLeftPathMotorPosition;
@@ -228,7 +228,8 @@ void TankDrive::move(double distanceFeet, ChassisTurnRate chassisTurnRate,
   endRightPathPoint.setMaxAcceleration(endRightPathMotorAcceleration);
   rightPath.addPathPoint(endRightPathPoint);
 
-  // Create the left and right motion profile trajectories, and generate using paths
+  // Create the left and right motion profile trajectories,
+  //  and generate them using the respective paths
   Trajectory leftTrajectory;
   leftTrajectory.generate(leftPath, trajectoryIterationPeriodMS);
   Trajectory rightTrajectory;

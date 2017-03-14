@@ -22,7 +22,6 @@ PathPoint::PathPoint()
 }
 
 PathPoint::~PathPoint() {
-  // TODO(Mark Jenkins): Auto-generated destructor stub
 }
 
 /**

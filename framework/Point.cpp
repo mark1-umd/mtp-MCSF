@@ -20,7 +20,6 @@ Point::Point()
 }
 
 Point::~Point() {
-  // TODO(Mark Jenkins): Auto-generated destructor stub
 }
 
 /**

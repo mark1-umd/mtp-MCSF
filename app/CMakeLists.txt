@@ -17,3 +17,26 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/include
     ${CMAKE_SOURCE_DIR}/framework
 )
+add_executable(mcsf-demo-evo2
+    main-evo2.cpp
+    ../framework/MotorAcceleration.cpp
+    ../framework/MotorPosition.cpp
+    ../framework/MotorVelocity.cpp
+    ../framework/Path.cpp
+    ../framework/PathPoint.cpp
+    ../framework/Point.cpp
+    ../framework/Route.cpp
+    ../framework/Trajectory.cpp
+    ../framework/TrajectoryPoint.cpp
+    ../framework/WayPoint.cpp
+    ../framework/ChassisTurnRate.cpp
+    ../framework/ChassisVelocity.cpp
+    ../framework/ChassisAcceleration.cpp
+    ../framework/DriveSystem.cpp
+    ../framework/TankDrive.cpp
+    ../framework/Chassis.cpp 
+)
+include_directories(
+    ${CMAKE_SOURCE_DIR}/include
+    ${CMAKE_SOURCE_DIR}/framework
+)

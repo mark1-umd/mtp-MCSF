@@ -1,0 +1,47 @@
+\hypertarget{main-evo2_8cpp}{\section{app/main-\/evo2.cpp File Reference}
+\label{main-evo2_8cpp}\index{app/main-\/evo2.\-cpp@{app/main-\/evo2.\-cpp}}
+}
+
+
+A main program to drive the M\-C\-S\-F system to verify its trajectory generation capabilities.  
+
+
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include \char`\"{}../framework/\-Chassis.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../framework/\-Chassis\-Acceleration.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../framework/\-Chassis\-Turn\-Rate.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../framework/\-Chassis\-Velocity.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../framework/\-Drive\-System.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../framework/\-Motor\-Acceleration.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../framework/\-Motor\-Velocity.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../framework/\-Path.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../framework/\-Path\-Point.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../framework/\-Route.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../framework/\-Tank\-Drive.\-hpp\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main-evo2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A main program to drive the M\-C\-S\-F system to verify its trajectory generation capabilities. \begin{DoxyCopyright}{Copyright}
+(c) 2017 Mark R. Jenkins. All rights reserved.
+\end{DoxyCopyright}
+\begin{DoxyAuthor}{Author}
+M\-Jenkins, E\-N\-P\-M 808\-X Spring 2017 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Mar 14, 2017 -\/ Creation
+\end{DoxyDate}
+This main program uses the Motion Control System Framework to generate a motion profile trajectory for a \hyperlink{classChassis}{Chassis} with a \hyperlink{classTankDrive}{Tank\-Drive}, then outputs the two trajectories (one per side of the tank drive) in order to demonstrate the ability to generate matched pairs of trajectories capable of moving a tank drive-\/based system in the desired path using motion profiling. 
+
+\subsection{Function Documentation}
+\hypertarget{main-evo2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{\index{main-\/evo2.\-cpp@{main-\/evo2.\-cpp}!main@{main}}
+\index{main@{main}!main-evo2.cpp@{main-\/evo2.\-cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{main-evo2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}

@@ -1,0 +1,22 @@
+\hypertarget{Chassis_8cpp}{\section{framework/\-Chassis.cpp File Reference}
+\label{Chassis_8cpp}\index{framework/\-Chassis.\-cpp@{framework/\-Chassis.\-cpp}}
+}
+
+
+A \hyperlink{classChassis}{Chassis} has a \hyperlink{classDriveSystem}{Drive\-System} and a name, and can move using the Motion Control System Framework.  
+
+
+{\ttfamily \#include \char`\"{}Chassis.\-hpp\char`\"{}}\\*
+
+
+\subsection{Detailed Description}
+A \hyperlink{classChassis}{Chassis} has a \hyperlink{classDriveSystem}{Drive\-System} and a name, and can move using the Motion Control System Framework. \begin{DoxyCopyright}{Copyright}
+(c) 2017 Mark R. Jenkins. All rights reserved.
+\end{DoxyCopyright}
+\begin{DoxyAuthor}{Author}
+M\-Jenkins, E\-N\-P\-M 808\-X Spring 2017 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Mar 14, 2017 -\/ Creation
+\end{DoxyDate}
+The \hyperlink{classChassis}{Chassis} class represents a robot chassis. The chassis has a \hyperlink{classDriveSystem}{Drive\-System}, which can be of different types (only a \hyperlink{classTankDrive}{Tank\-Drive} is derived from the \hyperlink{classDriveSystem}{Drive\-System} class at this time). Once the \hyperlink{classDriveSystem}{Drive\-System} has been configured and set in the chassis, the chassis can be commanded to move with a distance, a turn rate (0 for straight, $<$ 0 for left turns, $>$ 0 for right turns), a velocity, and an acceleration. While operating within the constraints of the drive system (which has maximum velocity and acceleration constraints), the drive system will create a path for the motion, generate trajectories, and either execute (after customizing the execution method for a particular hardware implementation) or demonstrate the trajectories (by outputting comma-\/separated value files for the trajectories, named with the chassis name as the leading element of the C\-S\-V file name. 

@@ -1,0 +1,135 @@
+\hypertarget{classMotorPosition}{\section{Motor\-Position Class Reference}
+\label{classMotorPosition}\index{Motor\-Position@{Motor\-Position}}
+}
+
+
+Creates a defined type for a position based on a motor encoder.  
+
+
+
+
+{\ttfamily \#include $<$Motor\-Position.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMotorPosition_aff0b57531330258354815c98c21ccf22}{Motor\-Position} ()
+\item 
+virtual \hyperlink{classMotorPosition_a63f9a5f064dedeee8d54c19a07e3afd9}{$\sim$\-Motor\-Position} ()
+\item 
+void \hyperlink{classMotorPosition_aafd35469ff1364e2d7db6704c79af9b8}{set\-Rotations} (const double count)
+\begin{DoxyCompactList}\small\item\em Set the motor position using a floating point (double) rotation count. \end{DoxyCompactList}\item 
+void \hyperlink{classMotorPosition_a9b0f13dd755deb8bda8069b7c5eda11e}{set\-From\-Distance\-Feet\-By\-Rot\-Per\-Movement\-Foot} (const double distance\-Feet, const double rot\-Per\-Movement\-Foot)
+\begin{DoxyCompactList}\small\item\em Convert a linear distance measure in feet to motor rotations using conversion factor. \end{DoxyCompactList}\item 
+double \hyperlink{classMotorPosition_aff33869a933accaca983110601151ddf}{get\-Rotations} ()
+\begin{DoxyCompactList}\small\item\em Return the motor position as a floating point (double) rotation count. \end{DoxyCompactList}\item 
+\hyperlink{classMotorPosition}{Motor\-Position} \hyperlink{classMotorPosition_a32b180c8c51be1a15c46ecc3e216325f}{operator-\/} (const \hyperlink{classMotorPosition}{Motor\-Position} \&mp)
+\begin{DoxyCompactList}\small\item\em Minus (-\/) operator to allow subtraction between Motor\-Positions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classMotorPosition_aa275f06359509a8e951fbde9e7b55a36}{rotation\-Count}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Creates a defined type for a position based on a motor encoder. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMotorPosition_aff0b57531330258354815c98c21ccf22}{\index{Motor\-Position@{Motor\-Position}!Motor\-Position@{Motor\-Position}}
+\index{Motor\-Position@{Motor\-Position}!MotorPosition@{Motor\-Position}}
+\subsubsection[{Motor\-Position}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Position\-::\-Motor\-Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMotorPosition_aff0b57531330258354815c98c21ccf22}
+\hypertarget{classMotorPosition_a63f9a5f064dedeee8d54c19a07e3afd9}{\index{Motor\-Position@{Motor\-Position}!$\sim$\-Motor\-Position@{$\sim$\-Motor\-Position}}
+\index{$\sim$\-Motor\-Position@{$\sim$\-Motor\-Position}!MotorPosition@{Motor\-Position}}
+\subsubsection[{$\sim$\-Motor\-Position}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Position\-::$\sim$\-Motor\-Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMotorPosition_a63f9a5f064dedeee8d54c19a07e3afd9}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMotorPosition_aff33869a933accaca983110601151ddf}{\index{Motor\-Position@{Motor\-Position}!get\-Rotations@{get\-Rotations}}
+\index{get\-Rotations@{get\-Rotations}!MotorPosition@{Motor\-Position}}
+\subsubsection[{get\-Rotations}]{\setlength{\rightskip}{0pt plus 5cm}double Motor\-Position\-::get\-Rotations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMotorPosition_aff33869a933accaca983110601151ddf}
+
+
+Return the motor position as a floating point (double) rotation count. 
+
+\begin{DoxyReturn}{Returns}
+the current position as a motor encoder rotation count 
+\end{DoxyReturn}
+\hypertarget{classMotorPosition_a32b180c8c51be1a15c46ecc3e216325f}{\index{Motor\-Position@{Motor\-Position}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!MotorPosition@{Motor\-Position}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Motor\-Position} Motor\-Position\-::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Motor\-Position} \&}]{mp}
+\end{DoxyParamCaption}
+)}}\label{classMotorPosition_a32b180c8c51be1a15c46ecc3e216325f}
+
+
+Minus (-\/) operator to allow subtraction between Motor\-Positions. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \hyperlink{classMotorPosition}{Motor\-Position}} & mp -\/ the right operand of the subtraction operator \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classMotorPosition}{Motor\-Position} representing the difference between the two operands 
+\end{DoxyReturn}
+\hypertarget{classMotorPosition_a9b0f13dd755deb8bda8069b7c5eda11e}{\index{Motor\-Position@{Motor\-Position}!set\-From\-Distance\-Feet\-By\-Rot\-Per\-Movement\-Foot@{set\-From\-Distance\-Feet\-By\-Rot\-Per\-Movement\-Foot}}
+\index{set\-From\-Distance\-Feet\-By\-Rot\-Per\-Movement\-Foot@{set\-From\-Distance\-Feet\-By\-Rot\-Per\-Movement\-Foot}!MotorPosition@{Motor\-Position}}
+\subsubsection[{set\-From\-Distance\-Feet\-By\-Rot\-Per\-Movement\-Foot}]{\setlength{\rightskip}{0pt plus 5cm}void Motor\-Position\-::set\-From\-Distance\-Feet\-By\-Rot\-Per\-Movement\-Foot (
+\begin{DoxyParamCaption}
+\item[{const double}]{distance\-Feet, }
+\item[{const double}]{rot\-Per\-Movement\-Foot}
+\end{DoxyParamCaption}
+)}}\label{classMotorPosition_a9b0f13dd755deb8bda8069b7c5eda11e}
+
+
+Convert a linear distance measure in feet to motor rotations using conversion factor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em double} & distance\-Feet -\/ the linear distance measure \\
+\hline
+\mbox{\tt in}  & {\em double} & rot\-Per\-Movement\-Foot -\/ the conversion factor from 1 linear foot to motor rotations \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMotorPosition_aafd35469ff1364e2d7db6704c79af9b8}{\index{Motor\-Position@{Motor\-Position}!set\-Rotations@{set\-Rotations}}
+\index{set\-Rotations@{set\-Rotations}!MotorPosition@{Motor\-Position}}
+\subsubsection[{set\-Rotations}]{\setlength{\rightskip}{0pt plus 5cm}void Motor\-Position\-::set\-Rotations (
+\begin{DoxyParamCaption}
+\item[{const double}]{count}
+\end{DoxyParamCaption}
+)}}\label{classMotorPosition_aafd35469ff1364e2d7db6704c79af9b8}
+
+
+Set the motor position using a floating point (double) rotation count. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a} & count value in a double \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classMotorPosition_aa275f06359509a8e951fbde9e7b55a36}{\index{Motor\-Position@{Motor\-Position}!rotation\-Count@{rotation\-Count}}
+\index{rotation\-Count@{rotation\-Count}!MotorPosition@{Motor\-Position}}
+\subsubsection[{rotation\-Count}]{\setlength{\rightskip}{0pt plus 5cm}double Motor\-Position\-::rotation\-Count\hspace{0.3cm}{\ttfamily [private]}}}\label{classMotorPosition_aa275f06359509a8e951fbde9e7b55a36}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+framework/\hyperlink{MotorPosition_8hpp}{Motor\-Position.\-hpp}\item 
+framework/\hyperlink{MotorPosition_8cpp}{Motor\-Position.\-cpp}\end{DoxyCompactItemize}

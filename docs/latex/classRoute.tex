@@ -1,0 +1,114 @@
+\hypertarget{classRoute}{\section{Route Class Reference}
+\label{classRoute}\index{Route@{Route}}
+}
+
+
+A \hyperlink{classRoute}{Route} represents a series of Way Points to be traveled to.  
+
+
+
+
+{\ttfamily \#include $<$Route.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classRoute_a2b1c971aaf032109cee8081c97e9b9e9}{Route} ()
+\item 
+virtual \hyperlink{classRoute_a41212532f2bce3298d8f9468f82c62ab}{$\sim$\-Route} ()
+\item 
+void \hyperlink{classRoute_a9411954ba50c930277bbb52ba3f3e7f4}{add\-Way\-Point} (const \hyperlink{classWayPoint}{Way\-Point} \&way\-Point)
+\begin{DoxyCompactList}\small\item\em Add a way point to this route. \end{DoxyCompactList}\item 
+\hyperlink{classPath}{Path} \hyperlink{classRoute_a05753c003e81efbe2149ad2f1782d70e}{plan\-Path} (const \hyperlink{classMotorVelocity}{Motor\-Velocity} \&max\-Velocity, const \hyperlink{classMotorAcceleration}{Motor\-Acceleration} \&max\-Acceleration)
+\begin{DoxyCompactList}\small\item\em Plan a path based on this route's way points. \end{DoxyCompactList}\item 
+void \hyperlink{classRoute_a42290dd852c117fe9549bc63c0b4171c}{show} ()
+\begin{DoxyCompactList}\small\item\em Show the details of this route on the default output device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::vector$<$ \hyperlink{classWayPoint}{Way\-Point} $>$ \hyperlink{classRoute_af5aac5eed6cc4fbcd02e2e817d87db45}{route}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A \hyperlink{classRoute}{Route} represents a series of Way Points to be traveled to. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classRoute_a2b1c971aaf032109cee8081c97e9b9e9}{\index{Route@{Route}!Route@{Route}}
+\index{Route@{Route}!Route@{Route}}
+\subsubsection[{Route}]{\setlength{\rightskip}{0pt plus 5cm}Route\-::\-Route (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRoute_a2b1c971aaf032109cee8081c97e9b9e9}
+\hypertarget{classRoute_a41212532f2bce3298d8f9468f82c62ab}{\index{Route@{Route}!$\sim$\-Route@{$\sim$\-Route}}
+\index{$\sim$\-Route@{$\sim$\-Route}!Route@{Route}}
+\subsubsection[{$\sim$\-Route}]{\setlength{\rightskip}{0pt plus 5cm}Route\-::$\sim$\-Route (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classRoute_a41212532f2bce3298d8f9468f82c62ab}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classRoute_a9411954ba50c930277bbb52ba3f3e7f4}{\index{Route@{Route}!add\-Way\-Point@{add\-Way\-Point}}
+\index{add\-Way\-Point@{add\-Way\-Point}!Route@{Route}}
+\subsubsection[{add\-Way\-Point}]{\setlength{\rightskip}{0pt plus 5cm}void Route\-::add\-Way\-Point (
+\begin{DoxyParamCaption}
+\item[{const {\bf Way\-Point} \&}]{way\-Point}
+\end{DoxyParamCaption}
+)}}\label{classRoute_a9411954ba50c930277bbb52ba3f3e7f4}
+
+
+Add a way point to this route. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a} & \hyperlink{classWayPoint}{Way\-Point} to be added to this route \\
+\hline
+\end{DoxyParams}
+\hypertarget{classRoute_a05753c003e81efbe2149ad2f1782d70e}{\index{Route@{Route}!plan\-Path@{plan\-Path}}
+\index{plan\-Path@{plan\-Path}!Route@{Route}}
+\subsubsection[{plan\-Path}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Path} Route\-::plan\-Path (
+\begin{DoxyParamCaption}
+\item[{const {\bf Motor\-Velocity} \&}]{max\-Velocity, }
+\item[{const {\bf Motor\-Acceleration} \&}]{max\-Acceleration}
+\end{DoxyParamCaption}
+)}}\label{classRoute_a05753c003e81efbe2149ad2f1782d70e}
+
+
+Plan a path based on this route's way points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\-Velocity} & \\
+\hline
+{\em max\-Acceleration} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \hyperlink{classPath}{Path} object specifying the path points to traverse 
+\end{DoxyReturn}
+\hypertarget{classRoute_a42290dd852c117fe9549bc63c0b4171c}{\index{Route@{Route}!show@{show}}
+\index{show@{show}!Route@{Route}}
+\subsubsection[{show}]{\setlength{\rightskip}{0pt plus 5cm}void Route\-::show (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRoute_a42290dd852c117fe9549bc63c0b4171c}
+
+
+Show the details of this route on the default output device. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classRoute_af5aac5eed6cc4fbcd02e2e817d87db45}{\index{Route@{Route}!route@{route}}
+\index{route@{route}!Route@{Route}}
+\subsubsection[{route}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Way\-Point}$>$ Route\-::route\hspace{0.3cm}{\ttfamily [private]}}}\label{classRoute_af5aac5eed6cc4fbcd02e2e817d87db45}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+framework/\hyperlink{Route_8hpp}{Route.\-hpp}\item 
+framework/\hyperlink{Route_8cpp}{Route.\-cpp}\end{DoxyCompactItemize}

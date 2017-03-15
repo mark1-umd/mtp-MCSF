@@ -1,0 +1,27 @@
+\hypertarget{MotorVelocity_8hpp}{\section{framework/\-Motor\-Velocity.hpp File Reference}
+\label{MotorVelocity_8hpp}\index{framework/\-Motor\-Velocity.\-hpp@{framework/\-Motor\-Velocity.\-hpp}}
+}
+
+
+A class to define a strict type for motor velocities.  
+
+
+{\ttfamily \#include \char`\"{}Chassis\-Velocity.\-hpp\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classMotorVelocity}{Motor\-Velocity}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classMotorVelocity}{Motor\-Velocity} class is a strict type for motor velocities. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class to define a strict type for motor velocities. \begin{DoxyCopyright}{Copyright}
+(c) 2017 Mark R. Jenkins. All rights reserved.
+\end{DoxyCopyright}
+\begin{DoxyAuthor}{Author}
+M\-Jenkins, E\-N\-P\-M 808\-X Spring 2017 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Mar 5, 2017 -\/ Creation
+\end{DoxyDate}
+Motor velocities can be specified in a variety of ways; encoder ticks per unit of time, or motor rotations per unit of time are two of these. This class creates a strict type for motor velocities, and can provide a variety of accessor functions to allow setting/getting the velocity in different units. The class stores the velocity internally as \char`\"{}\-Rotations Per Minute\char`\"{} (R\-P\-M). 

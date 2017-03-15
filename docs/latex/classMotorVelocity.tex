@@ -1,0 +1,114 @@
+\hypertarget{classMotorVelocity}{\section{Motor\-Velocity Class Reference}
+\label{classMotorVelocity}\index{Motor\-Velocity@{Motor\-Velocity}}
+}
+
+
+The \hyperlink{classMotorVelocity}{Motor\-Velocity} class is a strict type for motor velocities.  
+
+
+
+
+{\ttfamily \#include $<$Motor\-Velocity.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMotorVelocity_a710b857c335bdf69b986b23799b808f7}{Motor\-Velocity} ()
+\item 
+virtual \hyperlink{classMotorVelocity_af9a29b17b271b8b6c45c624a6764253e}{$\sim$\-Motor\-Velocity} ()
+\item 
+void \hyperlink{classMotorVelocity_a2ad99a1d1f49d767fa4eea224071d3a1}{set\-Rotations\-Per\-Minute} (const double rate)
+\begin{DoxyCompactList}\small\item\em Set motor velocity in units of Rotations per Minute. \end{DoxyCompactList}\item 
+void \hyperlink{classMotorVelocity_a6c5872379f7055a2d19635c68200dcc6}{set\-From\-Chassis\-Velocity\-By\-Rot\-Per\-Movement\-Foot} (\hyperlink{classChassisVelocity}{Chassis\-Velocity} chassis\-Velocity, double rot\-Per\-Movement\-Foot)
+\begin{DoxyCompactList}\small\item\em Convert from a Chass\-Velocity to motor rotations by Rotations per Movement Foot. \end{DoxyCompactList}\item 
+double \hyperlink{classMotorVelocity_a765517747b7fc90d5c0aee77c066a830}{get\-Rotations\-Per\-Minute} ()
+\begin{DoxyCompactList}\small\item\em Get motor velocity in units of Rotations per Minute. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classMotorVelocity_a1814d196cb74a2a0c1df5ce494714aea}{vel\-As\-Rotations\-Per\-Minute}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classMotorVelocity}{Motor\-Velocity} class is a strict type for motor velocities. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMotorVelocity_a710b857c335bdf69b986b23799b808f7}{\index{Motor\-Velocity@{Motor\-Velocity}!Motor\-Velocity@{Motor\-Velocity}}
+\index{Motor\-Velocity@{Motor\-Velocity}!MotorVelocity@{Motor\-Velocity}}
+\subsubsection[{Motor\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Velocity\-::\-Motor\-Velocity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMotorVelocity_a710b857c335bdf69b986b23799b808f7}
+\hypertarget{classMotorVelocity_af9a29b17b271b8b6c45c624a6764253e}{\index{Motor\-Velocity@{Motor\-Velocity}!$\sim$\-Motor\-Velocity@{$\sim$\-Motor\-Velocity}}
+\index{$\sim$\-Motor\-Velocity@{$\sim$\-Motor\-Velocity}!MotorVelocity@{Motor\-Velocity}}
+\subsubsection[{$\sim$\-Motor\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Velocity\-::$\sim$\-Motor\-Velocity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMotorVelocity_af9a29b17b271b8b6c45c624a6764253e}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMotorVelocity_a765517747b7fc90d5c0aee77c066a830}{\index{Motor\-Velocity@{Motor\-Velocity}!get\-Rotations\-Per\-Minute@{get\-Rotations\-Per\-Minute}}
+\index{get\-Rotations\-Per\-Minute@{get\-Rotations\-Per\-Minute}!MotorVelocity@{Motor\-Velocity}}
+\subsubsection[{get\-Rotations\-Per\-Minute}]{\setlength{\rightskip}{0pt plus 5cm}double Motor\-Velocity\-::get\-Rotations\-Per\-Minute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMotorVelocity_a765517747b7fc90d5c0aee77c066a830}
+
+
+Get motor velocity in units of Rotations per Minute. 
+
+\begin{DoxyReturn}{Returns}
+double representing a motor velocity 
+\end{DoxyReturn}
+\hypertarget{classMotorVelocity_a6c5872379f7055a2d19635c68200dcc6}{\index{Motor\-Velocity@{Motor\-Velocity}!set\-From\-Chassis\-Velocity\-By\-Rot\-Per\-Movement\-Foot@{set\-From\-Chassis\-Velocity\-By\-Rot\-Per\-Movement\-Foot}}
+\index{set\-From\-Chassis\-Velocity\-By\-Rot\-Per\-Movement\-Foot@{set\-From\-Chassis\-Velocity\-By\-Rot\-Per\-Movement\-Foot}!MotorVelocity@{Motor\-Velocity}}
+\subsubsection[{set\-From\-Chassis\-Velocity\-By\-Rot\-Per\-Movement\-Foot}]{\setlength{\rightskip}{0pt plus 5cm}void Motor\-Velocity\-::set\-From\-Chassis\-Velocity\-By\-Rot\-Per\-Movement\-Foot (
+\begin{DoxyParamCaption}
+\item[{{\bf Chassis\-Velocity}}]{chassis\-Velocity, }
+\item[{double}]{rot\-Per\-Movement\-Foot}
+\end{DoxyParamCaption}
+)}}\label{classMotorVelocity_a6c5872379f7055a2d19635c68200dcc6}
+
+
+Convert from a Chass\-Velocity to motor rotations by Rotations per Movement Foot. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \hyperlink{classChassisVelocity}{Chassis\-Velocity}} & chassis\-Velocity specifies a linear physical velocity \\
+\hline
+\mbox{\tt in}  & {\em double} & rot\-Per\-Movement\-Foot is the conversion factor from movement feet to rotations \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMotorVelocity_a2ad99a1d1f49d767fa4eea224071d3a1}{\index{Motor\-Velocity@{Motor\-Velocity}!set\-Rotations\-Per\-Minute@{set\-Rotations\-Per\-Minute}}
+\index{set\-Rotations\-Per\-Minute@{set\-Rotations\-Per\-Minute}!MotorVelocity@{Motor\-Velocity}}
+\subsubsection[{set\-Rotations\-Per\-Minute}]{\setlength{\rightskip}{0pt plus 5cm}void Motor\-Velocity\-::set\-Rotations\-Per\-Minute (
+\begin{DoxyParamCaption}
+\item[{const double}]{rate}
+\end{DoxyParamCaption}
+)}}\label{classMotorVelocity_a2ad99a1d1f49d767fa4eea224071d3a1}
+
+
+Set motor velocity in units of Rotations per Minute. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em double} & rate representing a motor velocity \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classMotorVelocity_a1814d196cb74a2a0c1df5ce494714aea}{\index{Motor\-Velocity@{Motor\-Velocity}!vel\-As\-Rotations\-Per\-Minute@{vel\-As\-Rotations\-Per\-Minute}}
+\index{vel\-As\-Rotations\-Per\-Minute@{vel\-As\-Rotations\-Per\-Minute}!MotorVelocity@{Motor\-Velocity}}
+\subsubsection[{vel\-As\-Rotations\-Per\-Minute}]{\setlength{\rightskip}{0pt plus 5cm}double Motor\-Velocity\-::vel\-As\-Rotations\-Per\-Minute\hspace{0.3cm}{\ttfamily [private]}}}\label{classMotorVelocity_a1814d196cb74a2a0c1df5ce494714aea}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+framework/\hyperlink{MotorVelocity_8hpp}{Motor\-Velocity.\-hpp}\item 
+framework/\hyperlink{MotorVelocity_8cpp}{Motor\-Velocity.\-cpp}\end{DoxyCompactItemize}

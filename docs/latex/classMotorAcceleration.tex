@@ -1,0 +1,114 @@
+\hypertarget{classMotorAcceleration}{\section{Motor\-Acceleration Class Reference}
+\label{classMotorAcceleration}\index{Motor\-Acceleration@{Motor\-Acceleration}}
+}
+
+
+A class to provide a strict type for specifying motor acceleration.  
+
+
+
+
+{\ttfamily \#include $<$Motor\-Acceleration.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMotorAcceleration_a72f063dc64724f540d7decff01a23f6f}{Motor\-Acceleration} ()
+\item 
+virtual \hyperlink{classMotorAcceleration_a0726b77fa1f8d306f7396e19a8cd4f45}{$\sim$\-Motor\-Acceleration} ()
+\item 
+void \hyperlink{classMotorAcceleration_afab1d3a188fff9779b581dcdb82310cb}{set\-Rotations\-Per\-Minute\-Per\-Second} (const double rate)
+\begin{DoxyCompactList}\small\item\em Set a motor acceleration value in Rotations per Minute per second. \end{DoxyCompactList}\item 
+void \hyperlink{classMotorAcceleration_a2d02913363b7ccbec7dea4d42bfed268}{set\-From\-Chassis\-Acceleration\-By\-Rot\-Per\-Movement\-Foot} (\hyperlink{classChassisAcceleration}{Chassis\-Acceleration} chassis\-Acceleration, double rot\-Per\-Movement\-Foot)
+\begin{DoxyCompactList}\small\item\em Set a motor acceleration value from a chassis acceleration object. \end{DoxyCompactList}\item 
+double \hyperlink{classMotorAcceleration_a51cc0b4db4e977b2076d23e77608e4aa}{get\-Rotations\-Per\-Minute\-Per\-Second} ()
+\begin{DoxyCompactList}\small\item\em Get a motor acceleration value in Rotations per Minute per second. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classMotorAcceleration_ae9c0873fe1fb6752b9584ace95e11635}{accel\-As\-Rotations\-Per\-Minute\-Per\-Second}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class to provide a strict type for specifying motor acceleration. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMotorAcceleration_a72f063dc64724f540d7decff01a23f6f}{\index{Motor\-Acceleration@{Motor\-Acceleration}!Motor\-Acceleration@{Motor\-Acceleration}}
+\index{Motor\-Acceleration@{Motor\-Acceleration}!MotorAcceleration@{Motor\-Acceleration}}
+\subsubsection[{Motor\-Acceleration}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Acceleration\-::\-Motor\-Acceleration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMotorAcceleration_a72f063dc64724f540d7decff01a23f6f}
+\hypertarget{classMotorAcceleration_a0726b77fa1f8d306f7396e19a8cd4f45}{\index{Motor\-Acceleration@{Motor\-Acceleration}!$\sim$\-Motor\-Acceleration@{$\sim$\-Motor\-Acceleration}}
+\index{$\sim$\-Motor\-Acceleration@{$\sim$\-Motor\-Acceleration}!MotorAcceleration@{Motor\-Acceleration}}
+\subsubsection[{$\sim$\-Motor\-Acceleration}]{\setlength{\rightskip}{0pt plus 5cm}Motor\-Acceleration\-::$\sim$\-Motor\-Acceleration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMotorAcceleration_a0726b77fa1f8d306f7396e19a8cd4f45}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMotorAcceleration_a51cc0b4db4e977b2076d23e77608e4aa}{\index{Motor\-Acceleration@{Motor\-Acceleration}!get\-Rotations\-Per\-Minute\-Per\-Second@{get\-Rotations\-Per\-Minute\-Per\-Second}}
+\index{get\-Rotations\-Per\-Minute\-Per\-Second@{get\-Rotations\-Per\-Minute\-Per\-Second}!MotorAcceleration@{Motor\-Acceleration}}
+\subsubsection[{get\-Rotations\-Per\-Minute\-Per\-Second}]{\setlength{\rightskip}{0pt plus 5cm}double Motor\-Acceleration\-::get\-Rotations\-Per\-Minute\-Per\-Second (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMotorAcceleration_a51cc0b4db4e977b2076d23e77608e4aa}
+
+
+Get a motor acceleration value in Rotations per Minute per second. 
+
+\begin{DoxyReturn}{Returns}
+a double representing the motor acceleration value 
+\end{DoxyReturn}
+\hypertarget{classMotorAcceleration_a2d02913363b7ccbec7dea4d42bfed268}{\index{Motor\-Acceleration@{Motor\-Acceleration}!set\-From\-Chassis\-Acceleration\-By\-Rot\-Per\-Movement\-Foot@{set\-From\-Chassis\-Acceleration\-By\-Rot\-Per\-Movement\-Foot}}
+\index{set\-From\-Chassis\-Acceleration\-By\-Rot\-Per\-Movement\-Foot@{set\-From\-Chassis\-Acceleration\-By\-Rot\-Per\-Movement\-Foot}!MotorAcceleration@{Motor\-Acceleration}}
+\subsubsection[{set\-From\-Chassis\-Acceleration\-By\-Rot\-Per\-Movement\-Foot}]{\setlength{\rightskip}{0pt plus 5cm}void Motor\-Acceleration\-::set\-From\-Chassis\-Acceleration\-By\-Rot\-Per\-Movement\-Foot (
+\begin{DoxyParamCaption}
+\item[{{\bf Chassis\-Acceleration}}]{chassis\-Acceleration, }
+\item[{double}]{rot\-Per\-Movement\-Foot}
+\end{DoxyParamCaption}
+)}}\label{classMotorAcceleration_a2d02913363b7ccbec7dea4d42bfed268}
+
+
+Set a motor acceleration value from a chassis acceleration object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \hyperlink{classChassisAcceleration}{Chassis\-Acceleration}} & chassis\-Acceleration object \\
+\hline
+\mbox{\tt in}  & {\em double} & rot\-Per\-Movement\-Foot specifying the rotations per movement foot \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMotorAcceleration_afab1d3a188fff9779b581dcdb82310cb}{\index{Motor\-Acceleration@{Motor\-Acceleration}!set\-Rotations\-Per\-Minute\-Per\-Second@{set\-Rotations\-Per\-Minute\-Per\-Second}}
+\index{set\-Rotations\-Per\-Minute\-Per\-Second@{set\-Rotations\-Per\-Minute\-Per\-Second}!MotorAcceleration@{Motor\-Acceleration}}
+\subsubsection[{set\-Rotations\-Per\-Minute\-Per\-Second}]{\setlength{\rightskip}{0pt plus 5cm}void Motor\-Acceleration\-::set\-Rotations\-Per\-Minute\-Per\-Second (
+\begin{DoxyParamCaption}
+\item[{const double}]{rate}
+\end{DoxyParamCaption}
+)}}\label{classMotorAcceleration_afab1d3a188fff9779b581dcdb82310cb}
+
+
+Set a motor acceleration value in Rotations per Minute per second. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em double} & rate to set as the acceleration value \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classMotorAcceleration_ae9c0873fe1fb6752b9584ace95e11635}{\index{Motor\-Acceleration@{Motor\-Acceleration}!accel\-As\-Rotations\-Per\-Minute\-Per\-Second@{accel\-As\-Rotations\-Per\-Minute\-Per\-Second}}
+\index{accel\-As\-Rotations\-Per\-Minute\-Per\-Second@{accel\-As\-Rotations\-Per\-Minute\-Per\-Second}!MotorAcceleration@{Motor\-Acceleration}}
+\subsubsection[{accel\-As\-Rotations\-Per\-Minute\-Per\-Second}]{\setlength{\rightskip}{0pt plus 5cm}double Motor\-Acceleration\-::accel\-As\-Rotations\-Per\-Minute\-Per\-Second\hspace{0.3cm}{\ttfamily [private]}}}\label{classMotorAcceleration_ae9c0873fe1fb6752b9584ace95e11635}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+framework/\hyperlink{MotorAcceleration_8hpp}{Motor\-Acceleration.\-hpp}\item 
+framework/\hyperlink{MotorAcceleration_8cpp}{Motor\-Acceleration.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,286 @@
+\hypertarget{classDriveSystem}{\section{Drive\-System Class Reference}
+\label{classDriveSystem}\index{Drive\-System@{Drive\-System}}
+}
+
+
+Base class for representing drive system objects.  
+
+
+
+
+{\ttfamily \#include $<$Drive\-System.\-hpp$>$}
+
+Inheritance diagram for Drive\-System\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDriveSystem}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDriveSystem_ae01dd44e98832cd3fd53d34e11d53daa}{Drive\-System} ()
+\item 
+virtual \hyperlink{classDriveSystem_ab571a24395df418db8721d1e75348c2a}{$\sim$\-Drive\-System} ()
+\item 
+void \hyperlink{classDriveSystem_add520db676d50658a45813bc4620ed28}{set\-Chassis\-Name} (std\-::string name)
+\begin{DoxyCompactList}\small\item\em Set the chassis name to which this drive system belongs. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classDriveSystem_ae7099ada003ded0f8e29f1394e41c88a}{get\-Chassis\-Name} ()
+\begin{DoxyCompactList}\small\item\em Get the name for the chassis to which this drive system belongs. \end{DoxyCompactList}\item 
+void \hyperlink{classDriveSystem_a0fcba2555b44f81ba8a4f8eb07119a2d}{set\-Max\-Velocity} (\hyperlink{classMotorVelocity}{Motor\-Velocity} velocity)
+\begin{DoxyCompactList}\small\item\em Set the maximum velocity at which this drive system can operate effectively. \end{DoxyCompactList}\item 
+\hyperlink{classMotorVelocity}{Motor\-Velocity} \hyperlink{classDriveSystem_ac34dc1ce697223d25f978ba2ace3a164}{get\-Max\-Velocity} ()
+\begin{DoxyCompactList}\small\item\em Get the maximum velocity at which this drive system can operate effectively. \end{DoxyCompactList}\item 
+void \hyperlink{classDriveSystem_a4c2924e7b017844a0517e1a915761e0b}{set\-Max\-Acceleration} (\hyperlink{classMotorAcceleration}{Motor\-Acceleration} acceleration)
+\begin{DoxyCompactList}\small\item\em Set the maximum acceleration at which this drive system can operate effectively. \end{DoxyCompactList}\item 
+\hyperlink{classMotorAcceleration}{Motor\-Acceleration} \hyperlink{classDriveSystem_a6d675fc43ab54446f62d1abb9e888ac5}{get\-Max\-Acceleration} ()
+\begin{DoxyCompactList}\small\item\em Get the maximum acceleration at which this drive system can operate effectively. \end{DoxyCompactList}\item 
+void \hyperlink{classDriveSystem_a3db4b8e79e330dbf2a013cc8c7c462b5}{set\-Motor\-Rot\-Per\-Movement\-Foot} (double rotations)
+\begin{DoxyCompactList}\small\item\em Set the number of motor rotations required to move the drive system one foot. \end{DoxyCompactList}\item 
+double \hyperlink{classDriveSystem_a0ec467bebb7953e764e81435c6a75f2d}{get\-Motor\-Rot\-Per\-Movement\-Foot} ()
+\begin{DoxyCompactList}\small\item\em Get the number of motor rotations required to move the drive system one foot. \end{DoxyCompactList}\item 
+void \hyperlink{classDriveSystem_afc47457d594e21405383a680194c834c}{set\-Trajectory\-Iteration\-Period\-M\-S} (unsigned int period)
+\begin{DoxyCompactList}\small\item\em Set the iteration period (in milliseconds) to be used for each trajectory point. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classDriveSystem_a6e1dd3cebd19be585ccf2a9079230cfd}{get\-Trajectory\-Iteration\-Period\-M\-S} ()
+\begin{DoxyCompactList}\small\item\em Get the iteration period (in milliseconds) to be used for each trajectory point. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classDriveSystem_af0f174a092b6b4a13ae589a1d72ff0c8}{move} (double distance\-Feet, \hyperlink{classChassisTurnRate}{Chassis\-Turn\-Rate} chassis\-Turn\-Rate, \hyperlink{classChassisVelocity}{Chassis\-Velocity} chassis\-Velocity\-Requested, \hyperlink{classChassisAcceleration}{Chassis\-Acceleration} chassis\-Acceleration\-Requested)
+\begin{DoxyCompactList}\small\item\em A \char`\"{}filler\char`\"{} method in the base class to prevent link errors; redefined in derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{classDriveSystem_a9751d2041e38600dafc1d4575f0b7c2a}{chassis\-Name}
+\item 
+\hyperlink{classMotorVelocity}{Motor\-Velocity} \hyperlink{classDriveSystem_a3a9b75c1ae1147548d155a64432cedc4}{max\-Velocity}
+\item 
+\hyperlink{classMotorAcceleration}{Motor\-Acceleration} \hyperlink{classDriveSystem_a3f36b9c2b93fb6ed87cdb698a812087e}{max\-Acceleration}
+\item 
+double \hyperlink{classDriveSystem_acb0ea84b9cff42cd2b3619da7547ec06}{motor\-Rot\-Per\-Movement\-Foot}
+\item 
+unsigned int \hyperlink{classDriveSystem_a718e69f0338b27d50e79d698886aa744}{trajectory\-Iteration\-Period\-M\-S}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for representing drive system objects. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDriveSystem_ae01dd44e98832cd3fd53d34e11d53daa}{\index{Drive\-System@{Drive\-System}!Drive\-System@{Drive\-System}}
+\index{Drive\-System@{Drive\-System}!DriveSystem@{Drive\-System}}
+\subsubsection[{Drive\-System}]{\setlength{\rightskip}{0pt plus 5cm}Drive\-System\-::\-Drive\-System (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDriveSystem_ae01dd44e98832cd3fd53d34e11d53daa}
+\hypertarget{classDriveSystem_ab571a24395df418db8721d1e75348c2a}{\index{Drive\-System@{Drive\-System}!$\sim$\-Drive\-System@{$\sim$\-Drive\-System}}
+\index{$\sim$\-Drive\-System@{$\sim$\-Drive\-System}!DriveSystem@{Drive\-System}}
+\subsubsection[{$\sim$\-Drive\-System}]{\setlength{\rightskip}{0pt plus 5cm}Drive\-System\-::$\sim$\-Drive\-System (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDriveSystem_ab571a24395df418db8721d1e75348c2a}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classDriveSystem_ae7099ada003ded0f8e29f1394e41c88a}{\index{Drive\-System@{Drive\-System}!get\-Chassis\-Name@{get\-Chassis\-Name}}
+\index{get\-Chassis\-Name@{get\-Chassis\-Name}!DriveSystem@{Drive\-System}}
+\subsubsection[{get\-Chassis\-Name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Drive\-System\-::get\-Chassis\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDriveSystem_ae7099ada003ded0f8e29f1394e41c88a}
+
+
+Get the name for the chassis to which this drive system belongs. 
+
+\begin{DoxyReturn}{Returns}
+std\-::string chassis\-Name of the chassis to which this drive system belongs 
+\end{DoxyReturn}
+\hypertarget{classDriveSystem_a6d675fc43ab54446f62d1abb9e888ac5}{\index{Drive\-System@{Drive\-System}!get\-Max\-Acceleration@{get\-Max\-Acceleration}}
+\index{get\-Max\-Acceleration@{get\-Max\-Acceleration}!DriveSystem@{Drive\-System}}
+\subsubsection[{get\-Max\-Acceleration}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Motor\-Acceleration} Drive\-System\-::get\-Max\-Acceleration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDriveSystem_a6d675fc43ab54446f62d1abb9e888ac5}
+
+
+Get the maximum acceleration at which this drive system can operate effectively. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classMotorAcceleration}{Motor\-Acceleration} acceleration at which this drive system can operate effectively 
+\end{DoxyReturn}
+\hypertarget{classDriveSystem_ac34dc1ce697223d25f978ba2ace3a164}{\index{Drive\-System@{Drive\-System}!get\-Max\-Velocity@{get\-Max\-Velocity}}
+\index{get\-Max\-Velocity@{get\-Max\-Velocity}!DriveSystem@{Drive\-System}}
+\subsubsection[{get\-Max\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Motor\-Velocity} Drive\-System\-::get\-Max\-Velocity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDriveSystem_ac34dc1ce697223d25f978ba2ace3a164}
+
+
+Get the maximum velocity at which this drive system can operate effectively. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classMotorVelocity}{Motor\-Velocity} velocity at which this drive system can operate effectively 
+\end{DoxyReturn}
+\hypertarget{classDriveSystem_a0ec467bebb7953e764e81435c6a75f2d}{\index{Drive\-System@{Drive\-System}!get\-Motor\-Rot\-Per\-Movement\-Foot@{get\-Motor\-Rot\-Per\-Movement\-Foot}}
+\index{get\-Motor\-Rot\-Per\-Movement\-Foot@{get\-Motor\-Rot\-Per\-Movement\-Foot}!DriveSystem@{Drive\-System}}
+\subsubsection[{get\-Motor\-Rot\-Per\-Movement\-Foot}]{\setlength{\rightskip}{0pt plus 5cm}double Drive\-System\-::get\-Motor\-Rot\-Per\-Movement\-Foot (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDriveSystem_a0ec467bebb7953e764e81435c6a75f2d}
+
+
+Get the number of motor rotations required to move the drive system one foot. 
+
+\begin{DoxyReturn}{Returns}
+double rotations of the motor per foot of movement 
+\end{DoxyReturn}
+\hypertarget{classDriveSystem_a6e1dd3cebd19be585ccf2a9079230cfd}{\index{Drive\-System@{Drive\-System}!get\-Trajectory\-Iteration\-Period\-M\-S@{get\-Trajectory\-Iteration\-Period\-M\-S}}
+\index{get\-Trajectory\-Iteration\-Period\-M\-S@{get\-Trajectory\-Iteration\-Period\-M\-S}!DriveSystem@{Drive\-System}}
+\subsubsection[{get\-Trajectory\-Iteration\-Period\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Drive\-System\-::get\-Trajectory\-Iteration\-Period\-M\-S (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDriveSystem_a6e1dd3cebd19be585ccf2a9079230cfd}
+
+
+Get the iteration period (in milliseconds) to be used for each trajectory point. 
+
+\begin{DoxyReturn}{Returns}
+unsigned int period for trajectory points in milliseconds 
+\end{DoxyReturn}
+\hypertarget{classDriveSystem_af0f174a092b6b4a13ae589a1d72ff0c8}{\index{Drive\-System@{Drive\-System}!move@{move}}
+\index{move@{move}!DriveSystem@{Drive\-System}}
+\subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}void Drive\-System\-::move (
+\begin{DoxyParamCaption}
+\item[{double}]{distance\-Feet, }
+\item[{{\bf Chassis\-Turn\-Rate}}]{chassis\-Turn\-Rate, }
+\item[{{\bf Chassis\-Velocity}}]{chassis\-Velocity\-Requested, }
+\item[{{\bf Chassis\-Acceleration}}]{chassis\-Acceleration\-Requested}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classDriveSystem_af0f174a092b6b4a13ae589a1d72ff0c8}
+
+
+A \char`\"{}filler\char`\"{} method in the base class to prevent link errors; redefined in derived classes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em distance\-Feet} & \\
+\hline
+{\em chassis\-Turn\-Rate} & \\
+\hline
+{\em chassis\-Velocity\-Requested} & \\
+\hline
+{\em chassis\-Acceleration\-Requested} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classTankDrive_ab4f103bfd11ab28c18ef292a505c454e}{Tank\-Drive}.
+
+\hypertarget{classDriveSystem_add520db676d50658a45813bc4620ed28}{\index{Drive\-System@{Drive\-System}!set\-Chassis\-Name@{set\-Chassis\-Name}}
+\index{set\-Chassis\-Name@{set\-Chassis\-Name}!DriveSystem@{Drive\-System}}
+\subsubsection[{set\-Chassis\-Name}]{\setlength{\rightskip}{0pt plus 5cm}void Drive\-System\-::set\-Chassis\-Name (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name}
+\end{DoxyParamCaption}
+)}}\label{classDriveSystem_add520db676d50658a45813bc4620ed28}
+
+
+Set the chassis name to which this drive system belongs. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em std\-::string} & name that matches the chassis name to which this drive system belongs \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDriveSystem_a4c2924e7b017844a0517e1a915761e0b}{\index{Drive\-System@{Drive\-System}!set\-Max\-Acceleration@{set\-Max\-Acceleration}}
+\index{set\-Max\-Acceleration@{set\-Max\-Acceleration}!DriveSystem@{Drive\-System}}
+\subsubsection[{set\-Max\-Acceleration}]{\setlength{\rightskip}{0pt plus 5cm}void Drive\-System\-::set\-Max\-Acceleration (
+\begin{DoxyParamCaption}
+\item[{{\bf Motor\-Acceleration}}]{acceleration}
+\end{DoxyParamCaption}
+)}}\label{classDriveSystem_a4c2924e7b017844a0517e1a915761e0b}
+
+
+Set the maximum acceleration at which this drive system can operate effectively. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \hyperlink{classMotorAcceleration}{Motor\-Acceleration}} & acceleration at which this drive system can operate effectively \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDriveSystem_a0fcba2555b44f81ba8a4f8eb07119a2d}{\index{Drive\-System@{Drive\-System}!set\-Max\-Velocity@{set\-Max\-Velocity}}
+\index{set\-Max\-Velocity@{set\-Max\-Velocity}!DriveSystem@{Drive\-System}}
+\subsubsection[{set\-Max\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}void Drive\-System\-::set\-Max\-Velocity (
+\begin{DoxyParamCaption}
+\item[{{\bf Motor\-Velocity}}]{velocity}
+\end{DoxyParamCaption}
+)}}\label{classDriveSystem_a0fcba2555b44f81ba8a4f8eb07119a2d}
+
+
+Set the maximum velocity at which this drive system can operate effectively. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \hyperlink{classMotorVelocity}{Motor\-Velocity}} & velocity at which this drive system can operate effectively \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDriveSystem_a3db4b8e79e330dbf2a013cc8c7c462b5}{\index{Drive\-System@{Drive\-System}!set\-Motor\-Rot\-Per\-Movement\-Foot@{set\-Motor\-Rot\-Per\-Movement\-Foot}}
+\index{set\-Motor\-Rot\-Per\-Movement\-Foot@{set\-Motor\-Rot\-Per\-Movement\-Foot}!DriveSystem@{Drive\-System}}
+\subsubsection[{set\-Motor\-Rot\-Per\-Movement\-Foot}]{\setlength{\rightskip}{0pt plus 5cm}void Drive\-System\-::set\-Motor\-Rot\-Per\-Movement\-Foot (
+\begin{DoxyParamCaption}
+\item[{double}]{rotations}
+\end{DoxyParamCaption}
+)}}\label{classDriveSystem_a3db4b8e79e330dbf2a013cc8c7c462b5}
+
+
+Set the number of motor rotations required to move the drive system one foot. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em double} & rotations of the motor per foot of movement \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDriveSystem_afc47457d594e21405383a680194c834c}{\index{Drive\-System@{Drive\-System}!set\-Trajectory\-Iteration\-Period\-M\-S@{set\-Trajectory\-Iteration\-Period\-M\-S}}
+\index{set\-Trajectory\-Iteration\-Period\-M\-S@{set\-Trajectory\-Iteration\-Period\-M\-S}!DriveSystem@{Drive\-System}}
+\subsubsection[{set\-Trajectory\-Iteration\-Period\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}void Drive\-System\-::set\-Trajectory\-Iteration\-Period\-M\-S (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{period}
+\end{DoxyParamCaption}
+)}}\label{classDriveSystem_afc47457d594e21405383a680194c834c}
+
+
+Set the iteration period (in milliseconds) to be used for each trajectory point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em unsigned} & int period for trajectory points in milliseconds \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classDriveSystem_a9751d2041e38600dafc1d4575f0b7c2a}{\index{Drive\-System@{Drive\-System}!chassis\-Name@{chassis\-Name}}
+\index{chassis\-Name@{chassis\-Name}!DriveSystem@{Drive\-System}}
+\subsubsection[{chassis\-Name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Drive\-System\-::chassis\-Name\hspace{0.3cm}{\ttfamily [protected]}}}\label{classDriveSystem_a9751d2041e38600dafc1d4575f0b7c2a}
+\hypertarget{classDriveSystem_a3f36b9c2b93fb6ed87cdb698a812087e}{\index{Drive\-System@{Drive\-System}!max\-Acceleration@{max\-Acceleration}}
+\index{max\-Acceleration@{max\-Acceleration}!DriveSystem@{Drive\-System}}
+\subsubsection[{max\-Acceleration}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Motor\-Acceleration} Drive\-System\-::max\-Acceleration\hspace{0.3cm}{\ttfamily [protected]}}}\label{classDriveSystem_a3f36b9c2b93fb6ed87cdb698a812087e}
+\hypertarget{classDriveSystem_a3a9b75c1ae1147548d155a64432cedc4}{\index{Drive\-System@{Drive\-System}!max\-Velocity@{max\-Velocity}}
+\index{max\-Velocity@{max\-Velocity}!DriveSystem@{Drive\-System}}
+\subsubsection[{max\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Motor\-Velocity} Drive\-System\-::max\-Velocity\hspace{0.3cm}{\ttfamily [protected]}}}\label{classDriveSystem_a3a9b75c1ae1147548d155a64432cedc4}
+\hypertarget{classDriveSystem_acb0ea84b9cff42cd2b3619da7547ec06}{\index{Drive\-System@{Drive\-System}!motor\-Rot\-Per\-Movement\-Foot@{motor\-Rot\-Per\-Movement\-Foot}}
+\index{motor\-Rot\-Per\-Movement\-Foot@{motor\-Rot\-Per\-Movement\-Foot}!DriveSystem@{Drive\-System}}
+\subsubsection[{motor\-Rot\-Per\-Movement\-Foot}]{\setlength{\rightskip}{0pt plus 5cm}double Drive\-System\-::motor\-Rot\-Per\-Movement\-Foot\hspace{0.3cm}{\ttfamily [protected]}}}\label{classDriveSystem_acb0ea84b9cff42cd2b3619da7547ec06}
+\hypertarget{classDriveSystem_a718e69f0338b27d50e79d698886aa744}{\index{Drive\-System@{Drive\-System}!trajectory\-Iteration\-Period\-M\-S@{trajectory\-Iteration\-Period\-M\-S}}
+\index{trajectory\-Iteration\-Period\-M\-S@{trajectory\-Iteration\-Period\-M\-S}!DriveSystem@{Drive\-System}}
+\subsubsection[{trajectory\-Iteration\-Period\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Drive\-System\-::trajectory\-Iteration\-Period\-M\-S\hspace{0.3cm}{\ttfamily [protected]}}}\label{classDriveSystem_a718e69f0338b27d50e79d698886aa744}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+framework/\hyperlink{DriveSystem_8hpp}{Drive\-System.\-hpp}\item 
+framework/\hyperlink{DriveSystem_8cpp}{Drive\-System.\-cpp}\end{DoxyCompactItemize}

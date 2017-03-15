@@ -1,0 +1,30 @@
+\hypertarget{PathPoint_8hpp}{\section{framework/\-Path\-Point.hpp File Reference}
+\label{PathPoint_8hpp}\index{framework/\-Path\-Point.\-hpp@{framework/\-Path\-Point.\-hpp}}
+}
+
+
+A representation of a point along a path with maximum velocity and maximum acceleration constraints.  
+
+
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include \char`\"{}Motor\-Acceleration.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Motor\-Velocity.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Point.\-hpp\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classPathPoint}{Path\-Point}
+\begin{DoxyCompactList}\small\item\em A motion path point has a maximum velocity and acceleration for motion from this point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A representation of a point along a path with maximum velocity and maximum acceleration constraints. \begin{DoxyCopyright}{Copyright}
+(c) 2017 Mark R. Jenkins. All rights reserved.
+\end{DoxyCopyright}
+\begin{DoxyAuthor}{Author}
+M\-Jenkins, E\-N\-P\-M 808\-X Spring 2017 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Mar 5, 2017 -\/ Creation
+\end{DoxyDate}
+A path to be used for motion profiling trajectories needs to include velocity and acceleration constraints to be used in constructing a motion profile that shapes the motion based on the maximum velocities and accelerations to be used in achieving motion. 

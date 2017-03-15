@@ -1,0 +1,152 @@
+\hypertarget{classPathPoint}{\section{Path\-Point Class Reference}
+\label{classPathPoint}\index{Path\-Point@{Path\-Point}}
+}
+
+
+A motion path point has a maximum velocity and acceleration for motion from this point.  
+
+
+
+
+{\ttfamily \#include $<$Path\-Point.\-hpp$>$}
+
+Inheritance diagram for Path\-Point\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPathPoint}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPathPoint_a430ccd20bd3aca66d02e5762ada584cc}{Path\-Point} ()
+\item 
+virtual \hyperlink{classPathPoint_aa1186aedeb2f97861375d70c1f29baef}{$\sim$\-Path\-Point} ()
+\item 
+void \hyperlink{classPathPoint_af3cc40bbe896d63162c037a57476272f}{set\-Max\-Velocity} (const \hyperlink{classMotorVelocity}{Motor\-Velocity} \&max\-V)
+\begin{DoxyCompactList}\small\item\em Set the maximum allowable velocity for this path point. \end{DoxyCompactList}\item 
+\hyperlink{classMotorVelocity}{Motor\-Velocity} \hyperlink{classPathPoint_a7e32c122ba0bf4aefcc6684c2d30a69f}{get\-Max\-Velocity} ()
+\begin{DoxyCompactList}\small\item\em Get the maximum allowable velocity for this path point. \end{DoxyCompactList}\item 
+void \hyperlink{classPathPoint_a2d25367b2e4940967cb7cecda1549896}{set\-Max\-Acceleration} (const \hyperlink{classMotorAcceleration}{Motor\-Acceleration} \&max\-A)
+\begin{DoxyCompactList}\small\item\em Set the maximum allowable acceleration for this path point. \end{DoxyCompactList}\item 
+\hyperlink{classMotorAcceleration}{Motor\-Acceleration} \hyperlink{classPathPoint_a52f932842709dd6a9213e61252a9c273}{get\-Max\-Acceleration} ()
+\begin{DoxyCompactList}\small\item\em Get the maximum allowable acceleration for this path point. \end{DoxyCompactList}\item 
+void \hyperlink{classPathPoint_a9dec1d3f21b43b18a4b6daebb1c123de}{show} ()
+\begin{DoxyCompactList}\small\item\em Show the details of the current path point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMotorVelocity}{Motor\-Velocity} \hyperlink{classPathPoint_a1cc5f8871560f419edb85f24c6796613}{max\-Velocity}
+\item 
+\hyperlink{classMotorAcceleration}{Motor\-Acceleration} \hyperlink{classPathPoint_a70ea6c3945f895ebdfb34f8fa31b707e}{max\-Acceleration}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A motion path point has a maximum velocity and acceleration for motion from this point. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPathPoint_a430ccd20bd3aca66d02e5762ada584cc}{\index{Path\-Point@{Path\-Point}!Path\-Point@{Path\-Point}}
+\index{Path\-Point@{Path\-Point}!PathPoint@{Path\-Point}}
+\subsubsection[{Path\-Point}]{\setlength{\rightskip}{0pt plus 5cm}Path\-Point\-::\-Path\-Point (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPathPoint_a430ccd20bd3aca66d02e5762ada584cc}
+\hypertarget{classPathPoint_aa1186aedeb2f97861375d70c1f29baef}{\index{Path\-Point@{Path\-Point}!$\sim$\-Path\-Point@{$\sim$\-Path\-Point}}
+\index{$\sim$\-Path\-Point@{$\sim$\-Path\-Point}!PathPoint@{Path\-Point}}
+\subsubsection[{$\sim$\-Path\-Point}]{\setlength{\rightskip}{0pt plus 5cm}Path\-Point\-::$\sim$\-Path\-Point (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPathPoint_aa1186aedeb2f97861375d70c1f29baef}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPathPoint_a52f932842709dd6a9213e61252a9c273}{\index{Path\-Point@{Path\-Point}!get\-Max\-Acceleration@{get\-Max\-Acceleration}}
+\index{get\-Max\-Acceleration@{get\-Max\-Acceleration}!PathPoint@{Path\-Point}}
+\subsubsection[{get\-Max\-Acceleration}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Motor\-Acceleration} Path\-Point\-::get\-Max\-Acceleration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPathPoint_a52f932842709dd6a9213e61252a9c273}
+
+
+Get the maximum allowable acceleration for this path point. 
+
+\begin{DoxyReturn}{Returns}
+a \hyperlink{classMotorAcceleration}{Motor\-Acceleration} value representing the maximum allowable acceleration 
+\end{DoxyReturn}
+\hypertarget{classPathPoint_a7e32c122ba0bf4aefcc6684c2d30a69f}{\index{Path\-Point@{Path\-Point}!get\-Max\-Velocity@{get\-Max\-Velocity}}
+\index{get\-Max\-Velocity@{get\-Max\-Velocity}!PathPoint@{Path\-Point}}
+\subsubsection[{get\-Max\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Motor\-Velocity} Path\-Point\-::get\-Max\-Velocity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPathPoint_a7e32c122ba0bf4aefcc6684c2d30a69f}
+
+
+Get the maximum allowable velocity for this path point. 
+
+\begin{DoxyReturn}{Returns}
+a \hyperlink{classMotorVelocity}{Motor\-Velocity} value representing the maximum allowable velocity 
+\end{DoxyReturn}
+\hypertarget{classPathPoint_a2d25367b2e4940967cb7cecda1549896}{\index{Path\-Point@{Path\-Point}!set\-Max\-Acceleration@{set\-Max\-Acceleration}}
+\index{set\-Max\-Acceleration@{set\-Max\-Acceleration}!PathPoint@{Path\-Point}}
+\subsubsection[{set\-Max\-Acceleration}]{\setlength{\rightskip}{0pt plus 5cm}void Path\-Point\-::set\-Max\-Acceleration (
+\begin{DoxyParamCaption}
+\item[{const {\bf Motor\-Acceleration} \&}]{max\-A}
+\end{DoxyParamCaption}
+)}}\label{classPathPoint_a2d25367b2e4940967cb7cecda1549896}
+
+
+Set the maximum allowable acceleration for this path point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a} & \hyperlink{classMotorAcceleration}{Motor\-Acceleration} maximum allowable acceleration \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPathPoint_af3cc40bbe896d63162c037a57476272f}{\index{Path\-Point@{Path\-Point}!set\-Max\-Velocity@{set\-Max\-Velocity}}
+\index{set\-Max\-Velocity@{set\-Max\-Velocity}!PathPoint@{Path\-Point}}
+\subsubsection[{set\-Max\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}void Path\-Point\-::set\-Max\-Velocity (
+\begin{DoxyParamCaption}
+\item[{const {\bf Motor\-Velocity} \&}]{max\-V}
+\end{DoxyParamCaption}
+)}}\label{classPathPoint_af3cc40bbe896d63162c037a57476272f}
+
+
+Set the maximum allowable velocity for this path point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a} & \hyperlink{classMotorVelocity}{Motor\-Velocity} maximum velocity \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPathPoint_a9dec1d3f21b43b18a4b6daebb1c123de}{\index{Path\-Point@{Path\-Point}!show@{show}}
+\index{show@{show}!PathPoint@{Path\-Point}}
+\subsubsection[{show}]{\setlength{\rightskip}{0pt plus 5cm}void Path\-Point\-::show (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPathPoint_a9dec1d3f21b43b18a4b6daebb1c123de}
+
+
+Show the details of the current path point. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classPathPoint_a70ea6c3945f895ebdfb34f8fa31b707e}{\index{Path\-Point@{Path\-Point}!max\-Acceleration@{max\-Acceleration}}
+\index{max\-Acceleration@{max\-Acceleration}!PathPoint@{Path\-Point}}
+\subsubsection[{max\-Acceleration}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Motor\-Acceleration} Path\-Point\-::max\-Acceleration\hspace{0.3cm}{\ttfamily [private]}}}\label{classPathPoint_a70ea6c3945f895ebdfb34f8fa31b707e}
+\hypertarget{classPathPoint_a1cc5f8871560f419edb85f24c6796613}{\index{Path\-Point@{Path\-Point}!max\-Velocity@{max\-Velocity}}
+\index{max\-Velocity@{max\-Velocity}!PathPoint@{Path\-Point}}
+\subsubsection[{max\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Motor\-Velocity} Path\-Point\-::max\-Velocity\hspace{0.3cm}{\ttfamily [private]}}}\label{classPathPoint_a1cc5f8871560f419edb85f24c6796613}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+framework/\hyperlink{PathPoint_8hpp}{Path\-Point.\-hpp}\item 
+framework/\hyperlink{PathPoint_8cpp}{Path\-Point.\-cpp}\end{DoxyCompactItemize}

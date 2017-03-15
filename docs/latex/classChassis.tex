@@ -1,0 +1,155 @@
+\hypertarget{classChassis}{\section{Chassis Class Reference}
+\label{classChassis}\index{Chassis@{Chassis}}
+}
+
+
+A \hyperlink{classChassis}{Chassis} has a \hyperlink{classDriveSystem}{Drive\-System} and a name, and can move using the Motion Control System Framework.  
+
+
+
+
+{\ttfamily \#include $<$Chassis.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classChassis_abff4a95e18eea726bccbb647939b2141}{Chassis} ()
+\item 
+virtual \hyperlink{classChassis_a75880fe86a5e5fcadee712908f52e658}{$\sim$\-Chassis} ()
+\item 
+void \hyperlink{classChassis_ad50f86ab08f17f5b12e720c83eaf8ecc}{set\-Name} (std\-::string name)
+\begin{DoxyCompactList}\small\item\em Set the chassis name. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classChassis_a9cadf36721b16e153410349ce3c3644a}{get\-Name} ()
+\begin{DoxyCompactList}\small\item\em Get the chassis name. \end{DoxyCompactList}\item 
+void \hyperlink{classChassis_a1b0a7d94f3db91361557c58fa049d39e}{set\-Drive\-System} (const \hyperlink{classTankDrive}{Tank\-Drive} \&drive\-System)
+\begin{DoxyCompactList}\small\item\em Sets the chassis's drive system to the specified object of a class derived from \hyperlink{classDriveSystem}{Drive\-System}. \end{DoxyCompactList}\item 
+\hyperlink{classTankDrive}{Tank\-Drive} \hyperlink{classChassis_ac91e9c94d479cf887ec66f282c05d81f}{get\-Drive\-System} ()
+\item 
+void \hyperlink{classChassis_a7882d0edfd3ad7208bf0568074acd93f}{move} (double distance\-Feet, \hyperlink{classChassisTurnRate}{Chassis\-Turn\-Rate} chassis\-Turn\-Rate, \hyperlink{classChassisVelocity}{Chassis\-Velocity} chassis\-Velocity\-Requested, \hyperlink{classChassisAcceleration}{Chassis\-Acceleration} chassis\-Acceleration\-Requested)
+\begin{DoxyCompactList}\small\item\em Use the \hyperlink{classDriveSystem}{Drive\-System} to move the chassis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{classChassis_ad902898daa957d3b7159df8d66b3a047}{my\-Name}
+\item 
+\hyperlink{classTankDrive}{Tank\-Drive} \hyperlink{classChassis_a9cb7cd7d9c99a1eb67385600a3f86bc8}{my\-Drive}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A \hyperlink{classChassis}{Chassis} has a \hyperlink{classDriveSystem}{Drive\-System} and a name, and can move using the Motion Control System Framework. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classChassis_abff4a95e18eea726bccbb647939b2141}{\index{Chassis@{Chassis}!Chassis@{Chassis}}
+\index{Chassis@{Chassis}!Chassis@{Chassis}}
+\subsubsection[{Chassis}]{\setlength{\rightskip}{0pt plus 5cm}Chassis\-::\-Chassis (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classChassis_abff4a95e18eea726bccbb647939b2141}
+\hypertarget{classChassis_a75880fe86a5e5fcadee712908f52e658}{\index{Chassis@{Chassis}!$\sim$\-Chassis@{$\sim$\-Chassis}}
+\index{$\sim$\-Chassis@{$\sim$\-Chassis}!Chassis@{Chassis}}
+\subsubsection[{$\sim$\-Chassis}]{\setlength{\rightskip}{0pt plus 5cm}Chassis\-::$\sim$\-Chassis (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classChassis_a75880fe86a5e5fcadee712908f52e658}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classChassis_ac91e9c94d479cf887ec66f282c05d81f}{\index{Chassis@{Chassis}!get\-Drive\-System@{get\-Drive\-System}}
+\index{get\-Drive\-System@{get\-Drive\-System}!Chassis@{Chassis}}
+\subsubsection[{get\-Drive\-System}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tank\-Drive} Chassis\-::get\-Drive\-System (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classChassis_ac91e9c94d479cf887ec66f282c05d81f}
+\hypertarget{classChassis_a9cadf36721b16e153410349ce3c3644a}{\index{Chassis@{Chassis}!get\-Name@{get\-Name}}
+\index{get\-Name@{get\-Name}!Chassis@{Chassis}}
+\subsubsection[{get\-Name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Chassis\-::get\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classChassis_a9cadf36721b16e153410349ce3c3644a}
+
+
+Get the chassis name. 
+
+\begin{DoxyReturn}{Returns}
+string name of the chassis 
+\end{DoxyReturn}
+\hypertarget{classChassis_a7882d0edfd3ad7208bf0568074acd93f}{\index{Chassis@{Chassis}!move@{move}}
+\index{move@{move}!Chassis@{Chassis}}
+\subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}void Chassis\-::move (
+\begin{DoxyParamCaption}
+\item[{double}]{distance\-Feet, }
+\item[{{\bf Chassis\-Turn\-Rate}}]{chassis\-Turn\-Rate, }
+\item[{{\bf Chassis\-Velocity}}]{chassis\-Velocity\-Requested, }
+\item[{{\bf Chassis\-Acceleration}}]{chassis\-Acceleration\-Requested}
+\end{DoxyParamCaption}
+)}}\label{classChassis_a7882d0edfd3ad7208bf0568074acd93f}
+
+
+Use the \hyperlink{classDriveSystem}{Drive\-System} to move the chassis. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em double} & distance\-Feet to move the chassis \\
+\hline
+\mbox{\tt in}  & {\em Chassis\-Turnrate} & chassis\-Turn\-Rate (0 for straight, $<$ 0 for left turn, $>$ 0 for right turn) \\
+\hline
+\mbox{\tt in}  & {\em \hyperlink{classChassisVelocity}{Chassis\-Velocity}} & chassis\-Velocity\-Requested (actual movement constrained by drive system) \\
+\hline
+\mbox{\tt in}  & {\em \hyperlink{classChassisAcceleration}{Chassis\-Acceleration}} & chassis\-Acceleration\-Requested (actual movement constrained by drive system) \\
+\hline
+\end{DoxyParams}
+\hypertarget{classChassis_a1b0a7d94f3db91361557c58fa049d39e}{\index{Chassis@{Chassis}!set\-Drive\-System@{set\-Drive\-System}}
+\index{set\-Drive\-System@{set\-Drive\-System}!Chassis@{Chassis}}
+\subsubsection[{set\-Drive\-System}]{\setlength{\rightskip}{0pt plus 5cm}void Chassis\-::set\-Drive\-System (
+\begin{DoxyParamCaption}
+\item[{const {\bf Tank\-Drive} \&}]{drive\-System}
+\end{DoxyParamCaption}
+)}}\label{classChassis_a1b0a7d94f3db91361557c58fa049d39e}
+
+
+Sets the chassis's drive system to the specified object of a class derived from \hyperlink{classDriveSystem}{Drive\-System}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \hyperlink{classDriveSystem}{Drive\-System}} & drive\-System derived class object (e.\-g., a \hyperlink{classTankDrive}{Tank\-Drive} object) Gets the chassis' drive system (an object of a class derived from the \hyperlink{classDriveSystem}{Drive\-System} base class) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classDriveSystem}{Drive\-System} my\-Drive\-System -\/ an object of a class derived from the \hyperlink{classDriveSystem}{Drive\-System} base class 
+\end{DoxyReturn}
+\hypertarget{classChassis_ad50f86ab08f17f5b12e720c83eaf8ecc}{\index{Chassis@{Chassis}!set\-Name@{set\-Name}}
+\index{set\-Name@{set\-Name}!Chassis@{Chassis}}
+\subsubsection[{set\-Name}]{\setlength{\rightskip}{0pt plus 5cm}void Chassis\-::set\-Name (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name}
+\end{DoxyParamCaption}
+)}}\label{classChassis_ad50f86ab08f17f5b12e720c83eaf8ecc}
+
+
+Set the chassis name. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em string} & name of the chassis \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classChassis_a9cb7cd7d9c99a1eb67385600a3f86bc8}{\index{Chassis@{Chassis}!my\-Drive@{my\-Drive}}
+\index{my\-Drive@{my\-Drive}!Chassis@{Chassis}}
+\subsubsection[{my\-Drive}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tank\-Drive} Chassis\-::my\-Drive\hspace{0.3cm}{\ttfamily [private]}}}\label{classChassis_a9cb7cd7d9c99a1eb67385600a3f86bc8}
+\hypertarget{classChassis_ad902898daa957d3b7159df8d66b3a047}{\index{Chassis@{Chassis}!my\-Name@{my\-Name}}
+\index{my\-Name@{my\-Name}!Chassis@{Chassis}}
+\subsubsection[{my\-Name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Chassis\-::my\-Name\hspace{0.3cm}{\ttfamily [private]}}}\label{classChassis_ad902898daa957d3b7159df8d66b3a047}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+framework/\hyperlink{Chassis_8hpp}{Chassis.\-hpp}\item 
+framework/\hyperlink{Chassis_8cpp}{Chassis.\-cpp}\end{DoxyCompactItemize}

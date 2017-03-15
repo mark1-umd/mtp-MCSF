@@ -1,0 +1,22 @@
+\hypertarget{TankDrive_8cpp}{\section{framework/\-Tank\-Drive.cpp File Reference}
+\label{TankDrive_8cpp}\index{framework/\-Tank\-Drive.\-cpp@{framework/\-Tank\-Drive.\-cpp}}
+}
+
+
+\hyperlink{classTankDrive}{Tank\-Drive} is a kind of \hyperlink{classDriveSystem}{Drive\-System} with two wheeled or tracked motivators, one per side.  
+
+
+{\ttfamily \#include \char`\"{}Tank\-Drive.\-hpp\char`\"{}}\\*
+
+
+\subsection{Detailed Description}
+\hyperlink{classTankDrive}{Tank\-Drive} is a kind of \hyperlink{classDriveSystem}{Drive\-System} with two wheeled or tracked motivators, one per side. \begin{DoxyCopyright}{Copyright}
+(c) 2017 Mark R. Jenkins. All rights reserved.
+\end{DoxyCopyright}
+\begin{DoxyAuthor}{Author}
+M\-Jenkins, E\-N\-P\-M 808\-X Spring 2017 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Mar 13, 2017 -\/ Creation
+\end{DoxyDate}
+There are different types of drive systems, one of which is the \hyperlink{classTankDrive}{Tank\-Drive}. The base class, \hyperlink{classDriveSystem}{Drive\-System}, defines all of the attributes and methods which the various specific drive systems have in common. \hyperlink{classTankDrive}{Tank\-Drive} extends the definition of the \hyperlink{classDriveSystem}{Drive\-System} base class to create a derived class with attributes and methods specific to a \hyperlink{classTankDrive}{Tank\-Drive}. Note that the \char`\"{}move\char`\"{} method is a virtual method that can be accessed from a variable of the \hyperlink{classDriveSystem}{Drive\-System} base class to which a specific derived class has been assigned. The \char`\"{}move\char`\"{} method will be executed from the definition contained in the derived class -\/ in this case, the \hyperlink{classTankDrive}{Tank\-Drive}. 

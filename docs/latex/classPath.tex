@@ -1,0 +1,153 @@
+\hypertarget{classPath}{\section{Path Class Reference}
+\label{classPath}\index{Path@{Path}}
+}
+
+
+A motion path is a series of path points between two Way Points.  
+
+
+
+
+{\ttfamily \#include $<$Path.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPath_af26cfab021ddf49af73da3b2beca85ac}{Path} ()
+\item 
+virtual \hyperlink{classPath_a141da9ff89c85e0ba410b5a73864c267}{$\sim$\-Path} ()
+\item 
+void \hyperlink{classPath_a8d5ea7007516aeda4a10c61d59051c6c}{add\-Path\-Point} (const \hyperlink{classPathPoint}{Path\-Point} \&path\-Point)
+\begin{DoxyCompactList}\small\item\em Add a path point onto this path. \end{DoxyCompactList}\item 
+bool \hyperlink{classPath_a05cef868b03ff1f01fd54bb2801b3af6}{get\-First\-Path\-Point} (\hyperlink{classPathPoint}{Path\-Point} \&path\-Point)
+\begin{DoxyCompactList}\small\item\em Return the first path point in the path. \end{DoxyCompactList}\item 
+bool \hyperlink{classPath_a9b6d6aa8279ff4c475ad03b471f8bf2d}{get\-Next\-Path\-Point} (\hyperlink{classPathPoint}{Path\-Point} \&path\-Point)
+\begin{DoxyCompactList}\small\item\em Return the next path point on the path. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classPath_aab30b48bfb68c8070cf4b70738f785d5}{size} ()
+\begin{DoxyCompactList}\small\item\em Reports the number of path points in this path. \end{DoxyCompactList}\item 
+void \hyperlink{classPath_acda7c567cd035d2f0a8661c53880bc4b}{show} ()
+\begin{DoxyCompactList}\small\item\em Shows this motion path on the default output device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::vector$<$ \hyperlink{classPathPoint}{Path\-Point} $>$ \hyperlink{classPath_a48208f93e5010f15f33f487c4fc63b00}{path}
+\item 
+std\-::vector$<$ \hyperlink{classPathPoint}{Path\-Point} $>$\-::size\-\_\-type \hyperlink{classPath_a29c205bd85a584663cdb5b4e61d6a871}{next\-Path\-Point}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A motion path is a series of path points between two Way Points. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPath_af26cfab021ddf49af73da3b2beca85ac}{\index{Path@{Path}!Path@{Path}}
+\index{Path@{Path}!Path@{Path}}
+\subsubsection[{Path}]{\setlength{\rightskip}{0pt plus 5cm}Path\-::\-Path (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPath_af26cfab021ddf49af73da3b2beca85ac}
+\hypertarget{classPath_a141da9ff89c85e0ba410b5a73864c267}{\index{Path@{Path}!$\sim$\-Path@{$\sim$\-Path}}
+\index{$\sim$\-Path@{$\sim$\-Path}!Path@{Path}}
+\subsubsection[{$\sim$\-Path}]{\setlength{\rightskip}{0pt plus 5cm}Path\-::$\sim$\-Path (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classPath_a141da9ff89c85e0ba410b5a73864c267}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPath_a8d5ea7007516aeda4a10c61d59051c6c}{\index{Path@{Path}!add\-Path\-Point@{add\-Path\-Point}}
+\index{add\-Path\-Point@{add\-Path\-Point}!Path@{Path}}
+\subsubsection[{add\-Path\-Point}]{\setlength{\rightskip}{0pt plus 5cm}void Path\-::add\-Path\-Point (
+\begin{DoxyParamCaption}
+\item[{const {\bf Path\-Point} \&}]{path\-Point}
+\end{DoxyParamCaption}
+)}}\label{classPath_a8d5ea7007516aeda4a10c61d59051c6c}
+
+
+Add a path point onto this path. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a} & \hyperlink{classPathPoint}{Path\-Point} path\-Point to add to the current path \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPath_a05cef868b03ff1f01fd54bb2801b3af6}{\index{Path@{Path}!get\-First\-Path\-Point@{get\-First\-Path\-Point}}
+\index{get\-First\-Path\-Point@{get\-First\-Path\-Point}!Path@{Path}}
+\subsubsection[{get\-First\-Path\-Point}]{\setlength{\rightskip}{0pt plus 5cm}bool Path\-::get\-First\-Path\-Point (
+\begin{DoxyParamCaption}
+\item[{{\bf Path\-Point} \&}]{path\-Point}
+\end{DoxyParamCaption}
+)}}\label{classPath_a05cef868b03ff1f01fd54bb2801b3af6}
+
+
+Return the first path point in the path. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em \hyperlink{classPathPoint}{Path\-Point}} & set equal to the value of the first path point on the path \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool indication of whether the requested point was on the path 
+\end{DoxyReturn}
+\hypertarget{classPath_a9b6d6aa8279ff4c475ad03b471f8bf2d}{\index{Path@{Path}!get\-Next\-Path\-Point@{get\-Next\-Path\-Point}}
+\index{get\-Next\-Path\-Point@{get\-Next\-Path\-Point}!Path@{Path}}
+\subsubsection[{get\-Next\-Path\-Point}]{\setlength{\rightskip}{0pt plus 5cm}bool Path\-::get\-Next\-Path\-Point (
+\begin{DoxyParamCaption}
+\item[{{\bf Path\-Point} \&}]{path\-Point}
+\end{DoxyParamCaption}
+)}}\label{classPath_a9b6d6aa8279ff4c475ad03b471f8bf2d}
+
+
+Return the next path point on the path. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em \hyperlink{classPathPoint}{Path\-Point}} & set equal to the value of the next path point on the path \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool indication of whether the requested point was on the path 
+\end{DoxyReturn}
+\hypertarget{classPath_acda7c567cd035d2f0a8661c53880bc4b}{\index{Path@{Path}!show@{show}}
+\index{show@{show}!Path@{Path}}
+\subsubsection[{show}]{\setlength{\rightskip}{0pt plus 5cm}void Path\-::show (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPath_acda7c567cd035d2f0a8661c53880bc4b}
+
+
+Shows this motion path on the default output device. 
+
+\hypertarget{classPath_aab30b48bfb68c8070cf4b70738f785d5}{\index{Path@{Path}!size@{size}}
+\index{size@{size}!Path@{Path}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Path\-::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPath_aab30b48bfb68c8070cf4b70738f785d5}
+
+
+Reports the number of path points in this path. 
+
+\begin{DoxyReturn}{Returns}
+int number of path points in path 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classPath_a29c205bd85a584663cdb5b4e61d6a871}{\index{Path@{Path}!next\-Path\-Point@{next\-Path\-Point}}
+\index{next\-Path\-Point@{next\-Path\-Point}!Path@{Path}}
+\subsubsection[{next\-Path\-Point}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Path\-Point}$>$\-::size\-\_\-type Path\-::next\-Path\-Point\hspace{0.3cm}{\ttfamily [private]}}}\label{classPath_a29c205bd85a584663cdb5b4e61d6a871}
+\hypertarget{classPath_a48208f93e5010f15f33f487c4fc63b00}{\index{Path@{Path}!path@{path}}
+\index{path@{path}!Path@{Path}}
+\subsubsection[{path}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Path\-Point}$>$ Path\-::path\hspace{0.3cm}{\ttfamily [private]}}}\label{classPath_a48208f93e5010f15f33f487c4fc63b00}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+framework/\hyperlink{Path_8hpp}{Path.\-hpp}\item 
+framework/\hyperlink{Path_8cpp}{Path.\-cpp}\end{DoxyCompactItemize}

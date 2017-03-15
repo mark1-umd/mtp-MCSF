@@ -1,0 +1,33 @@
+\hypertarget{Chassis_8hpp}{\section{framework/\-Chassis.hpp File Reference}
+\label{Chassis_8hpp}\index{framework/\-Chassis.\-hpp@{framework/\-Chassis.\-hpp}}
+}
+
+
+A \hyperlink{classChassis}{Chassis} has a \hyperlink{classDriveSystem}{Drive\-System} and a name, and can move using the Motion Control System Framework.  
+
+
+{\ttfamily \#include $<$memory$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include \char`\"{}Chassis\-Acceleration.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Chassis\-Turn\-Rate.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Chassis\-Velocity.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Drive\-System.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Tank\-Drive.\-hpp\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classChassis}{Chassis}
+\begin{DoxyCompactList}\small\item\em A \hyperlink{classChassis}{Chassis} has a \hyperlink{classDriveSystem}{Drive\-System} and a name, and can move using the Motion Control System Framework. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A \hyperlink{classChassis}{Chassis} has a \hyperlink{classDriveSystem}{Drive\-System} and a name, and can move using the Motion Control System Framework. \begin{DoxyCopyright}{Copyright}
+(c) 2017 Mark R. Jenkins. All rights reserved.
+\end{DoxyCopyright}
+\begin{DoxyAuthor}{Author}
+M\-Jenkins, E\-N\-P\-M 808\-X Spring 2017 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Mar 14, 2017 -\/ Creation
+\end{DoxyDate}
+The \hyperlink{classChassis}{Chassis} class represents a robot chassis. The chassis has a \hyperlink{classDriveSystem}{Drive\-System}, which can be of different types (only a \hyperlink{classTankDrive}{Tank\-Drive} is derived from the \hyperlink{classDriveSystem}{Drive\-System} class at this time). Once the \hyperlink{classDriveSystem}{Drive\-System} has been configured and set in the chassis, the chassis can be commanded to move with a distance, a turn rate (0 for straight, $<$ 0 for left turns, $>$ 0 for right turns), a velocity, and an acceleration. While operating within the constraints of the drive system (which has maximum velocity and acceleration constraints), the drive system will create a path for the motion, generate trajectories, and either execute (after customizing the execution method for a particular hardware implementation) or demonstrate the trajectories (by outputting comma-\/separated value files for the trajectories, named with the chassis name as the leading element of the C\-S\-V file name. 

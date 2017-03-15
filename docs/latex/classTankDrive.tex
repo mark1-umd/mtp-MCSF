@@ -1,0 +1,131 @@
+\hypertarget{classTankDrive}{\section{Tank\-Drive Class Reference}
+\label{classTankDrive}\index{Tank\-Drive@{Tank\-Drive}}
+}
+
+
+\hyperlink{classTankDrive}{Tank\-Drive} is derived from the base class \hyperlink{classDriveSystem}{Drive\-System}.  
+
+
+
+
+{\ttfamily \#include $<$Tank\-Drive.\-hpp$>$}
+
+Inheritance diagram for Tank\-Drive\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTankDrive}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTankDrive_aa60aae817ddee667161e9fa4e65b164c}{Tank\-Drive} ()
+\item 
+virtual \hyperlink{classTankDrive_a56b6753b731ed996eee30da3e0d44055}{$\sim$\-Tank\-Drive} ()
+\item 
+void \hyperlink{classTankDrive_ab425ff9f2e12317fb45253da80886915}{set\-Width\-In\-Feet} (double width)
+\begin{DoxyCompactList}\small\item\em Set the distance between the two \hyperlink{classTankDrive}{Tank\-Drive} motivators (left and right sides) \end{DoxyCompactList}\item 
+double \hyperlink{classTankDrive_a1d755a00437ccfa2e5e12634f473ac30}{get\-Width\-In\-Feet} ()
+\begin{DoxyCompactList}\small\item\em Get the distance between the two \hyperlink{classTankDrive}{Tank\-Drive} motivators (left and right sides) \end{DoxyCompactList}\item 
+void \hyperlink{classTankDrive_ab4f103bfd11ab28c18ef292a505c454e}{move} (double distance\-Feet, \hyperlink{classChassisTurnRate}{Chassis\-Turn\-Rate} chassis\-Turn\-Rate, \hyperlink{classChassisVelocity}{Chassis\-Velocity} chassis\-Velocity\-Requested, \hyperlink{classChassisAcceleration}{Chassis\-Acceleration} chassis\-Acceleleration\-Requested)
+\begin{DoxyCompactList}\small\item\em Move the \hyperlink{classTankDrive}{Tank\-Drive} according to the movement parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classTankDrive_a4c4b4e59f8fbfa31115aa3aa03c04d31}{width\-In\-Feet}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classTankDrive}{Tank\-Drive} is derived from the base class \hyperlink{classDriveSystem}{Drive\-System}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTankDrive_aa60aae817ddee667161e9fa4e65b164c}{\index{Tank\-Drive@{Tank\-Drive}!Tank\-Drive@{Tank\-Drive}}
+\index{Tank\-Drive@{Tank\-Drive}!TankDrive@{Tank\-Drive}}
+\subsubsection[{Tank\-Drive}]{\setlength{\rightskip}{0pt plus 5cm}Tank\-Drive\-::\-Tank\-Drive (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTankDrive_aa60aae817ddee667161e9fa4e65b164c}
+\hypertarget{classTankDrive_a56b6753b731ed996eee30da3e0d44055}{\index{Tank\-Drive@{Tank\-Drive}!$\sim$\-Tank\-Drive@{$\sim$\-Tank\-Drive}}
+\index{$\sim$\-Tank\-Drive@{$\sim$\-Tank\-Drive}!TankDrive@{Tank\-Drive}}
+\subsubsection[{$\sim$\-Tank\-Drive}]{\setlength{\rightskip}{0pt plus 5cm}Tank\-Drive\-::$\sim$\-Tank\-Drive (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTankDrive_a56b6753b731ed996eee30da3e0d44055}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTankDrive_a1d755a00437ccfa2e5e12634f473ac30}{\index{Tank\-Drive@{Tank\-Drive}!get\-Width\-In\-Feet@{get\-Width\-In\-Feet}}
+\index{get\-Width\-In\-Feet@{get\-Width\-In\-Feet}!TankDrive@{Tank\-Drive}}
+\subsubsection[{get\-Width\-In\-Feet}]{\setlength{\rightskip}{0pt plus 5cm}double Tank\-Drive\-::get\-Width\-In\-Feet (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTankDrive_a1d755a00437ccfa2e5e12634f473ac30}
+
+
+Get the distance between the two \hyperlink{classTankDrive}{Tank\-Drive} motivators (left and right sides) 
+
+\begin{DoxyReturn}{Returns}
+double width as the distance between the two \hyperlink{classTankDrive}{Tank\-Drive} motivators (left and right sides) 
+\end{DoxyReturn}
+\hypertarget{classTankDrive_ab4f103bfd11ab28c18ef292a505c454e}{\index{Tank\-Drive@{Tank\-Drive}!move@{move}}
+\index{move@{move}!TankDrive@{Tank\-Drive}}
+\subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}void Tank\-Drive\-::move (
+\begin{DoxyParamCaption}
+\item[{double}]{distance\-Feet, }
+\item[{{\bf Chassis\-Turn\-Rate}}]{chassis\-Turn\-Rate, }
+\item[{{\bf Chassis\-Velocity}}]{chassis\-Velocity\-Requested, }
+\item[{{\bf Chassis\-Acceleration}}]{chassis\-Acceleration\-Requested}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTankDrive_ab4f103bfd11ab28c18ef292a505c454e}
+
+
+Move the \hyperlink{classTankDrive}{Tank\-Drive} according to the movement parameters. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em double} & distance\-Feet -\/ distance to move in feet \\
+\hline
+ & {\em \hyperlink{classChassisTurnRate}{Chassis\-Turn\-Rate}} & chassis\-Turn\-Rate -\/ go straight or change heading as moving \\
+\hline
+ & {\em \hyperlink{classChassisVelocity}{Chassis\-Velocity}} & chassis\-Velocity\-Requested -\/ move at this rate \\
+\hline
+ & {\em \hyperlink{classChassisAcceleration}{Chassis\-Acceleration}} & chassis\-Acceleration\-Requested -\/ accelerate at this rate \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classDriveSystem_af0f174a092b6b4a13ae589a1d72ff0c8}{Drive\-System}.
+
+\hypertarget{classTankDrive_ab425ff9f2e12317fb45253da80886915}{\index{Tank\-Drive@{Tank\-Drive}!set\-Width\-In\-Feet@{set\-Width\-In\-Feet}}
+\index{set\-Width\-In\-Feet@{set\-Width\-In\-Feet}!TankDrive@{Tank\-Drive}}
+\subsubsection[{set\-Width\-In\-Feet}]{\setlength{\rightskip}{0pt plus 5cm}void Tank\-Drive\-::set\-Width\-In\-Feet (
+\begin{DoxyParamCaption}
+\item[{double}]{width}
+\end{DoxyParamCaption}
+)}}\label{classTankDrive_ab425ff9f2e12317fb45253da80886915}
+
+
+Set the distance between the two \hyperlink{classTankDrive}{Tank\-Drive} motivators (left and right sides) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em double} & width as the distance between the two \hyperlink{classTankDrive}{Tank\-Drive} motivators (left and right sides) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classTankDrive_a4c4b4e59f8fbfa31115aa3aa03c04d31}{\index{Tank\-Drive@{Tank\-Drive}!width\-In\-Feet@{width\-In\-Feet}}
+\index{width\-In\-Feet@{width\-In\-Feet}!TankDrive@{Tank\-Drive}}
+\subsubsection[{width\-In\-Feet}]{\setlength{\rightskip}{0pt plus 5cm}double Tank\-Drive\-::width\-In\-Feet\hspace{0.3cm}{\ttfamily [private]}}}\label{classTankDrive_a4c4b4e59f8fbfa31115aa3aa03c04d31}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+framework/\hyperlink{TankDrive_8hpp}{Tank\-Drive.\-hpp}\item 
+framework/\hyperlink{TankDrive_8cpp}{Tank\-Drive.\-cpp}\end{DoxyCompactItemize}

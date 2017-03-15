@@ -1,0 +1,26 @@
+\hypertarget{TrajectoryPoint_8cpp}{\section{framework/\-Trajectory\-Point.cpp File Reference}
+\label{TrajectoryPoint_8cpp}\index{framework/\-Trajectory\-Point.\-cpp@{framework/\-Trajectory\-Point.\-cpp}}
+}
+
+
+A motion profile trajectory point -\/ position, velocity, duration.  
+
+
+{\ttfamily \#include \char`\"{}Trajectory\-Point.\-hpp\char`\"{}}\\*
+
+
+\subsection{Detailed Description}
+A motion profile trajectory point -\/ position, velocity, duration. \begin{DoxyCopyright}{Copyright}
+(c) 2017 Mark R. Jenkins. All rights reserved.
+\end{DoxyCopyright}
+\begin{DoxyAuthor}{Author}
+M\-Jenkins, E\-N\-P\-M 808\-X Spring 2017 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Mar 5, 2017 -\/ Creation 
+
+Mar 9, 2017 -\/ Updates to support trajectory generation changes in \hyperlink{classTrajectory}{Trajectory} class 
+
+Mar 11, 2017 -\/ Updates to track algorithm details for model comparison
+\end{DoxyDate}
+A motion profile consists of a set of trajectory points, each one of which specifies a position and velocity to be achieved during the execution of the point, and a duration in which to achieve the velocity and position. Additional attributes capture the generation algorithm details such a filter values, acceleration and time points calculated during trajectory generation so that the generated output can be more closely compared with a spreadsheet model when verifying behavior. 

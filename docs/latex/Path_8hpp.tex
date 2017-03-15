@@ -1,0 +1,33 @@
+\hypertarget{Path_8hpp}{\section{framework/\-Path.hpp File Reference}
+\label{Path_8hpp}\index{framework/\-Path.\-hpp@{framework/\-Path.\-hpp}}
+}
+
+
+A motion path is a vector of \hyperlink{classPath}{Path} Points.  
+
+
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include \char`\"{}Path\-Point.\-hpp\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classPath}{Path}
+\begin{DoxyCompactList}\small\item\em A motion path is a series of path points between two Way Points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A motion path is a vector of \hyperlink{classPath}{Path} Points. \begin{DoxyCopyright}{Copyright}
+(c) 2017 Mark R. Jenkins. All rights reserved.
+\end{DoxyCopyright}
+\begin{DoxyAuthor}{Author}
+M\-Jenkins, E\-N\-P\-M 808\-X Spring 2017 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Mar 6, 2017 -\/ Creation 
+
+Mar 9, 2017 -\/ Removed plan\-Trajectory (moved to \hyperlink{classTrajectory}{Trajectory} object) 
+
+Mar 9, 2017 -\/ Added get\-First\-Path\-Point, get\-Next\-Path\-Point, and size methods to facilitate trajectory generation from \hyperlink{classTrajectory}{Trajectory} object
+\end{DoxyDate}
+A motion path represents a planned series of points through which a motion will travel. The path can be used to plan a motion profile trajectory. 

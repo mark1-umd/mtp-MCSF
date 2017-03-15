@@ -1,0 +1,412 @@
+\hypertarget{classTrajectoryPoint}{\section{Trajectory\-Point Class Reference}
+\label{classTrajectoryPoint}\index{Trajectory\-Point@{Trajectory\-Point}}
+}
+
+
+A trajectory point is a point with added velocity and duration.  
+
+
+
+
+{\ttfamily \#include $<$Trajectory\-Point.\-hpp$>$}
+
+Inheritance diagram for Trajectory\-Point\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTrajectoryPoint}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTrajectoryPoint_a6880ea8ab699f81587357df0dff311af}{Trajectory\-Point} ()
+\item 
+virtual \hyperlink{classTrajectoryPoint_ab83a29f27046a0e08c8377bf7b49cf18}{$\sim$\-Trajectory\-Point} ()
+\item 
+void \hyperlink{classTrajectoryPoint_ae9c5623802ffa61d94a1d401a35c84a5}{set\-Position} (const \hyperlink{classMotorPosition}{Motor\-Position} \&pos)
+\begin{DoxyCompactList}\small\item\em Set the position for this trajectory point. \end{DoxyCompactList}\item 
+\hyperlink{classMotorPosition}{Motor\-Position} \hyperlink{classTrajectoryPoint_a6958793f5089d26b7dacc81ad5f582c2}{get\-Position} ()
+\begin{DoxyCompactList}\small\item\em Get the position for this trajectory point. \end{DoxyCompactList}\item 
+void \hyperlink{classTrajectoryPoint_adfe48c8c36f70ce49eb7255422c848c2}{set\-Velocity} (const \hyperlink{classMotorVelocity}{Motor\-Velocity} \&vel)
+\begin{DoxyCompactList}\small\item\em Set the velocity for this trajectory point. \end{DoxyCompactList}\item 
+\hyperlink{classMotorVelocity}{Motor\-Velocity} \hyperlink{classTrajectoryPoint_af51e54915c13e2e3f8c8370b1e1120c4}{get\-Velocity} ()
+\begin{DoxyCompactList}\small\item\em Get the velocity for this trajectory point. \end{DoxyCompactList}\item 
+void \hyperlink{classTrajectoryPoint_a27fecd9f51bc986fd19423fd91f34a47}{set\-Acceleration} (const \hyperlink{classMotorAcceleration}{Motor\-Acceleration} \&accel)
+\begin{DoxyCompactList}\small\item\em Set the acceleration for this trajectory point. \end{DoxyCompactList}\item 
+\hyperlink{classMotorAcceleration}{Motor\-Acceleration} \hyperlink{classTrajectoryPoint_a237388eb01ab1cc243534e42f1d365f5}{get\-Acceleration} ()
+\begin{DoxyCompactList}\small\item\em Get the acceleration for this trajectory point. \end{DoxyCompactList}\item 
+void \hyperlink{classTrajectoryPoint_a3f9478e0af994b1fe3258e8c31b1a26a}{set\-Duration\-M\-S} (const unsigned int duration)
+\begin{DoxyCompactList}\small\item\em Set the duration for this trajectory point in milliseconds. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classTrajectoryPoint_aae6bd9313448ccbc049891c934b3032d}{get\-Duration\-M\-S} ()
+\begin{DoxyCompactList}\small\item\em Get the duration for this trajectory point in milliseconds. \end{DoxyCompactList}\item 
+void \hyperlink{classTrajectoryPoint_a3e02eb8dae0e8f27e9f0b3c18043c0eb}{set\-Step} (const unsigned int step\-Count)
+\begin{DoxyCompactList}\small\item\em Set the step count for this trajectory point. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classTrajectoryPoint_a296829f5eae5f461d21ba58d7ce9391b}{get\-Step} ()
+\begin{DoxyCompactList}\small\item\em Get the step count for this trajectory point. \end{DoxyCompactList}\item 
+void \hyperlink{classTrajectoryPoint_a696622132c87b2be1f7dde5985d26dfc}{set\-Time\-S} (const double time)
+\begin{DoxyCompactList}\small\item\em Set the relative time for this trajectory point in seconds. \end{DoxyCompactList}\item 
+double \hyperlink{classTrajectoryPoint_aa17ef1030899d70b96603f758063a00b}{get\-Time\-S} ()
+\begin{DoxyCompactList}\small\item\em Get the relative time for this trajectory point in seconds. \end{DoxyCompactList}\item 
+void \hyperlink{classTrajectoryPoint_aeb7e7d54d48f10cd7a92411cdbbd6f91}{set\-Filter1\-Sum} (const double sum)
+\begin{DoxyCompactList}\small\item\em Set the Filter 1 sum for this trajectory point. \end{DoxyCompactList}\item 
+double \hyperlink{classTrajectoryPoint_a978c0ae5481d1c91374e225076b9625b}{get\-Filter1\-Sum} ()
+\begin{DoxyCompactList}\small\item\em Get the Filter 1 sum for this trajectory point. \end{DoxyCompactList}\item 
+void \hyperlink{classTrajectoryPoint_a6284a1c19021694a03c82436a9bef822}{set\-Filter2\-Sum} (const double sum)
+\begin{DoxyCompactList}\small\item\em Set the Filter 2 sum for this trajectory point. \end{DoxyCompactList}\item 
+double \hyperlink{classTrajectoryPoint_a6d81a631ced4ff5d73434c6c0e0adeaf}{get\-Filter2\-Sum} ()
+\begin{DoxyCompactList}\small\item\em Get the Filter 2 sum for this trajectory point. \end{DoxyCompactList}\item 
+void \hyperlink{classTrajectoryPoint_ae74248e33ae5355bebd7ba894dfddc36}{show} ()
+\begin{DoxyCompactList}\small\item\em Show the trajectory point on standard output. \end{DoxyCompactList}\item 
+void \hyperlink{classTrajectoryPoint_a168f92496430009453c052e042803aa8}{output\-C\-S\-V} (std\-::ofstream \&file\-C\-S\-V)
+\begin{DoxyCompactList}\small\item\em Output the trajectory point to a comma-\/separated value file. \end{DoxyCompactList}\item 
+void \hyperlink{classTrajectoryPoint_a8063a1ca05dd41d3df6299b51147a998}{output\-C\-S\-Vheader} (std\-::ofstream \&file\-C\-S\-V)
+\begin{DoxyCompactList}\small\item\em Output the trajectory point header to a comma-\/separated value file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMotorPosition}{Motor\-Position} \hyperlink{classTrajectoryPoint_a786f988c05632066d9759cf23c1b1ddf}{position}
+\item 
+\hyperlink{classMotorVelocity}{Motor\-Velocity} \hyperlink{classTrajectoryPoint_ab8782cac9ee57c49096bd94611b4d2d2}{velocity}
+\item 
+\hyperlink{classMotorAcceleration}{Motor\-Acceleration} \hyperlink{classTrajectoryPoint_a7633f742dd289ebbcfe09286b3840d96}{acceleration}
+\item 
+unsigned int \hyperlink{classTrajectoryPoint_a7e6ba8249d02b309129ea6f190ff296f}{duration\-M\-S}
+\item 
+unsigned int \hyperlink{classTrajectoryPoint_a11f7fb0c8a2742c89c761bc807ec6b2e}{step}
+\item 
+double \hyperlink{classTrajectoryPoint_a25fe1578e301cba61b31921ec98f7349}{time\-S}
+\item 
+double \hyperlink{classTrajectoryPoint_a98e19176c99793e4fa45f6d117878ed0}{filter1\-Sum}
+\item 
+double \hyperlink{classTrajectoryPoint_a384166e1e0967cdc00572418826799db}{filter2\-Sum}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A trajectory point is a point with added velocity and duration. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTrajectoryPoint_a6880ea8ab699f81587357df0dff311af}{\index{Trajectory\-Point@{Trajectory\-Point}!Trajectory\-Point@{Trajectory\-Point}}
+\index{Trajectory\-Point@{Trajectory\-Point}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{Trajectory\-Point}]{\setlength{\rightskip}{0pt plus 5cm}Trajectory\-Point\-::\-Trajectory\-Point (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTrajectoryPoint_a6880ea8ab699f81587357df0dff311af}
+\hypertarget{classTrajectoryPoint_ab83a29f27046a0e08c8377bf7b49cf18}{\index{Trajectory\-Point@{Trajectory\-Point}!$\sim$\-Trajectory\-Point@{$\sim$\-Trajectory\-Point}}
+\index{$\sim$\-Trajectory\-Point@{$\sim$\-Trajectory\-Point}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{$\sim$\-Trajectory\-Point}]{\setlength{\rightskip}{0pt plus 5cm}Trajectory\-Point\-::$\sim$\-Trajectory\-Point (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTrajectoryPoint_ab83a29f27046a0e08c8377bf7b49cf18}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTrajectoryPoint_a237388eb01ab1cc243534e42f1d365f5}{\index{Trajectory\-Point@{Trajectory\-Point}!get\-Acceleration@{get\-Acceleration}}
+\index{get\-Acceleration@{get\-Acceleration}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{get\-Acceleration}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Motor\-Acceleration} Trajectory\-Point\-::get\-Acceleration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTrajectoryPoint_a237388eb01ab1cc243534e42f1d365f5}
+
+
+Get the acceleration for this trajectory point. 
+
+\begin{DoxyReturn}{Returns}
+a \hyperlink{classMotorAcceleration}{Motor\-Acceleration} representing this trajectory points acceleration 
+\end{DoxyReturn}
+\hypertarget{classTrajectoryPoint_aae6bd9313448ccbc049891c934b3032d}{\index{Trajectory\-Point@{Trajectory\-Point}!get\-Duration\-M\-S@{get\-Duration\-M\-S}}
+\index{get\-Duration\-M\-S@{get\-Duration\-M\-S}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{get\-Duration\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Trajectory\-Point\-::get\-Duration\-M\-S (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTrajectoryPoint_aae6bd9313448ccbc049891c934b3032d}
+
+
+Get the duration for this trajectory point in milliseconds. 
+
+\begin{DoxyReturn}{Returns}
+int duration in milliseconds 
+\end{DoxyReturn}
+\hypertarget{classTrajectoryPoint_a978c0ae5481d1c91374e225076b9625b}{\index{Trajectory\-Point@{Trajectory\-Point}!get\-Filter1\-Sum@{get\-Filter1\-Sum}}
+\index{get\-Filter1\-Sum@{get\-Filter1\-Sum}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{get\-Filter1\-Sum}]{\setlength{\rightskip}{0pt plus 5cm}double Trajectory\-Point\-::get\-Filter1\-Sum (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTrajectoryPoint_a978c0ae5481d1c91374e225076b9625b}
+
+
+Get the Filter 1 sum for this trajectory point. 
+
+\begin{DoxyReturn}{Returns}
+double sum value for the Filter 1 sum 
+\end{DoxyReturn}
+\hypertarget{classTrajectoryPoint_a6d81a631ced4ff5d73434c6c0e0adeaf}{\index{Trajectory\-Point@{Trajectory\-Point}!get\-Filter2\-Sum@{get\-Filter2\-Sum}}
+\index{get\-Filter2\-Sum@{get\-Filter2\-Sum}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{get\-Filter2\-Sum}]{\setlength{\rightskip}{0pt plus 5cm}double Trajectory\-Point\-::get\-Filter2\-Sum (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTrajectoryPoint_a6d81a631ced4ff5d73434c6c0e0adeaf}
+
+
+Get the Filter 2 sum for this trajectory point. 
+
+\begin{DoxyReturn}{Returns}
+double sum value for the Filter 2 sum 
+\end{DoxyReturn}
+\hypertarget{classTrajectoryPoint_a6958793f5089d26b7dacc81ad5f582c2}{\index{Trajectory\-Point@{Trajectory\-Point}!get\-Position@{get\-Position}}
+\index{get\-Position@{get\-Position}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{get\-Position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Motor\-Position} Trajectory\-Point\-::get\-Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTrajectoryPoint_a6958793f5089d26b7dacc81ad5f582c2}
+
+
+Get the position for this trajectory point. 
+
+\begin{DoxyReturn}{Returns}
+a \hyperlink{classMotorPosition}{Motor\-Position} representing this trajectory points position 
+\end{DoxyReturn}
+\hypertarget{classTrajectoryPoint_a296829f5eae5f461d21ba58d7ce9391b}{\index{Trajectory\-Point@{Trajectory\-Point}!get\-Step@{get\-Step}}
+\index{get\-Step@{get\-Step}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{get\-Step}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Trajectory\-Point\-::get\-Step (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTrajectoryPoint_a296829f5eae5f461d21ba58d7ce9391b}
+
+
+Get the step count for this trajectory point. 
+
+\begin{DoxyReturn}{Returns}
+unsigned int step count 
+\end{DoxyReturn}
+\hypertarget{classTrajectoryPoint_aa17ef1030899d70b96603f758063a00b}{\index{Trajectory\-Point@{Trajectory\-Point}!get\-Time\-S@{get\-Time\-S}}
+\index{get\-Time\-S@{get\-Time\-S}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{get\-Time\-S}]{\setlength{\rightskip}{0pt plus 5cm}double Trajectory\-Point\-::get\-Time\-S (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTrajectoryPoint_aa17ef1030899d70b96603f758063a00b}
+
+
+Get the relative time for this trajectory point in seconds. 
+
+\begin{DoxyReturn}{Returns}
+double relative time in seconds 
+\end{DoxyReturn}
+\hypertarget{classTrajectoryPoint_af51e54915c13e2e3f8c8370b1e1120c4}{\index{Trajectory\-Point@{Trajectory\-Point}!get\-Velocity@{get\-Velocity}}
+\index{get\-Velocity@{get\-Velocity}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{get\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Motor\-Velocity} Trajectory\-Point\-::get\-Velocity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTrajectoryPoint_af51e54915c13e2e3f8c8370b1e1120c4}
+
+
+Get the velocity for this trajectory point. 
+
+\begin{DoxyReturn}{Returns}
+a \hyperlink{classMotorVelocity}{Motor\-Velocity} representing this trajectory points velocity 
+\end{DoxyReturn}
+\hypertarget{classTrajectoryPoint_a168f92496430009453c052e042803aa8}{\index{Trajectory\-Point@{Trajectory\-Point}!output\-C\-S\-V@{output\-C\-S\-V}}
+\index{output\-C\-S\-V@{output\-C\-S\-V}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{output\-C\-S\-V}]{\setlength{\rightskip}{0pt plus 5cm}void Trajectory\-Point\-::output\-C\-S\-V (
+\begin{DoxyParamCaption}
+\item[{std\-::ofstream \&}]{file\-C\-S\-V}
+\end{DoxyParamCaption}
+)}}\label{classTrajectoryPoint_a168f92496430009453c052e042803aa8}
+
+
+Output the trajectory point to a comma-\/separated value file. 
+
+\hypertarget{classTrajectoryPoint_a8063a1ca05dd41d3df6299b51147a998}{\index{Trajectory\-Point@{Trajectory\-Point}!output\-C\-S\-Vheader@{output\-C\-S\-Vheader}}
+\index{output\-C\-S\-Vheader@{output\-C\-S\-Vheader}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{output\-C\-S\-Vheader}]{\setlength{\rightskip}{0pt plus 5cm}void Trajectory\-Point\-::output\-C\-S\-Vheader (
+\begin{DoxyParamCaption}
+\item[{std\-::ofstream \&}]{file\-C\-S\-V}
+\end{DoxyParamCaption}
+)}}\label{classTrajectoryPoint_a8063a1ca05dd41d3df6299b51147a998}
+
+
+Output the trajectory point header to a comma-\/separated value file. 
+
+\hypertarget{classTrajectoryPoint_a27fecd9f51bc986fd19423fd91f34a47}{\index{Trajectory\-Point@{Trajectory\-Point}!set\-Acceleration@{set\-Acceleration}}
+\index{set\-Acceleration@{set\-Acceleration}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{set\-Acceleration}]{\setlength{\rightskip}{0pt plus 5cm}void Trajectory\-Point\-::set\-Acceleration (
+\begin{DoxyParamCaption}
+\item[{const {\bf Motor\-Acceleration} \&}]{accel}
+\end{DoxyParamCaption}
+)}}\label{classTrajectoryPoint_a27fecd9f51bc986fd19423fd91f34a47}
+
+
+Set the acceleration for this trajectory point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a} & \hyperlink{classMotorAcceleration}{Motor\-Acceleration} acceleration setting \\
+\hline
+\end{DoxyParams}
+\hypertarget{classTrajectoryPoint_a3f9478e0af994b1fe3258e8c31b1a26a}{\index{Trajectory\-Point@{Trajectory\-Point}!set\-Duration\-M\-S@{set\-Duration\-M\-S}}
+\index{set\-Duration\-M\-S@{set\-Duration\-M\-S}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{set\-Duration\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}void Trajectory\-Point\-::set\-Duration\-M\-S (
+\begin{DoxyParamCaption}
+\item[{const unsigned int}]{duration}
+\end{DoxyParamCaption}
+)}}\label{classTrajectoryPoint_a3f9478e0af994b1fe3258e8c31b1a26a}
+
+
+Set the duration for this trajectory point in milliseconds. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em int} & duration in milliseconds \\
+\hline
+\end{DoxyParams}
+\hypertarget{classTrajectoryPoint_aeb7e7d54d48f10cd7a92411cdbbd6f91}{\index{Trajectory\-Point@{Trajectory\-Point}!set\-Filter1\-Sum@{set\-Filter1\-Sum}}
+\index{set\-Filter1\-Sum@{set\-Filter1\-Sum}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{set\-Filter1\-Sum}]{\setlength{\rightskip}{0pt plus 5cm}void Trajectory\-Point\-::set\-Filter1\-Sum (
+\begin{DoxyParamCaption}
+\item[{const double}]{sum}
+\end{DoxyParamCaption}
+)}}\label{classTrajectoryPoint_aeb7e7d54d48f10cd7a92411cdbbd6f91}
+
+
+Set the Filter 1 sum for this trajectory point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em double} & sum value for the Filter 1 sum \\
+\hline
+\end{DoxyParams}
+\hypertarget{classTrajectoryPoint_a6284a1c19021694a03c82436a9bef822}{\index{Trajectory\-Point@{Trajectory\-Point}!set\-Filter2\-Sum@{set\-Filter2\-Sum}}
+\index{set\-Filter2\-Sum@{set\-Filter2\-Sum}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{set\-Filter2\-Sum}]{\setlength{\rightskip}{0pt plus 5cm}void Trajectory\-Point\-::set\-Filter2\-Sum (
+\begin{DoxyParamCaption}
+\item[{const double}]{sum}
+\end{DoxyParamCaption}
+)}}\label{classTrajectoryPoint_a6284a1c19021694a03c82436a9bef822}
+
+
+Set the Filter 2 sum for this trajectory point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em double} & sum value for the Filter 2 sum \\
+\hline
+\end{DoxyParams}
+\hypertarget{classTrajectoryPoint_ae9c5623802ffa61d94a1d401a35c84a5}{\index{Trajectory\-Point@{Trajectory\-Point}!set\-Position@{set\-Position}}
+\index{set\-Position@{set\-Position}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{set\-Position}]{\setlength{\rightskip}{0pt plus 5cm}void Trajectory\-Point\-::set\-Position (
+\begin{DoxyParamCaption}
+\item[{const {\bf Motor\-Position} \&}]{pos}
+\end{DoxyParamCaption}
+)}}\label{classTrajectoryPoint_ae9c5623802ffa61d94a1d401a35c84a5}
+
+
+Set the position for this trajectory point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a} & \hyperlink{classMotorPosition}{Motor\-Position} position setting \\
+\hline
+\end{DoxyParams}
+\hypertarget{classTrajectoryPoint_a3e02eb8dae0e8f27e9f0b3c18043c0eb}{\index{Trajectory\-Point@{Trajectory\-Point}!set\-Step@{set\-Step}}
+\index{set\-Step@{set\-Step}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{set\-Step}]{\setlength{\rightskip}{0pt plus 5cm}void Trajectory\-Point\-::set\-Step (
+\begin{DoxyParamCaption}
+\item[{const unsigned int}]{step\-Count}
+\end{DoxyParamCaption}
+)}}\label{classTrajectoryPoint_a3e02eb8dae0e8f27e9f0b3c18043c0eb}
+
+
+Set the step count for this trajectory point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em unsigned} & int step count \\
+\hline
+\end{DoxyParams}
+\hypertarget{classTrajectoryPoint_a696622132c87b2be1f7dde5985d26dfc}{\index{Trajectory\-Point@{Trajectory\-Point}!set\-Time\-S@{set\-Time\-S}}
+\index{set\-Time\-S@{set\-Time\-S}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{set\-Time\-S}]{\setlength{\rightskip}{0pt plus 5cm}void Trajectory\-Point\-::set\-Time\-S (
+\begin{DoxyParamCaption}
+\item[{const double}]{time}
+\end{DoxyParamCaption}
+)}}\label{classTrajectoryPoint_a696622132c87b2be1f7dde5985d26dfc}
+
+
+Set the relative time for this trajectory point in seconds. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em double} & relative in seconds \\
+\hline
+\end{DoxyParams}
+\hypertarget{classTrajectoryPoint_adfe48c8c36f70ce49eb7255422c848c2}{\index{Trajectory\-Point@{Trajectory\-Point}!set\-Velocity@{set\-Velocity}}
+\index{set\-Velocity@{set\-Velocity}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{set\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}void Trajectory\-Point\-::set\-Velocity (
+\begin{DoxyParamCaption}
+\item[{const {\bf Motor\-Velocity} \&}]{vel}
+\end{DoxyParamCaption}
+)}}\label{classTrajectoryPoint_adfe48c8c36f70ce49eb7255422c848c2}
+
+
+Set the velocity for this trajectory point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a} & \hyperlink{classMotorVelocity}{Motor\-Velocity} velocity setting \\
+\hline
+\end{DoxyParams}
+\hypertarget{classTrajectoryPoint_ae74248e33ae5355bebd7ba894dfddc36}{\index{Trajectory\-Point@{Trajectory\-Point}!show@{show}}
+\index{show@{show}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{show}]{\setlength{\rightskip}{0pt plus 5cm}void Trajectory\-Point\-::show (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTrajectoryPoint_ae74248e33ae5355bebd7ba894dfddc36}
+
+
+Show the trajectory point on standard output. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classTrajectoryPoint_a7633f742dd289ebbcfe09286b3840d96}{\index{Trajectory\-Point@{Trajectory\-Point}!acceleration@{acceleration}}
+\index{acceleration@{acceleration}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{acceleration}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Motor\-Acceleration} Trajectory\-Point\-::acceleration\hspace{0.3cm}{\ttfamily [private]}}}\label{classTrajectoryPoint_a7633f742dd289ebbcfe09286b3840d96}
+\hypertarget{classTrajectoryPoint_a7e6ba8249d02b309129ea6f190ff296f}{\index{Trajectory\-Point@{Trajectory\-Point}!duration\-M\-S@{duration\-M\-S}}
+\index{duration\-M\-S@{duration\-M\-S}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{duration\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Trajectory\-Point\-::duration\-M\-S\hspace{0.3cm}{\ttfamily [private]}}}\label{classTrajectoryPoint_a7e6ba8249d02b309129ea6f190ff296f}
+\hypertarget{classTrajectoryPoint_a98e19176c99793e4fa45f6d117878ed0}{\index{Trajectory\-Point@{Trajectory\-Point}!filter1\-Sum@{filter1\-Sum}}
+\index{filter1\-Sum@{filter1\-Sum}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{filter1\-Sum}]{\setlength{\rightskip}{0pt plus 5cm}double Trajectory\-Point\-::filter1\-Sum\hspace{0.3cm}{\ttfamily [private]}}}\label{classTrajectoryPoint_a98e19176c99793e4fa45f6d117878ed0}
+\hypertarget{classTrajectoryPoint_a384166e1e0967cdc00572418826799db}{\index{Trajectory\-Point@{Trajectory\-Point}!filter2\-Sum@{filter2\-Sum}}
+\index{filter2\-Sum@{filter2\-Sum}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{filter2\-Sum}]{\setlength{\rightskip}{0pt plus 5cm}double Trajectory\-Point\-::filter2\-Sum\hspace{0.3cm}{\ttfamily [private]}}}\label{classTrajectoryPoint_a384166e1e0967cdc00572418826799db}
+\hypertarget{classTrajectoryPoint_a786f988c05632066d9759cf23c1b1ddf}{\index{Trajectory\-Point@{Trajectory\-Point}!position@{position}}
+\index{position@{position}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Motor\-Position} Trajectory\-Point\-::position\hspace{0.3cm}{\ttfamily [private]}}}\label{classTrajectoryPoint_a786f988c05632066d9759cf23c1b1ddf}
+\hypertarget{classTrajectoryPoint_a11f7fb0c8a2742c89c761bc807ec6b2e}{\index{Trajectory\-Point@{Trajectory\-Point}!step@{step}}
+\index{step@{step}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{step}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Trajectory\-Point\-::step\hspace{0.3cm}{\ttfamily [private]}}}\label{classTrajectoryPoint_a11f7fb0c8a2742c89c761bc807ec6b2e}
+\hypertarget{classTrajectoryPoint_a25fe1578e301cba61b31921ec98f7349}{\index{Trajectory\-Point@{Trajectory\-Point}!time\-S@{time\-S}}
+\index{time\-S@{time\-S}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{time\-S}]{\setlength{\rightskip}{0pt plus 5cm}double Trajectory\-Point\-::time\-S\hspace{0.3cm}{\ttfamily [private]}}}\label{classTrajectoryPoint_a25fe1578e301cba61b31921ec98f7349}
+\hypertarget{classTrajectoryPoint_ab8782cac9ee57c49096bd94611b4d2d2}{\index{Trajectory\-Point@{Trajectory\-Point}!velocity@{velocity}}
+\index{velocity@{velocity}!TrajectoryPoint@{Trajectory\-Point}}
+\subsubsection[{velocity}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Motor\-Velocity} Trajectory\-Point\-::velocity\hspace{0.3cm}{\ttfamily [private]}}}\label{classTrajectoryPoint_ab8782cac9ee57c49096bd94611b4d2d2}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+framework/\hyperlink{TrajectoryPoint_8hpp}{Trajectory\-Point.\-hpp}\item 
+framework/\hyperlink{TrajectoryPoint_8cpp}{Trajectory\-Point.\-cpp}\end{DoxyCompactItemize}

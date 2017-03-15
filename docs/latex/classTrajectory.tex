@@ -1,0 +1,372 @@
+\hypertarget{classTrajectory}{\section{Trajectory Class Reference}
+\label{classTrajectory}\index{Trajectory@{Trajectory}}
+}
+
+
+A trajectory is a vector of motion profile trajectory points.  
+
+
+
+
+{\ttfamily \#include $<$Trajectory.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTrajectory_aa340ba80f1f4d1aa39f19f069d5d8089}{Trajectory} ()
+\item 
+virtual \hyperlink{classTrajectory_ac673c37025ca5353ad99ab41c936e75d}{$\sim$\-Trajectory} ()
+\item 
+\hyperlink{classMotorVelocity}{Motor\-Velocity} \hyperlink{classTrajectory_a6b978d0ab6ef13bbf3034b1f6d37180b}{get\-Max\-Velocity} ()
+\begin{DoxyCompactList}\small\item\em Get the maximum velocity for this trajectory. \end{DoxyCompactList}\item 
+\hyperlink{classMotorAcceleration}{Motor\-Acceleration} \hyperlink{classTrajectory_ad05719b4fb4d03288ea1adb8c110059c}{get\-Max\-Acceleration} ()
+\begin{DoxyCompactList}\small\item\em Get the maximum acceleration for this trajectory. \end{DoxyCompactList}\item 
+\hyperlink{classMotorPosition}{Motor\-Position} \hyperlink{classTrajectory_a03e1d57ceece06e7af1250bcc72ae265}{get\-Distance} ()
+\begin{DoxyCompactList}\small\item\em Get the distance covered by this trajectory (in \hyperlink{classMotorPosition}{Motor\-Position} units) \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classTrajectory_a6b8d62dd1ce207ce77eb1fe5e7937f2c}{get\-Algo\-It\-P\-M\-S} ()
+\begin{DoxyCompactList}\small\item\em Get the iteration period for this trajectory in milliseconds. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classTrajectory_a8aebfcf3c5519b0350e82df8d8a24c5c}{get\-Algo\-T1\-M\-S} ()
+\begin{DoxyCompactList}\small\item\em Get the algorithmic variable T1 for this trajectory in milliseconds. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classTrajectory_a21342821f9027d423baa6b9a07828421}{get\-Algo\-T2\-M\-S} ()
+\begin{DoxyCompactList}\small\item\em Get the algorithmic variable T2 for this trajectory in milliseconds. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classTrajectory_a61122874889996b7c31cd268b8f45a9a}{get\-Algo\-T4\-M\-S} ()
+\begin{DoxyCompactList}\small\item\em Get the algorithmic variable T4 for this trajectory in milliseconds. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classTrajectory_a7db227eff10e1b65c706f9059380af96}{get\-Algo\-F\-L1count} ()
+\begin{DoxyCompactList}\small\item\em Get the algorithmic variable F\-L1 for this trajectory as a count. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classTrajectory_ab2406c8e1fbde1523d8ff47bafcfea2b}{get\-Algo\-F\-L2count} ()
+\begin{DoxyCompactList}\small\item\em Get the algorithmic variable F\-L2 for this trajectory as a count. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classTrajectory_a818f34c118496aecc5637a672b482d64}{get\-Algo\-Ncount} ()
+\begin{DoxyCompactList}\small\item\em Get the algorithmic variable N for this trajectory as a count. \end{DoxyCompactList}\item 
+void \hyperlink{classTrajectory_af536bb24d9009ebaa58ec3eb4e415a96}{generate} (\hyperlink{classPath}{Path} \&path, const unsigned int iteration\-Period\-M\-S)
+\begin{DoxyCompactList}\small\item\em Generate a trajectory based on a provided 2-\/point path. \end{DoxyCompactList}\item 
+void \hyperlink{classTrajectory_a54a11d19ae655d4db78ecd59d0d5a131}{execute} ()
+\begin{DoxyCompactList}\small\item\em Stub Execution of this trajectory's motion profile trajectory points. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classTrajectory_a93083e57d71d95670b957aa31aacab25}{size} ()
+\begin{DoxyCompactList}\small\item\em Returns the number of points in the motion profile trajectory. \end{DoxyCompactList}\item 
+void \hyperlink{classTrajectory_aaedb75c528c178cee1023a74f2caa077}{show} ()
+\begin{DoxyCompactList}\small\item\em Show this motion profile trajectory as individual points. \end{DoxyCompactList}\item 
+void \hyperlink{classTrajectory_a78f10564618041f74666a5dbb735e4cb}{output\-C\-S\-V} (const std\-::string \&trajectory\-File\-Name)
+\begin{DoxyCompactList}\small\item\em Output this motion profile trajectory as data to a C\-S\-V file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classTrajectory_a76e24db532647bd0d5e3ba1e004d85ee}{add\-To\-History} (std\-::vector$<$ double $>$ \&history, const unsigned int max, const double value)
+\begin{DoxyCompactList}\small\item\em Private function to maintain a limited history of double values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMotorVelocity}{Motor\-Velocity} \hyperlink{classTrajectory_a7101fccd21bccbf6ff66ae855fc6fb04}{max\-Velocity}
+\item 
+\hyperlink{classMotorAcceleration}{Motor\-Acceleration} \hyperlink{classTrajectory_aff0221bf2932e63c3b1211cacb273dc6}{max\-Acceleration}
+\item 
+\hyperlink{classMotorPosition}{Motor\-Position} \hyperlink{classTrajectory_adca462e882c89640c83cb546294ec6c8}{distance}
+\item 
+unsigned int \hyperlink{classTrajectory_a6fcb37a2f4d0ba6c79bacbe74c8c8291}{algo\-It\-P\-M\-S}
+\item 
+unsigned int \hyperlink{classTrajectory_a47305aeb6de4a4102406db6111e155d6}{algo\-T1\-M\-S}
+\item 
+unsigned int \hyperlink{classTrajectory_ada35c0fd4e7de5e9eec428e800d045e6}{algo\-T2\-M\-S}
+\item 
+unsigned int \hyperlink{classTrajectory_a7e8f6a0075794037354ad92416131be3}{algo\-T4\-M\-S}
+\item 
+unsigned int \hyperlink{classTrajectory_a6821dd2945918f2307a4004319050369}{algo\-F\-L1count}
+\item 
+unsigned int \hyperlink{classTrajectory_a56c679a5deca7efadc9c957f3e418e7b}{algo\-F\-L2count}
+\item 
+unsigned int \hyperlink{classTrajectory_a130dbb1855dd1ac27f89c6f9c30fe019}{algo\-Ncount}
+\item 
+std\-::vector$<$ \hyperlink{classTrajectoryPoint}{Trajectory\-Point} $>$ \hyperlink{classTrajectory_a159e6800353ba91aa66f304de8fa177c}{trajectory}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A trajectory is a vector of motion profile trajectory points. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTrajectory_aa340ba80f1f4d1aa39f19f069d5d8089}{\index{Trajectory@{Trajectory}!Trajectory@{Trajectory}}
+\index{Trajectory@{Trajectory}!Trajectory@{Trajectory}}
+\subsubsection[{Trajectory}]{\setlength{\rightskip}{0pt plus 5cm}Trajectory\-::\-Trajectory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTrajectory_aa340ba80f1f4d1aa39f19f069d5d8089}
+\hypertarget{classTrajectory_ac673c37025ca5353ad99ab41c936e75d}{\index{Trajectory@{Trajectory}!$\sim$\-Trajectory@{$\sim$\-Trajectory}}
+\index{$\sim$\-Trajectory@{$\sim$\-Trajectory}!Trajectory@{Trajectory}}
+\subsubsection[{$\sim$\-Trajectory}]{\setlength{\rightskip}{0pt plus 5cm}Trajectory\-::$\sim$\-Trajectory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTrajectory_ac673c37025ca5353ad99ab41c936e75d}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTrajectory_a76e24db532647bd0d5e3ba1e004d85ee}{\index{Trajectory@{Trajectory}!add\-To\-History@{add\-To\-History}}
+\index{add\-To\-History@{add\-To\-History}!Trajectory@{Trajectory}}
+\subsubsection[{add\-To\-History}]{\setlength{\rightskip}{0pt plus 5cm}void Trajectory\-::add\-To\-History (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ double $>$ \&}]{history, }
+\item[{const unsigned int}]{max, }
+\item[{const double}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classTrajectory_a76e24db532647bd0d5e3ba1e004d85ee}
+
+
+Private function to maintain a limited history of double values. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \mbox{[}in/out\mbox{]}} & vector$<$double$>$ history of values \\
+\hline
+\mbox{\tt in}  & {\em unsigned} & int maximum number of values to keep in the history list \\
+\hline
+\mbox{\tt in}  & {\em double} & value to add to the list \\
+\hline
+\end{DoxyParams}
+\hypertarget{classTrajectory_a54a11d19ae655d4db78ecd59d0d5a131}{\index{Trajectory@{Trajectory}!execute@{execute}}
+\index{execute@{execute}!Trajectory@{Trajectory}}
+\subsubsection[{execute}]{\setlength{\rightskip}{0pt plus 5cm}void Trajectory\-::execute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTrajectory_a54a11d19ae655d4db78ecd59d0d5a131}
+
+
+Stub Execution of this trajectory's motion profile trajectory points. 
+
+\hypertarget{classTrajectory_af536bb24d9009ebaa58ec3eb4e415a96}{\index{Trajectory@{Trajectory}!generate@{generate}}
+\index{generate@{generate}!Trajectory@{Trajectory}}
+\subsubsection[{generate}]{\setlength{\rightskip}{0pt plus 5cm}void Trajectory\-::generate (
+\begin{DoxyParamCaption}
+\item[{{\bf Path} \&}]{path, }
+\item[{const unsigned int}]{iteration\-Period\-M\-S}
+\end{DoxyParamCaption}
+)}}\label{classTrajectory_af536bb24d9009ebaa58ec3eb4e415a96}
+
+
+Generate a trajectory based on a provided 2-\/point path. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em path} & A motion path consisting of a series of path points \\
+\hline
+\mbox{\tt in}  & {\em unsigned} & int iteration period in milliseconds (time slice for execution of each trajectory point) \\
+\hline
+\end{DoxyParams}
+\hypertarget{classTrajectory_a7db227eff10e1b65c706f9059380af96}{\index{Trajectory@{Trajectory}!get\-Algo\-F\-L1count@{get\-Algo\-F\-L1count}}
+\index{get\-Algo\-F\-L1count@{get\-Algo\-F\-L1count}!Trajectory@{Trajectory}}
+\subsubsection[{get\-Algo\-F\-L1count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Trajectory\-::get\-Algo\-F\-L1count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTrajectory_a7db227eff10e1b65c706f9059380af96}
+
+
+Get the algorithmic variable F\-L1 for this trajectory as a count. 
+
+\begin{DoxyReturn}{Returns}
+int algorithmic variable F\-L1 for this trajectory as a count 
+\end{DoxyReturn}
+\hypertarget{classTrajectory_ab2406c8e1fbde1523d8ff47bafcfea2b}{\index{Trajectory@{Trajectory}!get\-Algo\-F\-L2count@{get\-Algo\-F\-L2count}}
+\index{get\-Algo\-F\-L2count@{get\-Algo\-F\-L2count}!Trajectory@{Trajectory}}
+\subsubsection[{get\-Algo\-F\-L2count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Trajectory\-::get\-Algo\-F\-L2count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTrajectory_ab2406c8e1fbde1523d8ff47bafcfea2b}
+
+
+Get the algorithmic variable F\-L2 for this trajectory as a count. 
+
+\begin{DoxyReturn}{Returns}
+int algorithmic variable F\-L2 for this trajectory as a count 
+\end{DoxyReturn}
+\hypertarget{classTrajectory_a6b8d62dd1ce207ce77eb1fe5e7937f2c}{\index{Trajectory@{Trajectory}!get\-Algo\-It\-P\-M\-S@{get\-Algo\-It\-P\-M\-S}}
+\index{get\-Algo\-It\-P\-M\-S@{get\-Algo\-It\-P\-M\-S}!Trajectory@{Trajectory}}
+\subsubsection[{get\-Algo\-It\-P\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Trajectory\-::get\-Algo\-It\-P\-M\-S (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTrajectory_a6b8d62dd1ce207ce77eb1fe5e7937f2c}
+
+
+Get the iteration period for this trajectory in milliseconds. 
+
+\begin{DoxyReturn}{Returns}
+int iteration period in milliseconds 
+\end{DoxyReturn}
+\hypertarget{classTrajectory_a818f34c118496aecc5637a672b482d64}{\index{Trajectory@{Trajectory}!get\-Algo\-Ncount@{get\-Algo\-Ncount}}
+\index{get\-Algo\-Ncount@{get\-Algo\-Ncount}!Trajectory@{Trajectory}}
+\subsubsection[{get\-Algo\-Ncount}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Trajectory\-::get\-Algo\-Ncount (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTrajectory_a818f34c118496aecc5637a672b482d64}
+
+
+Get the algorithmic variable N for this trajectory as a count. 
+
+\begin{DoxyReturn}{Returns}
+int algorithmic variable N for this trajectory as a count 
+\end{DoxyReturn}
+\hypertarget{classTrajectory_a8aebfcf3c5519b0350e82df8d8a24c5c}{\index{Trajectory@{Trajectory}!get\-Algo\-T1\-M\-S@{get\-Algo\-T1\-M\-S}}
+\index{get\-Algo\-T1\-M\-S@{get\-Algo\-T1\-M\-S}!Trajectory@{Trajectory}}
+\subsubsection[{get\-Algo\-T1\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Trajectory\-::get\-Algo\-T1\-M\-S (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTrajectory_a8aebfcf3c5519b0350e82df8d8a24c5c}
+
+
+Get the algorithmic variable T1 for this trajectory in milliseconds. 
+
+\begin{DoxyReturn}{Returns}
+int algorithmic variable T1 for this trajectory in milliseconds 
+\end{DoxyReturn}
+\hypertarget{classTrajectory_a21342821f9027d423baa6b9a07828421}{\index{Trajectory@{Trajectory}!get\-Algo\-T2\-M\-S@{get\-Algo\-T2\-M\-S}}
+\index{get\-Algo\-T2\-M\-S@{get\-Algo\-T2\-M\-S}!Trajectory@{Trajectory}}
+\subsubsection[{get\-Algo\-T2\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Trajectory\-::get\-Algo\-T2\-M\-S (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTrajectory_a21342821f9027d423baa6b9a07828421}
+
+
+Get the algorithmic variable T2 for this trajectory in milliseconds. 
+
+\begin{DoxyReturn}{Returns}
+int algorithmic variable T2 for this trajectory in milliseconds 
+\end{DoxyReturn}
+\hypertarget{classTrajectory_a61122874889996b7c31cd268b8f45a9a}{\index{Trajectory@{Trajectory}!get\-Algo\-T4\-M\-S@{get\-Algo\-T4\-M\-S}}
+\index{get\-Algo\-T4\-M\-S@{get\-Algo\-T4\-M\-S}!Trajectory@{Trajectory}}
+\subsubsection[{get\-Algo\-T4\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Trajectory\-::get\-Algo\-T4\-M\-S (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTrajectory_a61122874889996b7c31cd268b8f45a9a}
+
+
+Get the algorithmic variable T4 for this trajectory in milliseconds. 
+
+\begin{DoxyReturn}{Returns}
+int algorithmic variable T4 for this trajectory in milliseconds 
+\end{DoxyReturn}
+\hypertarget{classTrajectory_a03e1d57ceece06e7af1250bcc72ae265}{\index{Trajectory@{Trajectory}!get\-Distance@{get\-Distance}}
+\index{get\-Distance@{get\-Distance}!Trajectory@{Trajectory}}
+\subsubsection[{get\-Distance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Motor\-Position} Trajectory\-::get\-Distance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTrajectory_a03e1d57ceece06e7af1250bcc72ae265}
+
+
+Get the distance covered by this trajectory (in \hyperlink{classMotorPosition}{Motor\-Position} units) 
+
+\begin{DoxyReturn}{Returns}
+a \hyperlink{classMotorPosition}{Motor\-Position} representing this trajectory's distance covered 
+\end{DoxyReturn}
+\hypertarget{classTrajectory_ad05719b4fb4d03288ea1adb8c110059c}{\index{Trajectory@{Trajectory}!get\-Max\-Acceleration@{get\-Max\-Acceleration}}
+\index{get\-Max\-Acceleration@{get\-Max\-Acceleration}!Trajectory@{Trajectory}}
+\subsubsection[{get\-Max\-Acceleration}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Motor\-Acceleration} Trajectory\-::get\-Max\-Acceleration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTrajectory_ad05719b4fb4d03288ea1adb8c110059c}
+
+
+Get the maximum acceleration for this trajectory. 
+
+\begin{DoxyReturn}{Returns}
+a \hyperlink{classMotorAcceleration}{Motor\-Acceleration} representing this trajectory's maximum acceleration 
+\end{DoxyReturn}
+\hypertarget{classTrajectory_a6b978d0ab6ef13bbf3034b1f6d37180b}{\index{Trajectory@{Trajectory}!get\-Max\-Velocity@{get\-Max\-Velocity}}
+\index{get\-Max\-Velocity@{get\-Max\-Velocity}!Trajectory@{Trajectory}}
+\subsubsection[{get\-Max\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Motor\-Velocity} Trajectory\-::get\-Max\-Velocity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTrajectory_a6b978d0ab6ef13bbf3034b1f6d37180b}
+
+
+Get the maximum velocity for this trajectory. 
+
+\begin{DoxyReturn}{Returns}
+a \hyperlink{classMotorVelocity}{Motor\-Velocity} representing this trajectory's maximum velocity 
+\end{DoxyReturn}
+\hypertarget{classTrajectory_a78f10564618041f74666a5dbb735e4cb}{\index{Trajectory@{Trajectory}!output\-C\-S\-V@{output\-C\-S\-V}}
+\index{output\-C\-S\-V@{output\-C\-S\-V}!Trajectory@{Trajectory}}
+\subsubsection[{output\-C\-S\-V}]{\setlength{\rightskip}{0pt plus 5cm}void Trajectory\-::output\-C\-S\-V (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{trajectory\-File\-Name}
+\end{DoxyParamCaption}
+)}}\label{classTrajectory_a78f10564618041f74666a5dbb735e4cb}
+
+
+Output this motion profile trajectory as data to a C\-S\-V file. 
+
+\hypertarget{classTrajectory_aaedb75c528c178cee1023a74f2caa077}{\index{Trajectory@{Trajectory}!show@{show}}
+\index{show@{show}!Trajectory@{Trajectory}}
+\subsubsection[{show}]{\setlength{\rightskip}{0pt plus 5cm}void Trajectory\-::show (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTrajectory_aaedb75c528c178cee1023a74f2caa077}
+
+
+Show this motion profile trajectory as individual points. 
+
+\hypertarget{classTrajectory_a93083e57d71d95670b957aa31aacab25}{\index{Trajectory@{Trajectory}!size@{size}}
+\index{size@{size}!Trajectory@{Trajectory}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Trajectory\-::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTrajectory_a93083e57d71d95670b957aa31aacab25}
+
+
+Returns the number of points in the motion profile trajectory. 
+
+\begin{DoxyReturn}{Returns}
+int motion profile trajectory size 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classTrajectory_a6821dd2945918f2307a4004319050369}{\index{Trajectory@{Trajectory}!algo\-F\-L1count@{algo\-F\-L1count}}
+\index{algo\-F\-L1count@{algo\-F\-L1count}!Trajectory@{Trajectory}}
+\subsubsection[{algo\-F\-L1count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Trajectory\-::algo\-F\-L1count\hspace{0.3cm}{\ttfamily [private]}}}\label{classTrajectory_a6821dd2945918f2307a4004319050369}
+\hypertarget{classTrajectory_a56c679a5deca7efadc9c957f3e418e7b}{\index{Trajectory@{Trajectory}!algo\-F\-L2count@{algo\-F\-L2count}}
+\index{algo\-F\-L2count@{algo\-F\-L2count}!Trajectory@{Trajectory}}
+\subsubsection[{algo\-F\-L2count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Trajectory\-::algo\-F\-L2count\hspace{0.3cm}{\ttfamily [private]}}}\label{classTrajectory_a56c679a5deca7efadc9c957f3e418e7b}
+\hypertarget{classTrajectory_a6fcb37a2f4d0ba6c79bacbe74c8c8291}{\index{Trajectory@{Trajectory}!algo\-It\-P\-M\-S@{algo\-It\-P\-M\-S}}
+\index{algo\-It\-P\-M\-S@{algo\-It\-P\-M\-S}!Trajectory@{Trajectory}}
+\subsubsection[{algo\-It\-P\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Trajectory\-::algo\-It\-P\-M\-S\hspace{0.3cm}{\ttfamily [private]}}}\label{classTrajectory_a6fcb37a2f4d0ba6c79bacbe74c8c8291}
+\hypertarget{classTrajectory_a130dbb1855dd1ac27f89c6f9c30fe019}{\index{Trajectory@{Trajectory}!algo\-Ncount@{algo\-Ncount}}
+\index{algo\-Ncount@{algo\-Ncount}!Trajectory@{Trajectory}}
+\subsubsection[{algo\-Ncount}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Trajectory\-::algo\-Ncount\hspace{0.3cm}{\ttfamily [private]}}}\label{classTrajectory_a130dbb1855dd1ac27f89c6f9c30fe019}
+\hypertarget{classTrajectory_a47305aeb6de4a4102406db6111e155d6}{\index{Trajectory@{Trajectory}!algo\-T1\-M\-S@{algo\-T1\-M\-S}}
+\index{algo\-T1\-M\-S@{algo\-T1\-M\-S}!Trajectory@{Trajectory}}
+\subsubsection[{algo\-T1\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Trajectory\-::algo\-T1\-M\-S\hspace{0.3cm}{\ttfamily [private]}}}\label{classTrajectory_a47305aeb6de4a4102406db6111e155d6}
+\hypertarget{classTrajectory_ada35c0fd4e7de5e9eec428e800d045e6}{\index{Trajectory@{Trajectory}!algo\-T2\-M\-S@{algo\-T2\-M\-S}}
+\index{algo\-T2\-M\-S@{algo\-T2\-M\-S}!Trajectory@{Trajectory}}
+\subsubsection[{algo\-T2\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Trajectory\-::algo\-T2\-M\-S\hspace{0.3cm}{\ttfamily [private]}}}\label{classTrajectory_ada35c0fd4e7de5e9eec428e800d045e6}
+\hypertarget{classTrajectory_a7e8f6a0075794037354ad92416131be3}{\index{Trajectory@{Trajectory}!algo\-T4\-M\-S@{algo\-T4\-M\-S}}
+\index{algo\-T4\-M\-S@{algo\-T4\-M\-S}!Trajectory@{Trajectory}}
+\subsubsection[{algo\-T4\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Trajectory\-::algo\-T4\-M\-S\hspace{0.3cm}{\ttfamily [private]}}}\label{classTrajectory_a7e8f6a0075794037354ad92416131be3}
+\hypertarget{classTrajectory_adca462e882c89640c83cb546294ec6c8}{\index{Trajectory@{Trajectory}!distance@{distance}}
+\index{distance@{distance}!Trajectory@{Trajectory}}
+\subsubsection[{distance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Motor\-Position} Trajectory\-::distance\hspace{0.3cm}{\ttfamily [private]}}}\label{classTrajectory_adca462e882c89640c83cb546294ec6c8}
+\hypertarget{classTrajectory_aff0221bf2932e63c3b1211cacb273dc6}{\index{Trajectory@{Trajectory}!max\-Acceleration@{max\-Acceleration}}
+\index{max\-Acceleration@{max\-Acceleration}!Trajectory@{Trajectory}}
+\subsubsection[{max\-Acceleration}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Motor\-Acceleration} Trajectory\-::max\-Acceleration\hspace{0.3cm}{\ttfamily [private]}}}\label{classTrajectory_aff0221bf2932e63c3b1211cacb273dc6}
+\hypertarget{classTrajectory_a7101fccd21bccbf6ff66ae855fc6fb04}{\index{Trajectory@{Trajectory}!max\-Velocity@{max\-Velocity}}
+\index{max\-Velocity@{max\-Velocity}!Trajectory@{Trajectory}}
+\subsubsection[{max\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Motor\-Velocity} Trajectory\-::max\-Velocity\hspace{0.3cm}{\ttfamily [private]}}}\label{classTrajectory_a7101fccd21bccbf6ff66ae855fc6fb04}
+\hypertarget{classTrajectory_a159e6800353ba91aa66f304de8fa177c}{\index{Trajectory@{Trajectory}!trajectory@{trajectory}}
+\index{trajectory@{trajectory}!Trajectory@{Trajectory}}
+\subsubsection[{trajectory}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Trajectory\-Point}$>$ Trajectory\-::trajectory\hspace{0.3cm}{\ttfamily [private]}}}\label{classTrajectory_a159e6800353ba91aa66f304de8fa177c}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+framework/\hyperlink{Trajectory_8hpp}{Trajectory.\-hpp}\item 
+framework/\hyperlink{Trajectory_8cpp}{Trajectory.\-cpp}\end{DoxyCompactItemize}

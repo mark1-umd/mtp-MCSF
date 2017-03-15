@@ -1,0 +1,22 @@
+\hypertarget{ChassisTurnRate_8cpp}{\section{framework/\-Chassis\-Turn\-Rate.cpp File Reference}
+\label{ChassisTurnRate_8cpp}\index{framework/\-Chassis\-Turn\-Rate.\-cpp@{framework/\-Chassis\-Turn\-Rate.\-cpp}}
+}
+
+
+\hyperlink{classChassisTurnRate}{Chassis\-Turn\-Rate} is a strictly defined type for specifying the turn rate of a moving chassis.  
+
+
+{\ttfamily \#include \char`\"{}Chassis\-Turn\-Rate.\-hpp\char`\"{}}\\*
+
+
+\subsection{Detailed Description}
+\hyperlink{classChassisTurnRate}{Chassis\-Turn\-Rate} is a strictly defined type for specifying the turn rate of a moving chassis. \begin{DoxyCopyright}{Copyright}
+(c) 2017 Mark R. Jenkins. All rights reserved.
+\end{DoxyCopyright}
+\begin{DoxyAuthor}{Author}
+M\-Jenkins, E\-N\-P\-M 808\-X Spring 2017 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Mar 13, 2017 -\/ Creation
+\end{DoxyDate}
+\hyperlink{classChassis}{Chassis} turn rates may be specified in a variety of ways; the one implemented here is as a degree of turn per foot of movement. This class creates a strict type for chassis turn rates, and can provide a variety of accessor functiont so allow setting/getting the turn rate in different units. The class stores the turn rate internaly as \char`\"{}\-Degrees per Foot of movement\char`\"{}. Note that a zero turn rate indicates movement straight ahead, a negative turn rate indicates a deviation (turn) to the left, and a positive turn rate indicates a deviation (turn) to the right. 

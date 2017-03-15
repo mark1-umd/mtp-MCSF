@@ -1,0 +1,59 @@
+./framework/Chassis.hpp:46:  Add #include <utility> for move  [build/include_what_you_use] [4]
+./framework/Point.hpp:20:  Found C system header after C++ system header. Should be: Point.h, c system, c++ system, other.  [build/include_order] [4]
+./framework/Trajectory.cpp:397:  Add #include <string> for string  [build/include_what_you_use] [4]
+./framework/Trajectory.cpp:291:  Add #include <algorithm> for max  [build/include_what_you_use] [4]
+./framework/Trajectory.cpp:217:  Add #include <vector> for vector<>  [build/include_what_you_use] [4]
+./framework/Trajectory.hpp:54:  Is this a non-const reference? If so, make const or use a pointer: Path &path  [runtime/references] [2]
+./framework/Trajectory.hpp:61:  Is this a non-const reference? If so, make const or use a pointer: std::vector<double> &history  [runtime/references] [2]
+./framework/TankDrive.hpp:46:  Add #include <utility> for move  [build/include_what_you_use] [4]
+./framework/TankDrive.cpp:52:  Add #include <utility> for move  [build/include_what_you_use] [4]
+./framework/TankDrive.cpp:87:  Add #include <algorithm> for min  [build/include_what_you_use] [4]
+./framework/TankDrive.cpp:256:  Add #include <string> for string  [build/include_what_you_use] [4]
+./framework/DriveSystem.hpp:42:  Add #include <utility> for move  [build/include_what_you_use] [4]
+./framework/Chassis.cpp:54:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+./framework/Chassis.cpp:55:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+./framework/Chassis.cpp:64:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+./framework/Chassis.cpp:65:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+./framework/Chassis.cpp:89:  Add #include <utility> for move  [build/include_what_you_use] [4]
+./framework/Chassis.cpp:48:  Add #include <string> for string  [build/include_what_you_use] [4]
+./framework/Path.hpp:33:  Is this a non-const reference? If so, make const or use a pointer: PathPoint &pathPoint  [runtime/references] [2]
+./framework/Path.hpp:34:  Is this a non-const reference? If so, make const or use a pointer: PathPoint &pathPoint  [runtime/references] [2]
+./framework/DriveSystem.cpp:120:  Add #include <utility> for move  [build/include_what_you_use] [4]
+./framework/DriveSystem.cpp:41:  Add #include <string> for string  [build/include_what_you_use] [4]
+Done processing ./app/main-evo1.cpp
+Done processing ./app/main-evo2.cpp
+Done processing ./framework/ChassisTurnRate.cpp
+Done processing ./framework/MotorAcceleration.hpp
+Done processing ./framework/Chassis.hpp
+Done processing ./framework/Point.hpp
+Done processing ./framework/TrajectoryPoint.hpp
+Done processing ./framework/Trajectory.cpp
+Done processing ./framework/ChassisTurnRate.hpp
+Done processing ./framework/MotorAcceleration.cpp
+Done processing ./framework/Trajectory.hpp
+Done processing ./framework/Route.cpp
+Done processing ./framework/PathPoint.cpp
+Done processing ./framework/Route.hpp
+Done processing ./framework/MotorPosition.cpp
+Done processing ./framework/ChassisVelocity.hpp
+Done processing ./framework/MotorVelocity.hpp
+Done processing ./framework/WayPoint.hpp
+Done processing ./framework/Path.cpp
+Done processing ./framework/WayPoint.cpp
+Done processing ./framework/ChassisAcceleration.hpp
+Done processing ./framework/TankDrive.hpp
+Done processing ./framework/MotorVelocity.cpp
+Done processing ./framework/MotorPosition.hpp
+Done processing ./framework/ChassisVelocity.cpp
+Done processing ./framework/TankDrive.cpp
+Done processing ./framework/DriveSystem.hpp
+Done processing ./framework/Chassis.cpp
+Done processing ./framework/PathPoint.hpp
+Done processing ./framework/ChassisAcceleration.cpp
+Done processing ./framework/Point.cpp
+Done processing ./framework/TrajectoryPoint.cpp
+Done processing ./framework/Path.hpp
+Done processing ./framework/DriveSystem.cpp
+Done processing ./test/MCSFtest.cpp
+Done processing ./test/main.cpp
+Total errors found: 22

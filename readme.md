@@ -71,6 +71,46 @@ restarting the robot at each change in direction and/or speed)
 The focus of this project is to perform this work using the software
 engineering techniques being taught in a course entitled "Advanced Software Engineering for Robotics," so the results should not necessarily be relied upon as an "out-of-the-box" solution for motion control.  I am attempting to perform as much of the work as possible using my own original analysis, drawing on the reference material primarily to familiarize myself with the problem domain.  A secondary use of the reference material is to advance my understanding of how others have solved similar problems as I come to portions that I do not see a straightforward approach to solving.
 
+## Current Results
+
+As of 2017-03-14, the Motion Control System Framework consists of a series of classes that together enable two motion profile trajectory generation functions:
+
+- The first, and simplest motion profile trajectory generation creates a motion profle trajectory from a 1-dimensional, 2 point path.  Each path point represents a position (specified in motor rotations) with an associated velocity and acceleration.  The generation function uses the velocity and acceleration from the first point, then generates a series of motion profile trajectory points to accelerate up to the velocity, cruise for as long as possible, then decelerate to arrive exactly at the target position.  Since this project is based on reference documentation from Cross The Road Electronics for their Talon SRX motor controller, the output is directly compatible with this motor controller.
+
+- The second, and somewhat more interesting motion profile trajectory generation creates a 2 motion profile trajectories from a single move command.  The TankDrive class represents a robot mover with 2 sides, and it uses the simple 1D2P motion profile trajectory generator to create the two motion profile trajectories, intended for simultaneous use in driving the two sides of the robot.
+
+## License
+BSD 3-Clause License
+
+Copyright (c) 2017, Mark Jenkins
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice, this
+  list of conditions and the following disclaimer.
+
+* Redistributions in binary form must reproduce the above copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+
+* Neither the name of the copyright holder nor the names of its
+  contributors may be used to endorse or promote products derived from
+  this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
 ## Technology
 
 - Ubuntu Linux 14.04 as a VirtualBox guest O/S on a macOS 10.12 host O/S as the development platform
@@ -80,6 +120,9 @@ engineering techniques being taught in a course entitled "Advanced Software Engi
 - googletest testing
 - Travis Continual Integration
 - Coveralls coverage monitoring (in development)
+
+## Dependencies
+The only dependencies are the technology elements listed under Technology, and not all of these are strictly required.  The Motion Control System Framework itself does not use any other libraries.
 
 ## Status
 - See combined Work Log, Backlog, and Iteration planning at https://docs.google.com/spreadsheets/d/18VykVzmk6bcDeYrOBpadNUtSEcqD-ngulnOqJV_z5iA/edit?usp=sharing (Limited access, not public)
@@ -112,3 +155,15 @@ $ git clone --recursive https://github.com/mark1-umd/mtp-MCSF.git
 ```
 - Examine the code, particularly the app/main-evo1.cpp and app/main-evo2.cpp that demonstrate how to use the Motion Control System Framework to generate trajectories
 - Use/Extend the MCSF for your individual system
+
+### Build
+From the main directory, create a build subdirectory.  Change the working directory to the build subdirectory, type "cmake ..", then "make" to build the project.
+
+### Demo
+From the build subdirectory, type "./app/mcsf-demo-evo1" and "./app/mcsf-demo-evo2" to run the two demonstration programs.
+
+### Testing
+Execute the tests from the build directory with the command "./tests/MCSFtests".
+
+### Documentation
+From the main directory, use the "doxygen" command to generate documentation.  It will be placed in the docs subdirectory.

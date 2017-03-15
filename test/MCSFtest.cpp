@@ -22,6 +22,7 @@
  */
 #include <gtest/gtest.h>
 #include <memory>
+#include <string>
 #include "../framework/Chassis.hpp"
 #include "../framework/ChassisAcceleration.hpp"
 #include "../framework/ChassisTurnRate.hpp"
@@ -992,6 +993,5 @@ TEST(ChassisTest, testAccessorFunctions) {
   EXPECT_EQ(iterationPeriod,
             returnedTankDrive.getTrajectoryIterationPeriodMS());
   EXPECT_DOUBLE_EQ(driveWidthFeet, returnedTankDrive.getWidthInFeet());
-
 }
 

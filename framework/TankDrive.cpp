@@ -92,7 +92,8 @@ void TankDrive::move(double distanceFeet, ChassisTurnRate chassisTurnRate,
     // smaller on the inside of the turn, bigger on the outside
 
     // ****** First determine path distances based on move distance and
-    // ****** drive geometry (the distance between the left and right motivators)
+    // ****** drive geometry (the distance between the left and right
+    // ****** motivators)
 
     // Calculate center turn circle circumference in feet, then radius in feet
     const double centerTurnCircleCircumferenceFeet = (360
@@ -208,7 +209,8 @@ void TankDrive::move(double distanceFeet, ChassisTurnRate chassisTurnRate,
   endLeftPathPoint.setMaxAcceleration(endLeftPathMotorAcceleration);
   leftPath.addPathPoint(endLeftPathPoint);
 
-  // Specify right path beginning and ending position, velocity, and acceleration
+  // Specify right path beginning and ending position, velocity,
+  // and acceleration
   MotorPosition beginRightPathMotorPosition, endRightPathMotorPosition;
   beginRightPathMotorPosition.setRotations(0.0);
   endRightPathMotorPosition.setFromDistanceFeetByRotPerMovementFoot(
@@ -245,8 +247,8 @@ void TankDrive::move(double distanceFeet, ChassisTurnRate chassisTurnRate,
   /* When trajectory.execute has been implemented for a real drive system:
    *    leftTrajectory.execute();
    *    rightTrajectory.execute();
-   * would simultaneously run the left and right trajectories, and the drive system
-   * would move.
+   * would simultaneously run the left and right trajectories,
+   * and the drive system would move.
    */
 
   // For demonstration purposes, create meaningful CSV file names

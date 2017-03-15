@@ -16,6 +16,7 @@
  */
 
 #include <iostream>
+#include <string>
 #include "../framework/Chassis.hpp"
 #include "../framework/ChassisAcceleration.hpp"
 #include "../framework/ChassisTurnRate.hpp"

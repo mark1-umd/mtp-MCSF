@@ -82,6 +82,8 @@ engineering techniques being taught in a course entitled "Advanced Software Engi
 - Coveralls coverage monitoring (in development)
 
 ## Status
+- See combined Work Log, Backlog, and Iteration planning at https://docs.google.com/spreadsheets/d/18VykVzmk6bcDeYrOBpadNUtSEcqD-ngulnOqJV_z5iA/edit?usp=sharing (Limited access, not public)
+
 ### Initial Development
 - 2017-03-04 Initial MCSF development work underway; no useful code at present
 - 2017-03-07 First set of three tests for basic accessor functions working

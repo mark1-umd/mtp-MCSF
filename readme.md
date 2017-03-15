@@ -56,11 +56,14 @@ My development is being conducted in phases:
 
 - The first phase is to create a trajectory generator capable of taking a two-point, 1 dimensional path and creating a series of trajectory points that describe a trapezoidal motion profile consistent with specified
 constraints (maximum velocity, maximum acceleration)
+    - This phase is complete
 - The second phase will use the trajectory generator to handle creating dual
 trajectories for a "tank drive" system that turns through differential motor speeds
+    - This phase is complete as of the end of the current design iteration
 - The third phase will consider how to enhance the system to handle paths with
 multiple segments (i.e., how to best merge motion profiles to avoid stopping/
 restarting the robot at each change in direction and/or speed)
+    - This is future work to be done
 
 
 ## Focus of work
@@ -85,10 +88,19 @@ engineering techniques being taught in a course entitled "Advanced Software Engi
 - 2017-03-08 Initial MCSF development complete, all basic tests working
     - See the design documents in the /UML/initial development folder
     
-### Evolution - Iteration20170308
+### Evolution 1 - Iteration20170308
 - 2017-03-11 Evolution of the MCSF 1-dimensional 2-path trajectory generation complete
     - See the design documents in the /UML/iteration20170308 folder (Astah Community package and .png output)
     - See the results in the /Results folder (a 10ms iteration period motion profile that matches exactly with the Talon Motion Profile Excel model for possible use on an FRC robot with Talon SRX motor controllers, and a 25 ms iteration period motion profile showing the same profile at a coarser granularity, such as might be expected from an FTC Android-based robot with its 25 ms hardware update loop and no direct access to the motor controllers)
+    
+### Evolution 2 - Iteration20170312
+- 2017-03-14 Evolution of the MCSF 2-dimensional 2-path trajectory generation complete
+    - See the design documents in the /UML/Iteration20170312 folder (Astah Community package and .png output)
+    - See the results in the /Results folder (two trajectory files, left side and right side, generated as the result of a single move command to the robot chassis) (PDF file containing Excel graph results showing simultaneous path relationship)
+    - The file app/main-evo1 builds to the executable mcsf-demo-evo1 which demonstrates the first iteration's 1D2P trajectories
+    - The file app/main-evo2 builds to the executable mcsf-demo-evo2 which demonstrates the second iteration's 2D2P trajectory generation
+    - Further work needs to be done to refine the structure of the MCSF in order to make it as easy as possible to use, but for now follow the examples in the demo applications to see how to use the MCSF
+    
 
 ## Review and usage of the MCSF
 
@@ -96,6 +108,5 @@ engineering techniques being taught in a course entitled "Advanced Software Engi
 ```
 $ git clone --recursive https://github.com/mark1-umd/mtp-MCSF.git
 ```
-- Examine the code, particularly the /app/main.cpp that demonstrates how to
-use the Motion Control System Framework to generate trajectories
+- Examine the code, particularly the app/main-evo1.cpp and app/main-evo2.cpp that demonstrate how to use the Motion Control System Framework to generate trajectories
 - Use/Extend the MCSF for your individual system

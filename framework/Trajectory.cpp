@@ -34,7 +34,6 @@ Trajectory::Trajectory()
 }
 
 Trajectory::~Trajectory() {
-  // TODO(Mark Jenkins): Auto-generated destructor stub
 }
 
 /**
@@ -144,6 +143,10 @@ void Trajectory::addToHistory(std::vector<double> &history,
  * @param [in] path A motion path consisting of a series of path points
  * @param [in] unsigned int iteration period in milliseconds (time slice for execution of each trajectory point)
  */
+// Note that the path parameter cannot be set to a "const reference" without
+// causing the path.size, pathGetFirstPathPoint, and pathGetNextPathPoint
+// methods to no longer be recognized; fixing this is future work
+
 void Trajectory::generate(Path &path,
                           const unsigned int iterationPeriodMS) {
   // This is the two-point path version of trajectory generation - only

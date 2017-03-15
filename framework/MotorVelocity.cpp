@@ -22,7 +22,6 @@ MotorVelocity::MotorVelocity()
 }
 
 MotorVelocity::~MotorVelocity() {
-  // TODO(Mark Jenkins): Auto-generated destructor stub
 }
 
 /**
@@ -39,7 +38,7 @@ void MotorVelocity::setRotationsPerMinute(const double rate) {
  * @param [in] ChassisVelocity chassisVelocity specifies a linear physical velocity
  * @param [in] double rotPerMovementFoot is the conversion factor from movement feet to rotations
  */
-void MotorVelocity::convertFromChassisVelocityByRotPerMovementFoot(
+void MotorVelocity::setFromChassisVelocityByRotPerMovementFoot(
     ChassisVelocity chassisVelocity, double rotPerMovementFoot) {
   velAsRotationsPerMinute = chassisVelocity.getFeetPerSecond() * 60
       * rotPerMovementFoot;

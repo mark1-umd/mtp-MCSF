@@ -42,6 +42,13 @@ double TankDrive::getWidthInFeet() {
   return widthInFeet;
 }
 
+/**
+ * @brief Move the TankDrive according to the movement parameters
+ * @param [in] double distanceFeet - distance to move in feet
+ * @param ChassisTurnRate chassisTurnRate - go straight or change heading as moving
+ * @param ChassisVelocity chassisVelocityRequested - move at this rate
+ * @param ChassisAcceleration chassisAccelerationRequested - accelerate at this rate
+ */
 void TankDrive::move(double distanceFeet, ChassisTurnRate chassisTurnRate,
                      ChassisVelocity chassisVelocityRequested,
                      ChassisAcceleration chassisAccelerationRequested) {
@@ -174,22 +181,22 @@ void TankDrive::move(double distanceFeet, ChassisTurnRate chassisTurnRate,
   // side's path to motor distances (positions), velocities, and
   // accelerations to that we can build the motion paths for this movement
 
-  // Left path beginning and ending position, velocity, and acceleration
+  // Specify left path beginning and ending position, velocity, and acceleration
   MotorPosition beginLeftPathMotorPosition, endLeftPathMotorPosition;
   beginLeftPathMotorPosition.setRotations(0.0);
-  endLeftPathMotorPosition.convertFromDistanceFeetByRotPerMovementFoot(
+  endLeftPathMotorPosition.setFromDistanceFeetByRotPerMovementFoot(
       leftPathDistanceFeet, motorRotPerMovementFoot);
   MotorVelocity beginLeftPathMotorVelocity, endLeftPathMotorVelocity;
-  beginLeftPathMotorVelocity.convertFromChassisVelocityByRotPerMovementFoot(
+  beginLeftPathMotorVelocity.setFromChassisVelocityByRotPerMovementFoot(
       leftPathVelocity, motorRotPerMovementFoot);
   endLeftPathMotorVelocity.setRotationsPerMinute(0.0);
   MotorAcceleration beginLeftPathMotorAcceleration,
       endLeftPathMotorAcceleration;
   beginLeftPathMotorAcceleration
-      .convertFromChassisAccelerationByRotPerMovementFoot(
+      .setFromChassisAccelerationByRotPerMovementFoot(
       leftPathAcceleration, motorRotPerMovementFoot);
 
-  // Create the left path with two points
+  // Create the left path with the two points specified
   Path leftPath;
   PathPoint beginLeftPathPoint, endLeftPathPoint;
   beginLeftPathPoint.setPosition(beginLeftPathMotorPosition);
@@ -201,22 +208,22 @@ void TankDrive::move(double distanceFeet, ChassisTurnRate chassisTurnRate,
   endLeftPathPoint.setMaxAcceleration(endLeftPathMotorAcceleration);
   leftPath.addPathPoint(endLeftPathPoint);
 
-  // Right path beginning and ending position, velocity, and acceleration
+  // Specify right path beginning and ending position, velocity, and acceleration
   MotorPosition beginRightPathMotorPosition, endRightPathMotorPosition;
   beginRightPathMotorPosition.setRotations(0.0);
-  endRightPathMotorPosition.convertFromDistanceFeetByRotPerMovementFoot(
+  endRightPathMotorPosition.setFromDistanceFeetByRotPerMovementFoot(
       rightPathDistanceFeet, motorRotPerMovementFoot);
   MotorVelocity beginRightPathMotorVelocity, endRightPathMotorVelocity;
-  beginRightPathMotorVelocity.convertFromChassisVelocityByRotPerMovementFoot(
+  beginRightPathMotorVelocity.setFromChassisVelocityByRotPerMovementFoot(
       rightPathVelocity, motorRotPerMovementFoot);
   endRightPathMotorVelocity.setRotationsPerMinute(0.0);
   MotorAcceleration beginRightPathMotorAcceleration,
       endRightPathMotorAcceleration;
   beginRightPathMotorAcceleration
-      .convertFromChassisAccelerationByRotPerMovementFoot(
+      .setFromChassisAccelerationByRotPerMovementFoot(
       rightPathAcceleration, motorRotPerMovementFoot);
 
-  // Create the right path with two points
+  // Create the right path with the two points specified
   Path rightPath;
   PathPoint beginRightPathPoint, endRightPathPoint;
   beginRightPathPoint.setPosition(beginRightPathMotorPosition);

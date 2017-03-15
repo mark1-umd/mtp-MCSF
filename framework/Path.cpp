@@ -73,6 +73,9 @@ unsigned int Path::size() {
   return path.size();
 }
 
+/**
+ * @brief Shows this motion path on the default output device
+ */
 void Path::show() {
   std::cout << "Motion path:" << std::endl;
   for (auto pathPoint : path) {

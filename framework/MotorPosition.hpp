@@ -24,7 +24,7 @@ class MotorPosition {
   MotorPosition();
   virtual ~MotorPosition();
   void setRotations(const double count);
-  void convertFromDistanceFeetByRotPerMovementFoot(
+  void setFromDistanceFeetByRotPerMovementFoot(
       const double distanceFeet, const double rotPerMovementFoot);
   double getRotations();
   MotorPosition operator-(const MotorPosition& mp);

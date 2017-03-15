@@ -18,7 +18,6 @@ Route::Route()
 }
 
 Route::~Route() {
-  // TODO(Mark Jenkins): Auto-generated destructor stub
 }
 
 /**
@@ -49,6 +48,9 @@ Path Route::planPath(const MotorVelocity &maxVelocity,
   return path;
 }
 
+/**
+ * @brief Show the details of this route on the default output device
+ */
 void Route::show() {
   std::cout << "Route way points:" << std::endl;
   for (auto wayPoint : route) {

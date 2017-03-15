@@ -32,7 +32,6 @@ TrajectoryPoint::TrajectoryPoint()
 }
 
 TrajectoryPoint::~TrajectoryPoint() {
-  // TODO(Mark Jenkins): Auto-generated destructor stub
 }
 
 /**

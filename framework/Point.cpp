@@ -33,7 +33,7 @@ void Point::setPosition(const MotorPosition &pos) {
 
 /**
  * @brief Get the previously set position of a generic Point object
- * @return MotorPosition position
+ * @return MotorPosition position of this point
  */
 MotorPosition Point::getPosition() {
   return position;

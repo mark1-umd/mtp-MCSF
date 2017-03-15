@@ -37,7 +37,7 @@ class Chassis {
  public:
   Chassis();
   virtual ~Chassis();
-  void setName(std::string myName);
+  void setName(std::string name);
   std::string getName();
 //  void setDriveSystem(std::shared_ptr<DriveSystem> driveSystem);
 //  std::shared_ptr<DriveSystem> getDriveSystem(); // Not working 2017-03-14

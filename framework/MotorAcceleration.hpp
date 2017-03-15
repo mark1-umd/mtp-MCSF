@@ -29,7 +29,7 @@ class MotorAcceleration {
   MotorAcceleration();
   virtual ~MotorAcceleration();
   void setRotationsPerMinutePerSecond(const double rate);
-  void convertFromChassisAccelerationByRotPerMovementFoot(
+  void setFromChassisAccelerationByRotPerMovementFoot(
       ChassisAcceleration chassisAcceleration, double rotPerMovementFoot);
   double getRotationsPerMinutePerSecond();
 
